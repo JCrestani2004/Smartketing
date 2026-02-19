@@ -1,0 +1,51 @@
+---
+const backgroundImage = '/background/Bannerlogos.svg';
+const clients = [
+    { name: 'MiamiFoodTrucksEvents', logo: '/clientes/miami.svg' },
+    { name: 'Energy Control', logo: '/clientes/energy.svg' },
+    { name: 'Gel Smart', logo: '/clientes/gel.svg' },
+    { name: 'Illuminations', logo: '/clientes/illuminations.svg' },
+    { name: 'Luxolar', logo: '/clientes/luxolar.svg' },
+    { name: 'Osumed', logo: '/clientes/osumed.svg' },
+    { name: 'Simel', logo: '/clientes/simel.svg' },
+    { name: 'Vicone', logo: '/clientes/vicone.svg' }
+];
+const doubleClients = [...clients, ...clients];
+---
+
+<section class="relative w-full overflow-hidden py-12 lg:py-16 z-10 -mt-12">
+  <div class="absolute inset-0 -z-10 w-full">
+    <img
+      src={backgroundImage}
+      alt="Fondo decorativo"
+      class="h-full w-full scale-105 object-cover object-top-left"
+    />
+  </div>
+
+  <div class="pt-10 lg:pt-14">
+   <div class="flex w-max animate-marquee items-center gap-12 md:gap-24">
+      {doubleClients.map((client) => (
+        <img 
+          src={client.logo} 
+          alt={client.name} 
+          class="h-6 md:h-10 w-auto object-contain brightness-0 invert opacity-80 hover:opacity-100 transition-opacity"
+        />
+      ))}
+    </div>
+  </div>
+</section>
+<style>
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
+  }
+
+  /* Pausar al pasar el mouse para mejorar la UX */
+  .animate-marquee:hover {
+    animation-play-state: paused;
+  }
+</style>
