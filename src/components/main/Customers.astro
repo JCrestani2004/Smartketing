@@ -6,7 +6,6 @@ const clients = [
     { name: 'Energy Control', logo: '/clientes/energy.svg' },
     { name: 'Gel Smart', logo: '/clientes/gel.svg' },
     { name: 'Illuminations', logo: '/clientes/illuminations.svg' },
-    { name: 'Luxolar', logo: '/clientes/luxolar.svg' },
     { name: 'Osumed', logo: '/clientes/osumed.svg' },
     { name: 'Simel', logo: '/clientes/simel.svg' },
     { name: 'Vicone', logo: '/clientes/vicone.svg' }
@@ -23,13 +22,13 @@ const doubleClients = [...clients, ...clients];
     />
   </div>
 
-  <div class="pt-10 lg:pt-14">
-   <div class="flex w-max animate-marquee items-center gap-12 md:gap-24">
+  <div class="pt-4 lg:pt-8">
+   <div class="flex w-max animate-marquee items-center gap-12 md:gap-20">
       {doubleClients.map((client) => (
         <img 
           src={client.logo} 
           alt={client.name} 
-          class="h-6 md:h-10 w-auto object-contain brightness-0 invert opacity-80 hover:opacity-100 transition-opacity"
+          class="h-16 md:h-19 w-auto object-contain brightness-0 invert hover:opacity-100 transition-opacity"
         />
       ))}
     </div>
