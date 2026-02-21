@@ -8,7 +8,9 @@ const clients = [
     { name: 'Illuminations', logo: '/clientes/illuminations.svg' },
     { name: 'Osumed', logo: '/clientes/osumed.svg' },
     { name: 'Simel', logo: '/clientes/simel.svg' },
-    { name: 'Vicone', logo: '/clientes/vicone.svg' }
+    { name: 'Vicone', logo: '/clientes/vicone.svg' },
+    { name: 'Damaschke', logo: '/clientes/damaschke.svg' },
+    { name: 'Epcom', logo: '/clientes/epcom.svg' }
 ];
 const doubleClients = [...clients, ...clients];
 ---
@@ -28,7 +30,7 @@ const doubleClients = [...clients, ...clients];
         <img 
           src={client.logo} 
           alt={client.name} 
-          class="h-16 md:h-19 w-auto object-contain brightness-0 invert hover:opacity-100 transition-opacity"
+          class="h-10 md:h-14 w-auto object-contain brightness-0 invert hover:opacity-100 transition-opacity"
         />
       ))}
     </div>
