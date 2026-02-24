@@ -1,21 +1,87 @@
 ---
 import logo from "../assets/logo_svg/logo.svg";
 ---
-<nav class="absolute top-0 w-full z-50 bg-transparent font-body">
 
-  <div class="max-w-8xl mx-auto px-25 py-6 flex justify-between items-center">
+<nav id="main-nav" class="fixed top-0 w-full z-50 bg-transparent font-body transition-all duration-300">
+  <div class="max-w-8xl mx-auto px-6 md:px-25 py-6 flex justify-between items-center">
 
-    <!-- Logo -->
-    <img src={logo.src} alt="Smartketing" class="h-13" />
+    <a href="/">
+      <img src={logo.src} alt="Smartketing" class="h-10 md:h-13 transition-transform duration-300 hover:scale-105" />
+    </a>
 
-    <!-- Links -->
     <ul class="hidden md:flex gap-14 text-base text-brand-gray font-extralight">
-        <li><a href="#about" class="hover:text-brand-coral transition">Quiénes somos</a></li>
-        <li><a href="#services" class=" hover:text-brand-coral transition">Servicio</a></li>
-      <li><a href="#team" class="hover:text-brand-coral transition">Equipo</a></li>
-      <li><a href="#contact" class="hover:text-brand-coral transition">Contáctenos</a></li>
+        <li><a href="#about" class="hover:text-brand-coral transition-colors">Quiénes somos</a></li>
+        <li><a href="#services" class="hover:text-brand-coral transition-colors">Servicio</a></li>
+      <li><a href="#team" class="hover:text-brand-coral transition-colors">Equipo</a></li>
+      <li><a href="#contact" class="hover:text-brand-coral transition-colors">Contáctenos</a></li>
     </ul>
 
-  </div>
+    <button id="menu-btn" class="md:hidden flex flex-col gap-1.5 z-50 pointer-events-auto">
+      <span class="w-8 h-0.5 bg-brand-gray transition-all origin-center"></span>
+      <span class="w-8 h-0.5 bg-brand-gray transition-all"></span>
+      <span class="w-8 h-0.5 bg-brand-gray transition-all origin-center"></span>
+    </button>
 
+    <div id="mobile-menu" class="fixed inset-0 bg-brand-blue/95 backdrop-blur-md flex flex-col items-center justify-center gap-8 translate-x-full transition-transform duration-500 md:hidden">
+      <a href="#about" class="text-2xl text-white font-light hover:text-brand-coral">Quiénes somos</a>
+      <a href="#services" class="text-2xl text-white font-light hover:text-brand-coral">Servicio</a>
+      <a href="#team" class="text-2xl text-white font-light hover:text-brand-coral">Equipo</a>
+      <a href="#contact" class="text-2xl text-white font-light hover:text-brand-coral">Contáctenos</a>
+    </div>
+
+  </div>
 </nav>
+
+<style>
+  /* Animación de la Hamburguesa */
+  #menu-btn.open span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  #menu-btn.open span:nth-child(2) {
+    opacity: 0;
+  }
+  #menu-btn.open span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  /* Corrección para Nav Scrolled en Tailwind v4 */
+  .nav-scrolled {
+    /* Si el error persiste con @apply, usa clases estándar o CSS puro */
+    background-color: rgba(37, 26, 130, 0.9); /* Esto es #251A82 al 90% */
+    backdrop-filter: blur(8px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  }
+</style>
+
+<script>
+  const nav = document.getElementById('main-nav');
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const links = mobileMenu?.querySelectorAll('a');
+
+  // 1. Efecto de Scroll (Se vuelve sólido al bajar)
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      nav?.classList.add('nav-scrolled');
+    } else {
+      nav?.classList.remove('nav-scrolled');
+    }
+  });
+
+  // 2. Lógica del Menú Mobile
+  menuBtn?.addEventListener('click', () => {
+    menuBtn.classList.toggle('open');
+    mobileMenu?.classList.toggle('translate-x-full');
+    // Bloquear scroll del cuerpo cuando el menú está abierto
+    document.body.classList.toggle('overflow-hidden');
+  });
+
+  // 3. Cerrar menú al hacer click en un link
+  links?.forEach(link => {
+    link.addEventListener('click', () => {
+      menuBtn?.classList.remove('open');
+      mobileMenu?.classList.add('translate-x-full');
+      document.body.classList.remove('overflow-hidden');
+    });
+  });
+</script>

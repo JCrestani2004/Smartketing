@@ -15,27 +15,28 @@ const clients = [
 const doubleClients = [...clients, ...clients];
 ---
 
-<section class="relative w-full overflow-hidden py-12 lg:py-16 z-10 -mt-12">
+<section class="relative w-full overflow-hidden py-8 lg:py-16 z-30 -mt-22 lg:-mt-16">
   <div class="absolute inset-0 -z-10 w-full">
     <img
       src={backgroundImage}
       alt="Fondo decorativo"
-      class="h-full w-full scale-105 object-cover object-top-left"
+      class="h-full w-full scale-110 object-cover object-left lg:object-top-right"
     />
   </div>
 
-  <div class="pt-4 lg:pt-8">
-   <div class="flex w-max animate-marquee items-center gap-12 md:gap-20">
+  <div class="relative flex items-center overflow-hidden">
+    <div class="flex w-max animate-marquee items-center gap-8 md:gap-16">
       {doubleClients.map((client) => (
         <img 
           src={client.logo} 
           alt={client.name} 
-          class="h-10 md:h-14 w-auto object-contain brightness-0 invert hover:opacity-100 transition-opacity"
+          class="h-8 md:h-14 w-auto object-contain brightness-0 invert opacity-80 hover:opacity-100 transition-opacity px-2"
         />
       ))}
     </div>
   </div>
 </section>
+
 <style>
   @keyframes marquee {
     0% { transform: translateX(0); }
@@ -43,11 +44,20 @@ const doubleClients = [...clients, ...clients];
   }
 
   .animate-marquee {
-    animation: marquee 30s linear infinite;
+    display: flex;
+    white-space: nowrap;
+    animation: marquee 25s linear infinite; /* Un poco más rápido para compensar el gap menor */
   }
 
-  /* Pausar al pasar el mouse para mejorar la UX */
+  /* Pausar al pasar el mouse */
   .animate-marquee:hover {
     animation-play-state: paused;
+  }
+
+  /* Evita saltos visuales en móviles */
+  @media (max-width: 768px) {
+    .animate-marquee {
+      animation-duration: 20s;
+    }
   }
 </style>
