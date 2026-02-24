@@ -1,0 +1,165 @@
+---
+const testimonios = [
+  {
+    id: "damaschke",
+    logo: "/clientes/damaschke.svg",
+    alt: "Damaschke Premium Line",
+    texto:
+      "Su equipo ha asumido con excelencia la gestión de nuestras redes sociales y campañas. Nos gusta la pronta atención y respuesta a nuestros requerimientos, eso es importante.",
+  },
+  {
+    id: "energy",
+    logo: "/clientes/energy.svg",
+    alt: "Energy Control",
+    texto:
+      "Su equipo ha asumido con excelencia la gestión de nuestras redes sociales y campañas. Nos gusta la pronta atención y respuesta a nuestros requerimientos, eso es importante.",
+    },
+  {
+    id: "simel",
+    logo: "/clientes/simel.svg",
+    alt: "Simel Panama",
+    texto:
+      "Smartketing ha sido clave en nuestro crecimiento, gestionando con excelencia nuestras redes sociales, estrategias de marketing y campañas pagadas con contenido creativo, siempre con una atención valiosa y constante.",
+  },
+  {
+    id: "hunter",
+    logo: "/clientes/hunter.svg",
+    alt: "Hunter Panama",
+    texto:
+      "El profesionalismo, proactividad y calidad del servicio que ofrece Smarketing ha superado nuestras expectativas de manera constante. Recomendamos plenamente sus servicios.",
+  },
+];
+---
+
+<section class="relative w-full bg-brand-blue pb-10 overflow-hidden -mt-40">
+  <img
+    src="background/Background-testimonios.svg"
+    alt="Fondo de clientes"
+    class="absolute inset-0 w-full h-full object-cover object-bottom z-0 pointer-events-none scale-110"
+  />
+  <div
+    class="relative w-full max-w-7xl mx-auto px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center z-10"
+  >
+    <div
+      class="lg:col-span-4 flex flex-col items-center relative h-100 overflow-hidden group"
+    >
+      <div
+        id="logo-track"
+        class="flex flex-col w-full items-center transition-transform duration-700 ease-in-out pb-20 pt-30 pl-10"
+      >
+        {
+          testimonios.map((item, index) => (
+            <div
+              class="logo-item cursor-pointer transition-all duration-500 flex items-center justify-center h-30 w-full"
+              data-index={index}
+              data-texto={item.texto}
+            >
+              <img
+                src={item.logo}
+                alt={item.alt}
+                class="w-32 md:w-40 object-contain pointer-events-none opacity-30 grayscale scale-90 transition-all duration-500"
+              />
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <div
+      class="lg:col-span-8 relative flex items-center justify-center w-full min-h-162.5"
+    >
+      <img
+        src="/assets/onda_clientes.svg"
+        alt="Marco de testimonio"
+        class="absolute inset-0 w-full h-full object-contain z-0 scale-100 md:scale-115 lg:scale-130"
+      />
+
+      <div class="relative z-10 w-full max-w-md px-10 md:px-16 lg:px-20 py-10 mb-15 font-body">
+        <p
+          id="testimonial-text"
+          class="text-brand-gray/90 text-md md:text-lg font-extralight italic text-center transition-all duration-500 tracking-tight leading-[1.1]"
+        >
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    /* Aceleración por hardware para que el carrusel sea fluido */
+    #logo-track {
+      will-change: transform;
+    }
+  </style>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const track = document.getElementById("logo-track");
+      const textElement = document.getElementById("testimonial-text");
+      const logos = document.querySelectorAll(".logo-item");
+
+      let currentIndex = 0;
+      const itemHeight = 120;
+      let autoPlayInterval;
+      const intervalTime = 4000;
+
+      const updateCarousel = (index) => {
+        const offset = index * itemHeight;
+        if (track) track.style.transform = `translateY(-${offset}px)`;
+
+        logos.forEach((logo, i) => {
+          // --- PARTE CORREGIDA: Seleccionamos la imagen dentro del logo-item ---
+          const img = logo.querySelector("img");
+          if (img) {
+            if (i === index) {
+              // Activo: Quitamos las clases que pusiste en el HTML y ponemos las de resaltado
+              img.classList.remove("opacity-30", "grayscale", "scale-90");
+              img.classList.add("opacity-100", "grayscale-0", "scale-110");
+            } else {
+              // Inactivo: Volvemos al estado inicial del HTML
+              img.classList.remove("opacity-100", "grayscale-0", "scale-110");
+              img.classList.add("opacity-30", "grayscale", "scale-90");
+            }
+          }
+          // --- FIN DE LA CORRECCIÓN ---
+        });
+
+        const nuevoTexto = logos[index].getAttribute("data-texto");
+        if (textElement) {
+          textElement.style.opacity = "0";
+          textElement.style.transform = "translateY(10px)";
+
+          setTimeout(() => {
+            textElement.textContent = `"${nuevoTexto}"`;
+            textElement.style.opacity = "1";
+            textElement.style.transform = "translateY(0)";
+          }, 300);
+        }
+      };
+
+      const nextSlide = () => {
+        currentIndex = (currentIndex + 1) % logos.length;
+        updateCarousel(currentIndex);
+      };
+
+      const startAutoPlay = () => {
+        autoPlayInterval = setInterval(nextSlide, intervalTime);
+      };
+
+      const resetAutoPlay = () => {
+        clearInterval(autoPlayInterval);
+        startAutoPlay();
+      };
+
+      logos.forEach((logo) => {
+        logo.addEventListener("click", () => {
+          currentIndex = parseInt(logo.getAttribute("data-index"));
+          updateCarousel(currentIndex);
+          resetAutoPlay();
+        });
+      });
+
+      updateCarousel(0);
+      startAutoPlay();
+    });
+  </script>
+</section>
