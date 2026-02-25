@@ -2,31 +2,31 @@
 import logo from "../assets/logo_svg/logo.svg";
 ---
 
-<nav id="main-nav" class="fixed top-0 w-full z-50 bg-transparent font-body transition-all duration-300">
-  <div class="max-w-8xl mx-auto px-6 md:px-25 py-6 flex justify-between items-center">
+<nav id="main-nav" class="fixed top-0 w-full z-100 bg-transparent font-body transition-all duration-300">
+  <div class="max-w-8xl mx-auto px-6 md:px-20 lg:px-25 py-6 flex justify-between items-center">
 
     <a href="/">
       <img src={logo.src} alt="Smartketing" class="h-10 md:h-13 transition-transform duration-300 hover:scale-105" />
     </a>
 
-    <ul class="hidden md:flex gap-14 text-base text-brand-gray font-extralight">
-        <li><a href="#about" class="hover:text-brand-coral transition-colors">Quiénes somos</a></li>
-        <li><a href="#services" class="hover:text-brand-coral transition-colors">Servicio</a></li>
-      <li><a href="#team" class="hover:text-brand-coral transition-colors">Equipo</a></li>
-      <li><a href="#contact" class="hover:text-brand-coral transition-colors">Contáctenos</a></li>
+    <ul class="hidden md:flex gap-14 md:text-xs lg:text-base text-brand-gray font-extralight">
+        <li><a href="#about" class="hover:text-brand-cyan transition-colors duration-500">Quiénes somos</a></li>
+        <li><a href="#services" class="hover:text-brand-cyan transition-colors duration-500">Servicio</a></li>
+      <li><a href="#team" class="hover:text-brand-cyan transition-colors duration-500">Equipo</a></li>
+      <li><a href="#contact" class="hover:text-brand-cyan transition-colors duration-500">Contáctenos</a></li>
     </ul>
 
-    <button id="menu-btn" class="md:hidden flex flex-col gap-1.5 z-50 pointer-events-auto">
+    <button id="menu-btn" class="md:hidden z-101 flex flex-col gap-1.5 pointer-events-auto">
       <span class="w-8 h-0.5 bg-brand-gray transition-all origin-center"></span>
       <span class="w-8 h-0.5 bg-brand-gray transition-all"></span>
       <span class="w-8 h-0.5 bg-brand-gray transition-all origin-center"></span>
     </button>
 
-    <div id="mobile-menu" class="fixed inset-0 bg-brand-blue/95 backdrop-blur-md flex flex-col items-center justify-center gap-8 translate-x-full transition-transform duration-500 md:hidden">
-      <a href="#about" class="text-2xl text-white font-light hover:text-brand-coral">Quiénes somos</a>
-      <a href="#services" class="text-2xl text-white font-light hover:text-brand-coral">Servicio</a>
-      <a href="#team" class="text-2xl text-white font-light hover:text-brand-coral">Equipo</a>
-      <a href="#contact" class="text-2xl text-white font-light hover:text-brand-coral">Contáctenos</a>
+    <div id="mobile-menu" class="fixed top-0 left-0 w-full h-screen z-100 bg-brand-blue/95 backdrop-blur-md flex flex-col items-center justify-center gap-8 translate-x-full transition-transform duration-500 md:hidden">
+      <a href="#about" class="text-2xl text-white font-light hover:text-brand-cyan">Quiénes somos</a>
+      <a href="#services" class="text-2xl text-white font-light hover:text-brand-cyan">Servicio</a>
+      <a href="#team" class="text-2xl text-white font-light hover:text-brand-cyan">Equipo</a>
+      <a href="#contact" class="text-2xl text-white font-light hover:text-brand-cyan">Contáctenos</a>
     </div>
 
   </div>
@@ -68,13 +68,20 @@ import logo from "../assets/logo_svg/logo.svg";
     }
   });
 
-  // 2. Lógica del Menú Mobile
+
+  // Alternativa para bloquear scroll (si prefieres manipular estilos directamente)
   menuBtn?.addEventListener('click', () => {
-    menuBtn.classList.toggle('open');
+    const isOpened = menuBtn.classList.toggle('open');
     mobileMenu?.classList.toggle('translate-x-full');
-    // Bloquear scroll del cuerpo cuando el menú está abierto
-    document.body.classList.toggle('overflow-hidden');
-  });
+    
+    if (isOpened) {
+      document.documentElement.style.overflow = 'hidden';
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.documentElement.style.overflow = '';
+      document.body.style.overflow = '';
+    }
+});
 
   // 3. Cerrar menú al hacer click en un link
   links?.forEach(link => {

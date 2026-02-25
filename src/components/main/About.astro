@@ -1,65 +1,69 @@
----
-//  Seccion Quienes Somos
----
-
 <section
-  class="relative w-full bg-transparent pb-20 pt-32 px-6 md:px-10 lg:px-20 items-center"
+  class="relative w-full bg-transparent pb-20 pt-32 px-6 md:px-10 lg:px-20 items-center overflow-hidden"
 >
-  <div
-    class="absolute -top-10 -left-10 w-[70%] md:w-[40%] z-20 pointer-events-none opacity-60"
-  >
-    <img src="/assets/ondas_about.svg" alt="" class="w-full h-auto" />
-  </div>
-
   <div
     class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-start"
   >
     <div
-      class="md:col-span-5 flex flex-col relative align-center justify-center mt-35 mr-10"
+      class="flex flex-col relative items-start md:items-start md:col-span-5 md:mt-35 md:mr-10"
     >
       <h2
-        class="font-title text-3xl md:text-[2.8rem] leading-[0.9] tracking-tight"
+        class="font-title text-4xl md:text-[2.8rem] leading-[0.9] tracking-tight text-center md:text-left"
       >
         <span class="block text-brand-purple font-light">Quiénes</span>
-        <span class="block text-brand-coral font-bold">somos</span>
+        <span class="block text-brand-coral font-bold ml-2 md:ml-0">somos</span>
       </h2>
     </div>
 
-    <div class="md:col-span-7 flex flex-col items-end text-right pr-10">
+    <div
+      class="flex flex-col items-center md:items-end md:col-span-7 text-center md:text-right md:pr-10"
+    >
       <div
-        class="space-y-5 max-w-sm text-gray-500 font-body text-[0.9rem] leading-tight mb-14 text-right tracking-tight font-base antialiased"
+        class="space-y-5 max-w-sm text-gray-500 font-body text-[0.9rem] leading-tight mb-14 tracking-tight font-base antialiased"
       >
         <p>
-          En Smartketing tenemos más de diez años acompa- <br />
-          ñando a pequeñas y medianas empresas a construir <br />
+          En Smartketing tenemos más de diez años acompa- <br
+            class="hidden md:block"
+          />
+          ñando a pequeñas y medianas empresas a construir <br
+            class="hidden md:block"
+          />
           marcas con criterio y visión a largo plazo.
         </p>
         <p>
-          Trabajamos como su equipo creativo externo, dando <br />
-          forma a su identidad, su mensaje y su comunicación <br />
+          Trabajamos como su equipo creativo externo, dando <br
+            class="hidden md:block"
+          />
+          forma a su identidad, su mensaje y su comunicación <br
+            class="hidden md:block"
+          />
           a través de contenido y diseño estratégico.
         </p>
         <p>
-          No creemos en soluciones rápidas, creemos en <br />
-          procesos que hacen que vender sea una consecuen- <br />
+          No creemos en soluciones rápidas, creemos en <br
+            class="hidden md:block"
+          />
+          procesos que hacen que vender sea una consecuen- <br
+            class="hidden md:block"
+          />
           cia natural de una comunicación bien hecha.
         </p>
       </div>
 
-      <div class="max-w-md mb-13">
+      <div class="max-w-md mb-13 text-right">
         <p
           class="text-gray-500/95 font-body font-light text-2xl md:text-[1.58rem] leading-[1.1] italic"
         >
-          Somos un estudio de <br />
+          Somos un estudio de <br class="md:block" />
           <span class="">comunicación estratégica</span>
           <br />
-          especializado en marketing, <br />
-          contenido y posicionamiento de <br />
+          especializado en marketing, <br class="hidden md:block" />
+          contenido y posicionamiento de <br class="hidden md:block" />
           marca a largo plazo.
         </p>
       </div>
 
-      <div class="max-w-lg">
+      <div class="max-w-lg self-end">
         <h3
           class="font-title text-3xl md:text-[2.15rem] leading-[0.9] tracking-normal"
         >
@@ -74,19 +78,25 @@
       </div>
     </div>
   </div>
-  <div class="absolute top-[35%] -left-18 w-full z-0 pointer-events-none p-0">
+
+  <div
+    class="relative left-1/2 -translate-x-1/2 w-screen md:absolute md:top-[35%] md:-left-18 md:w-full z-0 pointer-events-none p-0 mt-25 md:my-0 md:translate-x-0"
+  >
     <img
       src="/assets/onda_about.svg"
       alt=""
-      class="w-full h-auto scale-130 object-cover object-top opacity-50"
+      class="w-full h-auto scale-[2.5] md:scale-130 object-cover object-top opacity-50"
     />
   </div>
-  <div class="relative w-full mt-25 px-20 bg-transparent">
+
+  <div class="relative w-full -mt-15 md:mt-25 md:px-20 bg-transparent">
     <div
-      class="max-w-7xl mx-auto px-6 lg:px-10 flex flex-col lg:flex-row items-center justify-between gap-10 min-h-162.5"
+      class="max-w-7xl mx-auto px-6 lg:px-10 flex flex-col lg:flex-row items-center justify-between gap-10 md:min-h-162.5"
     >
-      <div class="w-full lg:w-[60%] flex flex-col relative h-155">
-        <div class="absolute top-[7%] left-[5%] z-30">
+      <div class="w-full lg:w-[60%] flex flex-col relative h-auto md:h-155">
+        <div
+          class="relative mb-10 md:mb-0 md:absolute md:top-[7%] md:left-[5%] z-30 text-center md:text-left"
+        >
           <h2
             class="font-title text-2xl md:text-[2.3rem] leading-[0.95] tracking-tight"
           >
@@ -98,75 +108,73 @@
           </h2>
         </div>
 
+        <div class="grid grid-cols-2 md:block gap-4 mb-10 md:mb-0">
+          <div
+            class="absolute top-[35%] left-[5%] md:top-[30%] md:left-[50%] md:-translate-x-1/2 z-20 flex flex-col items-center justify-center"
+          >
+            <img
+              src="/assets/sombra.svg"
+              class="absolute translate-y-5 translate-x-14 w-24 md:w-56 rotate-[-50deg] md:translate-y-15 md:-translate-x-10 -z-10"
+            />
+            <p
+              class="text-brand-coral font-body font-bold text-xs md:text-[1rem] text-center leading-tight"
+            >
+              Clientes<br />que no<br />llegan.
+            </p>
+          </div>
+
+          <div
+            class="absolute top-[20%] left-[25%] md:top-[30%] md:left-[78%] md:-translate-x-1/2 z-20 flex flex-col items-center justify-center"
+          >
+            <img
+              src="/assets/sombra.svg"
+              class="absolute translate-y-10 translate-x-8 rotate-[-30deg] md:rotate-0 w-10 md:w-56 md:translate-y-4 md:-translate-x-12 -z-10"
+            />
+            <p
+              class="text-brand-coral font-body font-bold text-xs md:text-[1rem] text-center leading-tight"
+            >
+              Equipos<br />que no<br />responden.
+            </p>
+          </div>
+
+
+
+          <div
+            class="absolute top-[20%] left-[60%] md:top-[48%] md:left-[25%] md:-translate-x-1/2 z-20 flex flex-col items-center md:items-end"
+          >
+            <img
+              src="/assets/sombra.svg"
+              class="absolute translate-y-5 translate-x-6 rotate-[-30deg] w-10 md:w-56 md:rotate-[-70deg] md:translate-x-9 md:-translate-y-9 -z-10"
+            />
+            <p
+              class="text-brand-coral font-body font-bold text-xs md:text-[1rem] text-center md:text-right leading-tight"
+            >
+              Identidad<br />de marca<br />indefinida.
+            </p>
+          </div>
+
+
+
+        <div class="absolute top-[30%] left-[85%] md:top-[75%] md:left-[15%] md:-translate-x-1/2 z-20 flex flex-col items-center md:items-end">
+  <img src="/assets/sombra.svg" class="absolute w-24 md:w-56 -rotate-90 md:translate-x-12 md:-translate-y-35 -z-10 opacity-40 md:opacity-100" />
+  <p class="text-brand-coral font-body font-bold text-xs md:text-[1rem] text-center md:text-left leading-tight">
+    Falta de<br />tiempo para<br />crear contenido.
+  </p>
+</div>
+
         <div
-          class="absolute -bottom-3 left-[70%] -translate-x-1/2 translate-y-[25%] z-40 pointer-events-none"
+          class="relative flex justify-center md:absolute md:-bottom-3 md:left-[70%] md:-translate-x-1/2 md:translate-y-[25%] z-40 pointer-events-none"
         >
           <img
             src="/assets/problema.png"
             alt="Problemas"
-            class="w-87.5 md:w-105 max-w-none h-auto object-contain object-bottom opacity-80"
+            class="w-64 md:w-105 max-w-none h-auto object-contain object-bottom opacity-80"
           />
-        </div>
-
-        <div
-          class="absolute top-[30%] left-[50%] -translate-x-1/2 z-20 flex flex-col items-center justify-center"
-        >
-          <img
-            src="/assets/sombra.svg"
-            class="absolute w-40 md:w-56 rotate-[-50deg] translate-y-15 -translate-x-10 -z-10"
-          />
-          <p
-            class="text-brand-coral font-body font-bold text-sm md:text-[1rem] text-center leading-tight"
-          >
-            Clientes<br />que no<br />llegan.
-          </p>
-        </div>
-
-        <div
-          class="absolute top-[30%] left-[78%] -translate-x-1/2 z-20 flex flex-col items-center justify-center"
-        >
-          <img
-            src="/assets/sombra.svg"
-            class="absolute w-40 md:w-56 translate-y-4 -translate-x-12 -z-10"
-          />
-          <p
-            class="text-brand-coral font-body font-bold text-sm md:text-[1rem] text-center leading-tight"
-          >
-            Equipos<br />que no<br />responden.
-          </p>
-        </div>
-
-        <div
-          class="absolute top-[48%] left-[25%] -translate-x-1/2 z-20 flex flex-col items-end"
-        >
-          <img
-            src="/assets/sombra.svg"
-            class="absolute w-40 md:w-56 rotate-[-70deg] translate-x-9 -translate-y-9 -z-10"
-          />
-          <p
-            class="text-brand-coral font-body font-bold text-sm md:text-[1rem] text-right leading-tight"
-          >
-            Identidad<br />de marca<br />indefinida.
-          </p>
-        </div>
-
-        <div
-          class="absolute top-[75%] left-[15%] -translate-x-1/2 z-20 flex flex-col items-end"
-        >
-          <img
-            src="/assets/sombra.svg"
-            class="absolute w-40 md:w-56 -rotate-90 translate-x-12 -translate-y-35 -z-10"
-          />
-          <p
-            class="text-brand-coral font-body font-bold text-sm md:text-[1rem] text-left leading-tight"
-          >
-            Falta de<br />tiempo para<br />crear contenido.
-          </p>
         </div>
       </div>
 
       <div
-        class="w-full lg:w-[40%] flex flex-col items-end lg:items-end text-center lg:text-right gap-24 z-20 pb-10 lg:pb-0 self-end mb-4 pr-8"
+        class="w-full lg:w-[40%] flex flex-col items-center lg:items-end text-center lg:text-right gap-12 md:gap-24 z-20 pb-10 lg:pb-0 self-end mb-4 md:pr-8"
       >
         <h3
           class="font-title text-3xl md:text-[2.6rem] leading-[0.88] tracking-tight"

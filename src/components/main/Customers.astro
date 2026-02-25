@@ -15,7 +15,7 @@ const clients = [
 const doubleClients = [...clients, ...clients];
 ---
 
-<section class="relative w-full overflow-hidden py-8 lg:py-16 z-30 -mt-22 lg:-mt-16">
+<section class="relative w-full overflow-hidden py-8 lg:py-16 z-30 -mt-22 lg:-mt-16 overflow-x-clip">
   <div class="absolute inset-0 -z-10 w-full">
     <img
       src={backgroundImage}
@@ -24,7 +24,7 @@ const doubleClients = [...clients, ...clients];
     />
   </div>
 
-  <div class="relative flex items-center overflow-hidden">
+  <div class="relative flex items-center overflow-hidden max-w-[100vw]">
     <div class="flex w-max animate-marquee items-center gap-8 md:gap-16">
       {doubleClients.map((client) => (
         <img 
