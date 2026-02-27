@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_1" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 703.96 758.09">
+  <!-- Generator: Adobe Illustrator 29.8.1, SVG Export Plug-In . SVG Version: 2.1.1 Build 2)  -->
+  <defs>
+    <style>
+      .st0 {
+        mask: url(#mask-1);
+      }
+
+      .st1 {
+        fill: #ff6b6b;
+      }
+
+      .st2 {
+        mask: url(#mask);
+      }
+
+      .st3 {
+        fill: #02bbfa;
+      }
+
+      .st4 {
+        fill: url(#Degradado_sin_nombre_91);
+      }
+
+      .st5 {
+        fill: url(#Degradado_sin_nombre_80);
+      }
+    </style>
+    <radialGradient id="Degradado_sin_nombre_91" data-name="Degradado sin nombre 91" cx="117.6" cy="621.32" fx="117.6" fy="621.32" r="189.09" gradientTransform="translate(100.3 -995.4) scale(1.31 2.21)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset=".07" stop-color="#d5d5d5"/>
+      <stop offset=".19" stop-color="#959595"/>
+      <stop offset=".31" stop-color="#606060"/>
+      <stop offset=".41" stop-color="#363636"/>
+      <stop offset=".51" stop-color="#181818"/>
+      <stop offset=".59" stop-color="#060606"/>
+      <stop offset=".65" stop-color="#000"/>
+    </radialGradient>
+    <mask id="mask" x="56.21" y="47.34" width="397.28" height="663.41" maskUnits="userSpaceOnUse">
+      <rect class="st4" x="56.21" y="47.34" width="397.28" height="663.41"/>
+    </mask>
+    <radialGradient id="Degradado_sin_nombre_80" data-name="Degradado sin nombre 80" cx="212.65" cy="635.18" fx="212.65" fy="635.18" r="189.09" gradientTransform="translate(197.04 -1251.7) scale(1.24 2.55)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset=".11" stop-color="#bbb"/>
+      <stop offset=".24" stop-color="#797979"/>
+      <stop offset=".35" stop-color="#454545"/>
+      <stop offset=".44" stop-color="#1f1f1f"/>
+      <stop offset=".52" stop-color="#080808"/>
+      <stop offset=".57" stop-color="#000"/>
+    </radialGradient>
+    <mask id="mask-1" x="273.23" y="108.53" width="374.51" height="523.73" maskUnits="userSpaceOnUse">
+      <rect class="st5" x="273.23" y="108.53" width="374.51" height="523.73"/>
+    </mask>
+  </defs>
+  <g class="st2">
+    <rect class="st3" x="56.21" y="47.34" width="397.28" height="663.41"/>
+  </g>
+  <g class="st0">
+    <rect class="st1" x="273.23" y="108.53" width="374.51" height="523.73"/>
+  </g>
+</svg>

@@ -2,6 +2,7 @@
 import "../styles/global.css";
 const { title = "Smartketing" } = Astro.props;
 import { ClientRouter } from 'astro:transitions';
+import Header from '../components/Header.astro';
 ---
 
 <!doctype html>
@@ -18,7 +19,7 @@ import { ClientRouter } from 'astro:transitions';
   </head>
   <ClientRouter />
   <body class="bg-brand-gray/85">
-
+    <Header />
     <slot />
 
   </body>
