@@ -10,10 +10,10 @@ import logo from "../assets/logo_svg/logo.svg";
     </a>
 
     <ul class="hidden md:flex gap-14 md:text-xs lg:text-base text-brand-gray font-extralight">
-        <li><a href="/about" class="hover:text-brand-cyan transition-colors duration-500">Quiénes somos</a></li>
-        <li><a href="/servicio" class="hover:text-brand-cyan transition-colors duration-500">Servicio</a></li>
-      <li><a href="/equipo" class="hover:text-brand-cyan transition-colors duration-500">Equipo</a></li>
-      <li><a href="/contacto" class="hover:text-brand-cyan transition-colors duration-500">Contáctenos</a></li>
+        <li><a href="/about" class="nav-link hover:text-white transition-all duration-300">Quiénes somos</a></li>
+        <li><a href="/servicio" class="nav-link hover:text-white transition-all duration-300">Servicio</a></li>
+      <li><a href="/equipo" class="nav-link hover:text-white transition-all duration-300">Equipo</a></li>
+      <li><a href="/contacto" class="nav-link hover:text-white transition-all duration-300">Contáctenos</a></li>
     </ul>
 
     <button id="menu-btn" class="md:hidden z-101 flex flex-col gap-1.5 pointer-events-auto">
@@ -54,6 +54,52 @@ import logo from "../assets/logo_svg/logo.svg";
     backdrop-filter: blur(8px);
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
   }
+
+  /* Estilo base para el enlace */
+  .nav-link {
+    position: relative;
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+
+  /* Efecto de crecimiento del texto */
+  .nav-link:hover {
+    transform: scale(1.1); /* Crece un 10% */
+  }
+
+  /* Creación de la línea gradiente */
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -6px; /* Espacio bajo el texto */
+    left: 50%;
+    /* Gradiente con tus colores de marca */
+    background: linear-gradient(90deg, #00C2FF 0%, #FF6B6B 100%);
+    transition: width 0.4s ease, left 0.4s ease;
+    border-radius: 2px;
+  }
+
+  /* Animación de la línea al hacer hover */
+  .nav-link:hover::after {
+    width: 100%;
+    left: 0;
+  }
+
+  /* --- Tus estilos anteriores (nav-scrolled, etc.) --- */
+  .nav-scrolled {
+    background-color: rgba(37, 26, 130, 0.9);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-about-style {
+    background-color: rgba(39, 52, 139, 0.3);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0, 194, 255, 0.2);
+  }
+
 </style>
 
 <script>
