@@ -9,40 +9,31 @@ import logo from "../assets/logo_svg/logo.svg";
   <div class="relative z-10 max-w-7xl mx-auto">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
       <div class="flex flex-col gap-6">
-        <div class="mb-8">
-          <a href="/" class="inline-block group">
-            <img
-              src={logo.src}
-              alt="Smartketing Logo"
-              class="h-12 w-auto object-contain transition-opacity group-hover:opacity-80"
-            />
-          </a>
-        </div>
-        <h3 class="text-xl font-bold tracking-wider">
+        <h3 class="hover:text-brand-coral text-xl font-bold font-title tracking-wider transition-all duration-300">
           <a href="/servicio">Quiénes somos</a>
         </h3>
-        <p class="text-gray-400 font-light leading-relaxed text-sm max-w-xs">
+        <p class="text-gray-400 font-light font-body leading-relaxed text-sm max-w-xs">
           Tenemos más de diez años acompañando a pequeñas y medianas empresas a
           construir marcas con criterio y visión a largo plazo.
         </p>
       </div>
 
       <div class="flex flex-col gap-6">
-        <h3 class="hover:text-brand-coral text-xl font-bold tracking-wider">
+        <h3 class="hover:text-brand-coral text-xl font-bold font-title tracking-wider transition-all duration-300">
           <a href="/servicio">Servicios</a>
         </h3>
-        <ul class="flex flex-col gap-3 text-gray-400 font-light text-sm">
+        <ul class="flex flex-col gap-3 text-gray-400 font-light font-body text-sm transition-all duration-300">
           <li class="hover:text-brand-cyan transition-colors cursor-pointer">
-            Consultoría comercial y de ventas
+            <a href="/servicio#auditoria">Consultoría comercial y de ventas</a>
           </li>
           <li class="hover:text-brand-cyan transition-colors cursor-pointer">
-            Posicionamiento & Comunicación de marca
+            <a href="/servicio#posicionamiento">Posicionamiento & Comunicación de marca</a>
           </li>
           <li class="hover:text-brand-cyan transition-colors cursor-pointer">
-            Branding y Dirección Visual
+            <a href="/servicio#branding">Branding y Dirección Visual</a>
           </li>
           <li class="hover:text-brand-cyan transition-colors cursor-pointer">
-            Experiencia Digital en Diseño Web
+            <a href="/servicio#web">Experiencia Digital en Diseño Web</a>
           </li>
         </ul>
       </div>
@@ -50,12 +41,12 @@ import logo from "../assets/logo_svg/logo.svg";
       <div class="flex flex-col gap-6">
         <div class="flex flex-col gap-6">
           <h3
-            class="text-xl font-bold tracking-wider hover:text-brand-coral transition-colors cursor-pointer"
+            class="text-xl font-bold font-title tracking-wider hover:text-brand-coral transition-colors cursor-pointer transition-all duration-300"
           >
             <a href="/equipo">Nuestro Equipo</a>
           </h3>
           <h3
-            class="text-xl font-bold tracking-wider hover:text-brand-coral transition-colors cursor-pointer"
+            class="text-xl font-bold font-title tracking-wider hover:text-brand-coral transition-colors cursor-pointer transition-all duration-300"
           >
             <a href="/contacto">Contáctanos</a>
           </h3>
@@ -65,9 +56,9 @@ import logo from "../assets/logo_svg/logo.svg";
       <div class="flex flex-col gap-8">
         <div>
           <h3
-            class="text-sm font-bold uppercase tracking-[0.2em] mb-6 text-brand-gray"
+            class="text-sm font-bold font-subtitle tracking-[0.2em] mb-6 text-brand-gray"
           >
-            SÍGUENOS
+            Síguenos
           </h3>
           <div class="flex">
             <div
@@ -80,15 +71,23 @@ import logo from "../assets/logo_svg/logo.svg";
 
         <a
           href="#"
-          class="text-sm font-light text-brand-gray hover:text-white transition-colors"
+          class="text-sm font-light font-subtitle text-brand-gray hover:text-brand-cyan transition-all duration-300"
         >
           Política de Privacidad
         </a>
+
+        <a href="/" class="group">
+      <img 
+        src={logo.src} 
+        alt="Smartketing Logo" 
+        class="h-15 w-auto object-contain group-hover:opacity-100 transition-opacity" 
+      />
+    </a>
       </div>
     </div>
 
     <div
-      class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-brand-gray/90 font-bold"
+      class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[11px] uppercase tracking-[0.3em] text-brand-gray/90 font-bold font-title"
     >
       <span>© 2026 SMARTKETING. TODOS LOS DERECHOS RESERVADOS.</span>
       <div class="flex gap-6">

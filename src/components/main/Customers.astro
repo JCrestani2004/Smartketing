@@ -16,12 +16,15 @@ const clients = [
 const doubleClients = [...clients, ...clients];
 ---
 
-<section class="relative w-full overflow-hidden py-8 lg:py-16 z-30 -mt-22 lg:-mt-16 overflow-x-clip">
+<section class="relative w-full overflow-hidden py-8 lg:py-16 z-30 -mt-22 lg:-mt-16 overflow-x-clip"
+data-aos="fade-up" data-aos-duration="1200" data-aos-delay="1300"
+>
   <div class="absolute inset-0 -z-10 w-full">
     <img
       src={backgroundImage}
       alt="Fondo decorativo"
       class="h-full w-full scale-110 object-cover object-left lg:object-top-right"
+      data-aos="zoom-out" data-aos-duration="2000" data-aos-delay="1100"
     />
   </div>
 
@@ -54,6 +57,17 @@ const doubleClients = [...clients, ...clients];
   .animate-marquee:hover {
     animation-play-state: paused;
   }
+
+  /* Añade esto a tu etiqueta img dentro del map */
+.animate-marquee img {
+  transition: all 0.4s ease;
+  filter: brightness(0) invert(1) opacity(0.7); /* Logos un poco más tenues por defecto */
+}
+
+.animate-marquee img:hover {
+  filter: brightness(0) invert(1) opacity(1); /* Resaltan al pasar el mouse */
+  scale: 1.1;
+}
 
   /* Evita saltos visuales en móviles */
   @media (max-width: 768px) {
