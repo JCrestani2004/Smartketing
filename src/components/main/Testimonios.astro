@@ -83,7 +83,7 @@ const tripleTestimonios = [...testimonios, ...testimonios, ...testimonios];
       >
         <p
           id="testimonial-text"
-          class="text-brand-gray/90 text-xs md:text-sm lg:text-lg font-extralight italic text-center transition-all duration-500 tracking-tight leading-relaxed lg:leading-tight"
+          class="text-brand-gray/90 text-[10px] min-[375px]:text-[0.7] text-sm md:text-sm lg:text-lg font-extralight italic text-center transition-all duration-500 tracking-tight leading-relaxed lg:leading-tight"
         >
         </p>
       </div>
@@ -104,7 +104,7 @@ const tripleTestimonios = [...testimonios, ...testimonios, ...testimonios];
 </style>
 
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener("astro:page-load", () => {
     const track = document.getElementById("logo-track");
     const textElement = document.getElementById("testimonial-text");
     const logos = document.querySelectorAll(".logo-item");
