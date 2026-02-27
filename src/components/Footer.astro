@@ -1,0 +1,101 @@
+---
+// Componente Footer para Smartketing con gradiente
+import logo from "../assets/logo_svg/logo.svg";
+---
+
+<footer
+  class="relative w-full bg-linear-to-b from-brand-blue via-[#10247D] to-[#10247D] text-white pt-20 pb-10 px-6 lg:px-20 overflow-hidden -mt-1"
+>
+  <div class="relative z-10 max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+      <div class="flex flex-col gap-6">
+        <div class="mb-8">
+          <a href="/" class="inline-block group">
+            <img
+              src={logo.src}
+              alt="Smartketing Logo"
+              class="h-12 w-auto object-contain transition-opacity group-hover:opacity-80"
+            />
+          </a>
+        </div>
+        <h3 class="text-xl font-bold tracking-wider">
+          <a href="/servicio">Quiénes somos</a>
+        </h3>
+        <p class="text-gray-400 font-light leading-relaxed text-sm max-w-xs">
+          Tenemos más de diez años acompañando a pequeñas y medianas empresas a
+          construir marcas con criterio y visión a largo plazo.
+        </p>
+      </div>
+
+      <div class="flex flex-col gap-6">
+        <h3 class="hover:text-brand-coral text-xl font-bold tracking-wider">
+          <a href="/servicio">Servicios</a>
+        </h3>
+        <ul class="flex flex-col gap-3 text-gray-400 font-light text-sm">
+          <li class="hover:text-brand-cyan transition-colors cursor-pointer">
+            Consultoría comercial y de ventas
+          </li>
+          <li class="hover:text-brand-cyan transition-colors cursor-pointer">
+            Posicionamiento & Comunicación de marca
+          </li>
+          <li class="hover:text-brand-cyan transition-colors cursor-pointer">
+            Branding y Dirección Visual
+          </li>
+          <li class="hover:text-brand-cyan transition-colors cursor-pointer">
+            Experiencia Digital en Diseño Web
+          </li>
+        </ul>
+      </div>
+
+      <div class="flex flex-col gap-6">
+        <div class="flex flex-col gap-6">
+          <h3
+            class="text-xl font-bold tracking-wider hover:text-brand-coral transition-colors cursor-pointer"
+          >
+            <a href="/equipo">Nuestro Equipo</a>
+          </h3>
+          <h3
+            class="text-xl font-bold tracking-wider hover:text-brand-coral transition-colors cursor-pointer"
+          >
+            <a href="/contacto">Contáctanos</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-8">
+        <div>
+          <h3
+            class="text-sm font-bold uppercase tracking-[0.2em] mb-6 text-brand-gray"
+          >
+            SÍGUENOS
+          </h3>
+          <div class="flex">
+            <div
+              class="w-10 h-10 bg-white rounded-xl flex items-center justify-center shadow-lg hover:scale-110 transition-transform cursor-pointer"
+            >
+              <div class="w-5 h-5 bg-slate-200 rounded-sm"></div>
+            </div>
+          </div>
+        </div>
+
+        <a
+          href="#"
+          class="text-sm font-light text-brand-gray hover:text-white transition-colors"
+        >
+          Política de Privacidad
+        </a>
+      </div>
+    </div>
+
+    <div
+      class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-brand-gray/90 font-bold"
+    >
+      <span>© 2026 SMARTKETING. TODOS LOS DERECHOS RESERVADOS.</span>
+      <div class="flex gap-6">
+        <span>ESTRATEGIA</span>
+        <span class="text-brand-coral">DISEÑO</span>
+        <span class="text-brand-cyan">CRITERIO</span>
+      </div>
+    </div>
+  </div>
+</footer>

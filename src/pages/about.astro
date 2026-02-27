@@ -3,148 +3,428 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Quiénes Somos | Smartketing">
-  <section class="relative w-full min-h-screen bg-brand-gray overflow-hidden">
+  <section class="relative w-full min-h-screen bg-brand-gray overflow-hidden pt-42 pb-20 px-6 lg:px-20">
     <img 
-      src="/background/background-p-equipo.svg" 
+      src="/background/background-p-servicios.svg" 
       alt="" 
       class="absolute inset-0 w-full h-full object-cover object-top pointer-events-none"
     />
 
-    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 py-24 md:py-32">
-      
-      <div class="max-w-4xl animate-fade-up">
-        <span class="text-sm tracking-[0.3em] uppercase text-brand-cyan font-subtitle font-bold mb-4 block">
-          Sobre el estudio
-        </span>
-        <h1 class="text-5xl md:text-7xl font-title font-bold text-white leading-tight mb-8">
-          Construimos marcas con <span class="text-brand-coral italic">criterio</span> y visión.
+    <div class="relative z-10 max-w-5xl mx-auto">
+      <div class="text-center pt-15 md:-mb-16 lg:-mb-22">
+        <h1 class="text-brand-gray text-3xl md:text-4xl font-light">
+          Quiénes <span class="text-brand-coral font-bold">Somos</span>
         </h1>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-white/90 font-body font-light text-lg leading-relaxed">
-          <p>
-            En <strong class="font-bold">Smartketing</strong> somos un estudio de comunicación estratégica que acompaña a pequeñas y medianas empresas a construir y posicionar su marca en el tiempo.
-          </p>
-          <p>
-            Trabajamos como el equipo creativo y de comunicación externo de nuestros clientes, definiendo cómo se ven, cómo hablan y cómo se presentan.
-          </p>
-        </div>
       </div>
 
-      <div class="mt-24 grid grid-cols-1 md:grid-cols-2 gap-10 animate-fade-up" style="animation-delay: 200ms;">
-        <div class="bg-white/5 backdrop-blur-md border border-white/10 p-10 rounded-3xl shadow-2xl">
-          <h3 class="text-brand-cyan font-title text-2xl mb-4 font-bold">Análisis antes que ejecución</h3>
-          <p class="text-white/80 font-body font-light">
-            Iniciamos nuestros procesos con una auditoría comercial y de ventas. Entendemos el negocio, identificamos oportunidades y detectamos los puntos que necesitan orden para crecer con claridad.
-          </p>
-        </div>
-        <div class="bg-white/5 backdrop-blur-md border border-white/10 p-10 rounded-3xl shadow-2xl">
-          <h3 class="text-brand-coral font-title text-2xl mb-4 font-bold">Enfoque en procesos</h3>
-          <p class="text-white/80 font-body font-light">
-            No creemos en soluciones rápidas. Nuestro enfoque está en construir marcas sólidas donde vender sea una consecuencia natural de una comunicación bien hecha.
-          </p>
-        </div>
+      <div
+        class="relative w-full flex justify-center pointer-events-none select-none"
+      >
+        <img
+          src="/assets/division-01.svg"
+          alt=""
+          class="w-full max-w-5xl h-auto mix-blend-screen"
+        />
       </div>
 
-      <div class="mt-32">
-        <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-          <div class="max-w-xl">
-            <h2 class="text-4xl md:text-5xl font-title font-bold text-white">Cómo trabajamos</h2>
-            <p class="mt-4 text-brand-cyan font-subtitle tracking-widest uppercase text-sm">Nuestra metodología estratégica</p>
-          </div>
-        </div>
+      <div class="flex flex-col">
+        <article
+          class="grid grid-cols-1 md:grid-cols-[320px_auto_320px] md:gap-x-4 items-start justify-center"
+        >
+          <div class="flex flex-col">
+            <img
+              src="/iconos/consultoria.svg"
+              alt="Icono Auditoría"
+              class="w-40 h-auto mb-5 scale-105"
+            />
 
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
-          
-          <div class="space-y-12">
-            <div class="group">
-              <div class="flex items-center gap-4 mb-4">
-                <span class="text-4xl font-title font-bold text-white/20 group-hover:text-brand-coral transition-colors">01</span>
-                <h4 class="text-xl font-bold text-white font-title">Entendemos la marca</h4>
-              </div>
-              <p class="text-white/70 font-light pl-12 font-body">Conocemos la historia y objetivos del negocio para que cada decisión tenga sentido estratégico.</p>
-            </div>
+            <h2
+              class="text-brand-cyan text-xl md:text-3xl font-title font-bold leading-[0.9] mb-10 tracking-tight"
+            >
+              Auditoría Comercial <br /> y de Ventas
+            </h2>
 
-            <div class="group">
-              <div class="flex items-center gap-4 mb-4">
-                <span class="text-4xl font-title font-bold text-white/20 group-hover:text-brand-cyan transition-colors">02</span>
-                <h4 class="text-xl font-bold text-white font-title">Dirección clara</h4>
-              </div>
-              <p class="text-white/70 font-light pl-12 font-body">Establecemos cómo debe verse y comunicar la marca para posicionarse de forma coherente.</p>
+            <div class="pr-2 py-6 flex flex-col font-body gap-3 text-[0.85rem]">
+              <h3 class="text-white mb-5">Qué es</h3>
+              <p
+                class="text-brand-gray/90 leading-tight mb-8 font-extralight tracking-wide"
+              >
+                Un proceso de consultoría estratégica donde analizamos como
+                vende hoy el negocio, identificamos bloqueos reales en su
+                proceso comercial y ordenamos el punto de partida antes de
+                comunicar o ejecutar.
+              </p>
+              <p
+                class="text-brand-gray/90 leading-tight font-extralight tracking-wide"
+              >
+                Este servicio nos permite entender el negocio en profundidad y
+                definir con criterio los siguientes pasos.
+              </p>
             </div>
           </div>
 
-          <div class="bg-white/5 rounded-3xl p-8 border border-white/10  flex flex-col md:justify-center justify-self-center gap-12 shadow-inner md:max-w-140 lg:max-w-none">
-            <div class="flex flex-col gap-8">
-              <div class="bg-white/10 p-2 rounded-xl grid grid-cols-[1fr_auto] items-center gap-3 md:flex md:items-center md:justify-center group hover:scale-105 transition-transform">
-                <p class="text-brand-coral font-body text-sm font-light text-center">Consultoría y <br/> análisis de marca</p>
-                <div class="w-16 md:w-20 flex justify-center">
-                  <img src="/iconos/analisis.svg" alt="" class="w-full h-auto object-contain" />
-                </div>
-              </div>
-              <div class=" bg-white/10 p-2 rounded-xl grid grid-cols-[1fr_auto] items-center gap-3 md:flex md:items-center md:justify-center group hover:scale-105 transition-transform">
-                <p class="text-brand-coral font-body text-sm font-light text-center">Definimos una <br/> dirección clara</p>
-                <div class="w-16 md:w-20 flex justify-center ">
-                  <img src="/iconos/icono-hero.svg" alt="" class="w-full h-auto object-contain" />
-                </div>
-              </div>
-              <div class=" bg-white/10 p-2 rounded-xl grid grid-cols-[1fr_auto] items-center gap-3 md:flex md:items-center md:justify-center group hover:scale-105 transition-transform">
-                <p class="text-brand-coral font-body text-sm font-light text-center">Creamos con <br/> intención</p>
-                <div class="w-16 md:w-20 flex justify-center ">
-                  <img src="/iconos/intencion.svg" alt="" class="w-full h-auto object-contain" />
-                </div>
-              </div>
-              <div class="bg-white/10 p-2 rounded-xl grid grid-cols-[1fr_auto] items-center gap-3 md:flex md:items-center md:justify-center group hover:scale-105 transition-transform">
-                <p class="text-brand-coral font-body text-sm font-light text-center">Acompañamos <br/> el proceso</p>
-                <div class="w-16 md:w-20 flex justify-center ">
-                  <img src="/iconos/proceso.svg" alt="" class="w-full h-auto object-contain" />
-                </div>
-              </div>
-              <div class="bg-white/10 p-2 rounded-xl grid grid-cols-[1fr_auto] items-center gap-3 md:flex md:items-center md:justify-center group hover:scale-105 transition-transform">
-                <p class="text-brand-coral font-body text-sm font-light text-center">Pensamos a <br/> largo plazo</p>
-                <div class="w-16 md:w-20 flex justify-center ">
-                  <img src="/iconos/calendario.svg" alt="" class="w-full h-auto object-contain" />
-                </div>
-              </div>
+          <div class="hidden md:block w-px bg-gray-700 self-stretch mt-32">
+          </div>
+
+          <div class="mt-8 md:mt-32 pl-4 text-[0.85rem] font-body">
+            <h3 class="text-white mb-8">Incluye</h3>
+            <ul
+              class="space-y-7.5 text-brand-gray/90 font-extralight tracking-wide leading-[0.96]"
+            >
+              <li class="flex items-start">
+                <span class="text-brand-gray mr-3 font-bold">•</span> Reunión de diagnóstico
+                estratégico
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-gray mr-3 font-bold">•</span> Análisis del
+                modelo de negocio y proceso de ventas
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-gray mr-3 font-bold">•</span> Revisión del
+                embudo comercial
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-gray mr-3 font-bold">•</span> Auditoria del
+                CRM (si aplica)
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-gray mr-3 font-bold">•</span> Identificación
+                de oportunidades y fugas de venta
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-gray mr-3 font-bold">•</span> Informe estratégico
+                con recomendaciones y roadmap de acción
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-gray mr-3 font-bold">•</span> Este servicio
+                es el primer paso para cualquier acompañamiento posterior.
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <div
+          class="relative w-full flex md:-mt-10  justify-center pointer-events-none select-none"
+        >
+          <img
+            src="/assets/division-01.svg"
+            alt=""
+            class="w-full max-w-5xl h-auto mix-blend-screen"
+          />
+        </div>
+        
+        <article
+          class="grid grid-cols-1 md:grid-cols-[320px_auto_320px] md:gap-x-4 items-start justify-center"
+        >
+          <div class="flex flex-col">
+            <img
+              src="/iconos/consultoria.svg"
+              alt="Icono Auditoría"
+              class="w-40 h-auto mb-5 scale-105"
+            />
+
+            <h2
+              class="text-brand-cyan text-xl md:text-3xl font-title font-bold leading-[0.9] mb-10 tracking-tight"
+            >
+              Auditoría Comercial <br /> y de Ventas
+            </h2>
+
+            <div class="pr-2 py-6 flex flex-col font-body gap-3 text-[0.85rem]">
+              <h3 class="text-white mb-5">Qué es</h3>
+              <p
+                class="text-brand-gray/90 leading-tight mb-8 font-extralight tracking-wide"
+              >
+                Un proceso de consultoría estratégica donde analizamos como
+                vende hoy el negocio, identificamos bloqueos reales en su
+                proceso comercial y ordenamos el punto de partida antes de
+                comunicar o ejecutar.
+              </p>
+              <p
+                class="text-brand-gray/90 leading-tight font-extralight tracking-wide"
+              >
+                Este servicio nos permite entender el negocio en profundidad y
+                definir con criterio los siguientes pasos.
+              </p>
             </div>
           </div>
 
-          <div class="space-y-12">
-            <div class="group">
-              <div class="flex items-center gap-4 mb-4">
-                <span class="text-4xl font-title font-bold text-white/20 group-hover:text-brand-coral transition-colors">03</span>
-                <h4 class="text-xl font-bold text-white font-title">Creamos con intención</h4>
-              </div>
-              <p class="text-white/70 font-light pl-12 font-body">No trabajamos por volumen, sino por coherencia y calidad en cada punto de contacto.</p>
-            </div>
-            <div class="group">
-              <div class="flex items-center gap-4 mb-4">
-                <span class="text-4xl font-title font-bold text-white/20 group-hover:text-brand-cyan transition-colors">04</span>
-                <h4 class="text-xl font-bold text-white font-title">Acompañamos</h4>
-              </div>
-              <p class="text-white/70 font-light pl-12 font-body">Nos integramos como equipo externo para que la comunicación fluya sin improvisación.</p>
-            </div>
-            <div class="group">
-              <div class="flex items-center gap-4 mb-4">
-                <span class="text-4xl font-title font-bold text-white/20 group-hover:text-brand-coral transition-colors">05</span>
-                <h4 class="text-xl font-bold text-white font-title">Visión a largo plazo</h4>
-              </div>
-              <p class="text-white/70 font-light pl-12 font-body">Construimos marcas sostenibles que puedan crecer con claridad estratégica.</p>
+          <div class="hidden md:block w-px bg-gray-700 self-stretch mt-32">
+          </div>
+
+          <div class="mt-8 md:mt-32 pl-4 text-[0.85rem] font-body">
+            <h3 class="text-white mb-8">Incluye</h3>
+            <ul
+              class="space-y-7.5 text-brand-gray/90 font-extralight tracking-wide leading-[0.96]"
+            >
+              <li class="flex items-start">
+                <span class="text-brand-gray mr-3 font-bold">•</span> Reunión de diagnóstico
+                estratégico
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-gray mr-3 font-bold">•</span> Análisis del
+                modelo de negocio y proceso de ventas
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-gray mr-3 font-bold">•</span> Revisión del
+                embudo comercial
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-gray mr-3 font-bold">•</span> Auditoria del
+                CRM (si aplica)
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-gray mr-3 font-bold">•</span> Identificación
+                de oportunidades y fugas de venta
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-gray mr-3 font-bold">•</span> Informe estratégico
+                con recomendaciones y roadmap de acción
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-gray mr-3 font-bold">•</span> Este servicio
+                es el primer paso para cualquier acompañamiento posterior.
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <div
+          class="relative w-full flex md:-mt-10  justify-center pointer-events-none select-none"
+        >
+          <img
+            src="/assets/division-01.svg"
+            alt=""
+            class="w-full max-w-5xl h-auto mix-blend-screen"
+          />
+        </div>
+
+        <article
+          class="grid grid-cols-1 md:grid-cols-[320px_auto_320px] md:gap-x-4 items-start justify-center -mt-20 md:-mt-25"
+        >
+          <div class="flex flex-col pt-25">
+            <img
+              src="/iconos/posicionamiento.svg"
+              alt="Icono Posicionamiento"
+              class="w-40 h-auto scale-105"
+            />
+
+            <h2
+              class="text-brand-cyan text-xl md:text-3xl font-title font-bold leading-[0.9] mb-10 tracking-tight"
+            >
+              Posicionamiento & <br /> Comunicación de Marca
+            </h2>
+
+            <div
+              class="pr-2 pt-15 pb-6 flex flex-col font-body gap-3 text-[0.85rem]"
+            >
+              <h3 class="text-white mb-5">Qué es</h3>
+              <p
+                class="text-brand-gray/90 leading-tight font-extralight tracking-wide"
+              >
+                Un acompañamiento estratégico donde Smartketing actúa como el
+                equipo creativo y de comunicación externo de la marca,
+                trabajando sobre una dirección clara y coherente definida a
+                partir del diagnóstico.
+              </p>
             </div>
           </div>
 
-        </div>
-      </div>
+          <div class="hidden md:block w-px bg-gray-700 self-stretch mt-32">
+          </div>
 
-      <div class="mt-40 text-center animate-fade-up">
-        <div class="inline-block relative">
-          <span class="absolute -top-10 -left-3 md:left-10 lg:-left-10 text-8xl text-white font-serif">“</span>
-          <h3 class="text-2xl md:text-5xl font-title italic font-light text-white leading-tight max-w-4xl mx-auto">
-            Antes de ejecutar, <span class="text-brand-cyan font-bold not-italic">entendemos.</span> <br/>
-            Antes de comunicar, <span class="text-brand-coral font-bold not-italic">ordenamos.</span>
-          </h3>
-          <span class="absolute -bottom-15 -right-5 md:right-6 lg:-bottom-10 lg:-right-10 text-8xl text-white font-serif">”</span>
-        </div>
-      </div>
+          <div class="mt-8 md:mt-32 pl-4 text-[0.85rem] font-body">
+            <h3 class="text-white mb-8">Incluye</h3>
+            <ul
+              class="space-y-6.5 text-brand-gray/90 font-extralight tracking-wide leading-[0.96]"
+            >
+              <li class="flex items-start">
+                <span class="text-brand-gray mr-3 font-bold">•</span> Dirección creativa
+                de la marca.
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-gray mr-3 font-bold">•</span> Generación de
+                contenido de calidad(foto, video y storytelling). Creación de las
+                ideas, coordinación, edición y publicación).
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-gray mr-3 font-bold">•</span> Administración
+                de redes sociales.
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-gray mr-3 font-bold">•</span> Diseño gráfico
+                continuo.
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-gray mr-3 font-bold">•</span> Definición de
+                narrativa, tono y mensajes.
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-gray mr-3 font-bold">•</span> Consultoria
+                en comunicación corporativa.
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-gray mr-3 font-bold">•</span> Comunicación
+                corporativa.
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-gray mr-3 font-bold">•</span> Organización
+                del ecosistema de marca (archivos, piezas y lineamientos).
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-gray mr-3 font-bold">•</span> Coordinación
+                de marketing con proveedores interno: imprenta.
+              </li>
+            </ul>
+          </div>
+        </article>
 
+        <div
+          class="relative w-full flex md:-mt-10  justify-center pointer-events-none select-none"
+        >
+          <img
+            src="/assets/division-01.svg"
+            alt=""
+            class="w-full max-w-5xl h-auto mix-blend-screen"
+          />
+        </div>
+
+        <article
+          class="grid grid-cols-1 md:grid-cols-[320px_auto_320px] md:gap-x-4 items-start justify-center -mt-12 md:-mt-20"
+        >
+          <div class="flex flex-col pt-10">
+            <img
+              src="/iconos/branding.svg"
+              alt="Icono Branding"
+              class="w-40 h-auto scale-105"
+            />
+
+            <h2
+              class="text-brand-cyan text-xl md:text-3xl font-title font-bold leading-[0.9] mb-10 tracking-tight"
+            >
+              Branding & <br /> Dirección Visual
+            </h2>
+
+            <div
+              class="pr-2 pt-4 pb-6 flex flex-col font-body gap-3 text-[0.85rem]"
+            >
+              <h3 class="text-white mb-5">Qué es</h3>
+              <p
+                class="text-brand-gray/90 leading-tight font-extralight tracking-wide"
+              >
+                La construcción o evolución visual de una marca para que se vea
+                profesional, clara y reconocible, manteniendo coherencia en
+                todos sus puntos de contacto.
+              </p>
+            </div>
+          </div>
+
+          <div class="hidden md:block w-px bg-gray-700 self-stretch mt-32">
+          </div>
+
+          <div class="mt-8 md:mt-32 pl-4 text-[0.85rem] font-body">
+            <h3 class="text-white mb-8">Incluye</h3>
+            <ul
+              class="space-y-7.5 text-brand-gray/90 font-extralight tracking-wide leading-[0.96]"
+            >
+              <li class="flex items-start">
+                <span class="text-brand-gray mr-3 font-bold">•</span> Diseño o rediseño
+                de marca (logo)
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-gray mr-3 font-bold">•</span> Desarrollo de
+                identidad visual (colores, tipografías y estilo gráfico)
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-gray mr-3 font-bold">•</span> Lineamientos
+                de uso
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-gray mr-3 font-bold">•</span> Aplicaciones
+                básicas (redes sociales, piezas digitales, papelería)
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-gray mr-3 font-bold">•</span> Dirección visual
+                para asegurar coherencia en el tiempo
+              </li>
+            </ul>
+          </div>
+        </article>
+
+                <div
+          class="relative w-full flex md:-mt-10  justify-center pointer-events-none select-none"
+        >
+          <img
+            src="/assets/division-01.svg"
+            alt=""
+            class="w-full max-w-5xl h-auto mix-blend-screen"
+          />
+        </div>
+
+        <article
+          class="grid grid-cols-1 md:grid-cols-[320px_auto_320px] md:gap-x-4 items-start justify-center -mt-12 md:-mt-20"
+        >
+          <div class="flex flex-col pt-10">
+            <img
+              src="/iconos/web.svg"
+              alt="Icono Experiencia Digital de Marca"
+              class="w-40 h-auto scale-105"
+            />
+
+            <h2
+              class="text-brand-cyan text-xl md:text-3xl font-title font-bold leading-[0.9] mb-10 tracking-tight"
+            >
+              Experiencia Digital <br /> de Marca <br /><span
+                class="text-brand-coral font-light text-xl leading-[0.9]"
+              >
+                (Diseño y desarrollo web – <br />proyecto puntual)
+              </span>
+            </h2>
+
+            <div class="pr-2 pb-6 flex flex-col font-body gap-3 text-[0.85rem]">
+              <h3 class="text-white mb-5">Qué es</h3>
+              <p
+                class="text-brand-gray/90 leading-tight font-extralight tracking-wide"
+              >
+                Diseño y desarrollo de páginas web alineadas al branding y al
+                posicionamiento de la marca. No se trata solo de “hacer una
+                web”, sino de construir una experiencia digital clara, funcional
+                y coherente con la estrategia de marca.
+              </p>
+            </div>
+          </div>
+
+          <div class="hidden md:block w-px bg-gray-700 self-stretch mt-32">
+          </div>
+
+          <div class="mt-8 md:mt-32 pl-4 text-[0.85rem] font-body">
+            <h3 class="text-white mb-8">Incluye</h3>
+            <ul
+              class="space-y-13 text-brand-gray/90 font-extralight tracking-wide leading-[0.96]"
+            >
+              <li class="flex items-start">
+                <span class="text-brand-gray mr-3 font-bold">•</span> Diseño web alineado
+                a la identidad visual
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-gray mr-3 font-bold">•</span> Desarrollo técnico
+                del sitio
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-gray mr-3 font-bold">•</span> Estructura clara
+                de contenidos
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-gray mr-3 font-bold">•</span> Optimización
+                básica de experiencia de usuario
+              </li>
+              <li class="flex items-start">
+                <span class="text-brand-gray mr-3 font-bold">•</span> Integración
+                con herramientas necesarias (formularios, contacto, etc.)
+              </li>
+            </ul>
+          </div>
+        </article>
+      </div>
     </div>
   </section>
 </Layout>
