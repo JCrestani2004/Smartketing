@@ -57,41 +57,45 @@ import logo from "../assets/logo_svg/logo.svg";
 </style>
 
 <script>
-  const nav = document.getElementById('main-nav');
-  const menuBtn = document.getElementById('menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const links = mobileMenu?.querySelectorAll('a');
+  document.addEventListener("astro:page-load", () => {
 
-  // 1. Efecto de Scroll (Se vuelve sólido al bajar)
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      nav?.classList.add('nav-scrolled');
-    } else {
-      nav?.classList.remove('nav-scrolled');
-    }
-  });
+    const nav = document.getElementById('main-nav');
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const links = mobileMenu?.querySelectorAll('a');
 
-
-  // Alternativa para bloquear scroll (si prefieres manipular estilos directamente)
-  menuBtn?.addEventListener('click', () => {
-    const isOpened = menuBtn.classList.toggle('open');
-    mobileMenu?.classList.toggle('translate-x-full');
-    
-    if (isOpened) {
-      document.documentElement.style.overflow = 'hidden';
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.documentElement.style.overflow = '';
-      document.body.style.overflow = '';
-    }
-});
-
-  // 3. Cerrar menú al hacer click en un link
-  links?.forEach(link => {
-    link.addEventListener('click', () => {
-      menuBtn?.classList.remove('open');
-      mobileMenu?.classList.add('translate-x-full');
-      document.body.classList.remove('overflow-hidden');
+    // Scroll effect
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        nav?.classList.add('nav-scrolled');
+      } else {
+        nav?.classList.remove('nav-scrolled');
+      }
     });
+
+    // Toggle menu
+    menuBtn?.addEventListener('click', () => {
+      const isOpened = menuBtn.classList.toggle('open');
+      mobileMenu?.classList.toggle('translate-x-full');
+
+      if (isOpened) {
+        document.documentElement.style.overflow = 'hidden';
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.documentElement.style.overflow = '';
+        document.body.style.overflow = '';
+      }
+    });
+
+    // Close menu on link click
+    links?.forEach(link => {
+      link.addEventListener('click', () => {
+        menuBtn?.classList.remove('open');
+        mobileMenu?.classList.add('translate-x-full');
+        document.documentElement.style.overflow = '';
+        document.body.style.overflow = '';
+      });
+    });
+
   });
 </script>
