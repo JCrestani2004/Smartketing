@@ -3,94 +3,152 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Quiénes Somos | Smartketing">
-  <section class="relative w-full min-h-screen bg-brand-blue overflow-hidden pt-42 pb-20 px-6 lg:px-20">
-    <img 
-      src="/background/background-p-servicios.svg" 
-      alt="" 
-      class="absolute inset-0 w-full h-full object-cover object-top pointer-events-none opacity-40"
+  <section
+    class="relative w-full min-h-screen bg-brand-blue overflow-hidden pt-42 pb-20 px-6 lg:px-20"
+  >
+    <img
+      src="/background/background-p-servicios.svg"
+      alt=""
+      class="absolute inset-0 w-full h-full object-cover object-top pointer-events-none"
     />
 
-    <div class="relative z-10 max-w-4xl mx-auto">
-      <div class="text-center mb-10" data-aos="fade-down">
-        <h1 class="font-title text-4xl md:text-6xl leading-tight">
-          <span class="block font-light text-white">Quiénes</span>
-          <span class="block text-brand-coral font-bold italic">Somos</span>
+    <div class="relative z-10 max-w-5xl mx-auto">
+      <div class="text-center pt-15 md:-mb-16 lg:-mb-18 xl:-mb-22" data-aos="fade-down">
+        <h1 class="text-brand-gray font-title text-3xl md:text-4xl font-light">
+          Quiénes <span class="text-brand-coral font-bold">Somos</span>
         </h1>
       </div>
 
-      <div class="w-full flex justify-center mb-16" data-aos="zoom-in">
-        <img src="/assets/division-01.svg" alt="" class="w-full max-w-3xl mix-blend-screen opacity-50" />
+      <div class="w-full flex justify-center" data-aos="zoom-in">
+        <img
+          src="/assets/division-01.svg"
+          alt=""
+          class="w-full max-w-5xl mix-blend-screen"
+        />
       </div>
 
-      <article class="space-y-10 mb-32" data-aos="fade-up">
-        <p class="text-white text-xl md:text-2xl font-body font-light leading-relaxed italic text-center md:text-left">
-          En Smartketing somos un <span class="text-brand-cyan font-semibold">estudio de comunicación estratégica</span> que acompaña a pequeñas y medianas empresas a construir y posicionar su marca en el tiempo.
+      <article
+        class="space-y-10 -mb-10 max-w-3xl mx-auto text-justify"
+        data-aos="fade-up"
+      >
+        <p
+          class="text-brand-gray/90 text-sm md:text-lg font-body font-extralight leading-relaxed"
+        >
+          En Smartketing somos unestudio de comunicación estratégica que
+          acompaña a pequeñas y medianas empresas a construir y posicionar su
+          marca en el tiempo.
         </p>
 
-        <div class="grid grid-cols-1 gap-8 text-brand-gray/90 font-body font-extralight text-lg leading-relaxed">
+        <div
+          class="grid grid-cols-1 gap-8 text-brand-gray/90 font-body font-extralight text-sm md:text-lg leading-relaxed"
+        >
           <p>
-            Trabajamos como el equipo creativo y de comunicación externo de nuestros clientes, ayudándolos a definir cómo se ven, cómo hablan y cómo se presentan a través de contenido, diseño y una comunicación coherente y constante.
+            Trabajamos como el equipo creativo y de comunicación externo de
+            nuestros clientes, ayudándolos a definir cómo se ven, cómo hablan y
+            cómo se presentan a través de contenido, diseño y una comunicación
+            coherente y constante.
           </p>
           <p>
-            Antes de ejecutar, analizamos. Por eso iniciamos nuestros procesos con una <span class="text-brand-coral font-normal">auditoría comercial y de ventas</span>, donde entendemos el negocio, identificamos oportunidades y detectamos los puntos que necesitan orden para crecer con claridad.
+            Antes de ejecutar, analizamos. Por eso iniciamos nuestros procesos
+            con una auditoría comercial y de ventas, donde entendemos el
+            negocio, identificamos oportunidades y detectamos los puntos que
+            necesitan orden para crecer con claridad.
           </p>
           <p>
-            Creemos en procesos, no en soluciones rápidas. Nuestro enfoque está en construir marcas sólidas, con criterio y visión a largo plazo, donde vender sea una consecuencia natural de una comunicación bien hecha.
+            Creemos en procesos, no en soluciones rápidas. Nuestro enfoque está
+            en construir marcas sólidas, con criterio y visión a largo plazo,
+            donde vender sea una consecuencia natural de una comunicación bien
+            hecha.
           </p>
         </div>
       </article>
 
-      <div class="mt-32 mb-8" data-aos="fade-right">
-        <h2 class="font-title text-3xl md:text-5xl leading-none">
-          <span class="block font-light text-white">Cómo</span>
-          <span class="block text-brand-cyan font-bold italic">trabajamos</span>
+      <div class="text-center mt-35 md:-mb-16 lg:-mb-18 xl:-mb-22" data-aos="fade-right">
+        <h2
+          class="font-title text-3xl md:text-4xl leading-none font-light text-brand-gray"
+        >
+          Cómo
+          <span class="text-brand-coral font-bold">trabajamos</span>
         </h2>
+      </div>
+
+      <div class="w-full flex justify-center" data-aos="zoom-in">
+        <img
+          src="/assets/division-01.svg"
+          alt=""
+          class="w-full max-w-5xl mix-blend-screen"
+        />
       </div>
 
       <div class="space-y-12">
         {
           [
-            { 
-              num: "01", 
-              title: "Entendemos la marca", 
-              text: "Antes de crear cualquier pieza, nos tomamos el tiempo de conocer la historia, el contexto y los objetivos del negocio. Analizamos dónde está la marca hoy y hacia dónde quiere ir, para que cada decisión tenga sentido." 
+            {
+              num: "1.  ",
+              title: "Entendemos la marca",
+              text: "Antes de crear cualquier pieza, nos tomamos el tiempo de conocer la historia, el contexto y los objetivos del negocio. Analizamos dónde está la marca hoy y hacia dónde quiere ir, para que cada decisión tenga sentido.",
+              logo: "/iconos/analisis.svg",
             },
-            { 
-              num: "02", 
-              title: "Definimos una dirección clara", 
-              text: "A partir de ese entendimiento, establecemos una dirección creativa y estratégica: cómo debe verse la marca, cómo debe comunicar y qué tipo de contenido necesita para posicionarse de forma coherente en el tiempo." 
+            {
+              num: "2.  ",
+              title: "Definimos una dirección clara",
+              text: "A partir de ese entendimiento, establecemos una dirección creativa y estratégica: cómo debe verse la marca, cómo debe comunicar y qué tipo de contenido necesita para posicionarse de forma coherente en el tiempo.",
+              logo: "/iconos/icono-hero.svg",
             },
-            { 
-              num: "03", 
-              title: "Creamos con intención", 
-              text: "Desarrollamos contenido, diseño y piezas de comunicación alineadas a esa dirección. No trabajamos por volumen, sino por coherencia, calidad y consistencia, cuidando cada punto de contacto de la marca." 
+            {
+              num: "3.  ",
+              title: "Creamos con intención",
+              text: "Desarrollamos contenido, diseño y piezas de comunicación alineadas a esa dirección. No trabajamos por volumen, sino por coherencia, calidad y consistencia, cuidando cada punto de contacto de la marca.",
+              logo: "/iconos/intencion.svg",
             },
-            { 
-              num: "04", 
-              title: "Acompañamos el proceso", 
-              text: "Trabajamos de forma cercana y continua, ajustando, organizando y acompañando la evolución de la marca. Nos integramos como equipo externo, para que la comunicación fluya sin improvisación." 
+            {
+              num: "4.  ",
+              title: "Acompañamos el proceso",
+              text: "Trabajamos de forma cercana y continua, ajustando, organizando y acompañando la evolución de la marca. Nos integramos como equipo externo, para que la comunicación fluya sin improvisación.",
+              logo: "/iconos/proceso.svg",
             },
-            { 
-              num: "05", 
-              title: "Pensamos a largo plazo", 
-              text: "Creemos en procesos sostenibles. Nuestro enfoque no es inmediato ni reactivo, sino estratégico: construir una marca sólida que pueda crecer con claridad y visión." 
-            }
+            {
+              num: "5.  ",
+              title: "Pensamos a largo plazo",
+              text: "Creemos en procesos sostenibles. Nuestro enfoque no es inmediato ni reactivo, sino estratégico: construir una marca sólida que pueda crecer con claridad y visión.",
+              logo: "/iconos/calendario.svg",
+            },
           ].map((step, index) => (
             <>
-              <div class="" data-aos="fade-up" data-aos-delay={index * 100}>
-                <div class="flex flex-col gap-4">
-                  <span class="text-brand-coral font-title font-bold text-5xl opacity-80">{step.num}</span>
-                  <h3 class="text-brand-cyan font-title font-bold text-3xl tracking-tight">{step.title}</h3>
-                  <p class="text-brand-gray/90 font-body font-extralight text-lg leading-relaxed max-w-4xl">
+              <div class="-mb-3 md:-mb-15" data-aos="fade-up" data-aos-delay={index * 100}>
+                <div class="flex flex-col gap-3 items-center">
+                  <img
+                    src={step.logo}
+                    alt={step.title}
+                    class="w-32 h-auto mb-2 object-contain scale-105"
+                  
+                  />
+                  <div class="flex text-2xl text/90-center gap-0.5">
+                    <span class="text-brand-cyan font-title font-extralight">
+                      {step.num} 
+                    </span>
+                    <h3 class="text-brand-cyan/90 font-title font-bold tracking-tight">
+                      {step.title}
+                    </h3>
+                  </div>
+                  <p class="text-brand-gray/90 text-justify font-body font-light text-sm md:text-lg leading-relaxed max-w-3xl">
                     {step.text}
                   </p>
                 </div>
               </div>
-              
+
               {/* LA DIVISIÓN: Aparece después de cada paso menos el último */}
               {index < 4 && (
-                <div class="w-full flex justify-center" data-aos="zoom-in" data-aos-offset="100">
-                  <img src="/assets/division-01.svg" alt="" class="w-full max-w-4xl h-auto mix-blend-screen" />
+                <div
+                  class="w-full flex justify-center -mb-3"
+                  data-aos="zoom-in"
+                  data-aos-offset="100"
+                >
+                  <img
+                    src="/assets/division-01.svg"
+                    alt=""
+                    class="w-full max-w-4xl h-auto mix-blend-screen"
+                  />
                 </div>
               )}
             </>
@@ -99,9 +157,9 @@ import Layout from "../layouts/Layout.astro";
       </div>
 
       <div class="mt-32 flex justify-center" data-aos="zoom-in">
-        <a 
-          href="/contacto" 
-          class="bg-brand-coral hover:bg-white hover:text-brand-coral text-white px-12 py-5 rounded-2xl font-bold font-title text-xl transition-all duration-300 shadow-xl shadow-brand-coral/20 hover:scale-105"
+        <a
+          href="/contacto"
+          class="bg-brand-coral hover:bg-brand-gray hover:text-brand-coral text-brand-gray p-4 md:px-8 py-5 rounded-lg font-bold font-title text-sm md:text-lg transition-all duration-300 shadow-xl shadow-brand-coral/20 hover:scale-105"
         >
           Construyamos tu marca con criterio
         </a>
