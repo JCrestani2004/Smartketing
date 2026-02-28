@@ -34,21 +34,26 @@ const tripleTestimonios = [...testimonios, ...testimonios, ...testimonios];
 
 <section
   class="relative w-full bg-brand-blue pb-20 overflow-hidden pt-12 lg:pt-0 -mt-20 md:-mt-40 lg:-mt-40"
+  data-aos="fade"
 >
   <img
     src="background/Background-testimonios.svg"
     alt="Fondo de clientes"
     class="absolute inset-0 w-full h-full object-cover object-bottom z-0 pointer-events-none scale-110"
+    data-aos="fade"
+    data-aos-duration="2000"
   />
-         <div
-        class="absolute w-full flex justify-center pointer-events-none select-none -mt-25 z-50"
-      >
-        <img
-          src="/assets/division-01.svg"
-          alt=""
-          class="w-full max-w-5xl h-auto mix-blend-screen"
-        />
-      </div>
+  <div
+    class="absolute w-full flex justify-center pointer-events-none select-none -mt-25 z-50"
+  >
+    <img
+      src="/assets/division-01.svg"
+      alt=""
+      class="w-full max-w-5xl h-auto mix-blend-screen"
+      data-aos="zoom-in"
+      data-aos-delay="200"
+    />
+  </div>
 
   <div
     class="relative w-full max-w-7xl mx-auto px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-12 gap-0 lg:gap-10 items-center z-10"
@@ -59,6 +64,8 @@ const tripleTestimonios = [...testimonios, ...testimonios, ...testimonios];
       <div
         id="logo-track"
         class="flex flex-row lg:flex-col items-center transition-transform duration-700 ease-in-out pt-10 lg:pt-0"
+        data-aos="fade-right"
+        data-aos-delay="400"
       >
         {
           tripleTestimonios.map((item, index) => (
@@ -85,6 +92,9 @@ const tripleTestimonios = [...testimonios, ...testimonios, ...testimonios];
         src="/assets/onda_clientes.svg"
         alt="Marco de testimonio"
         class="absolute inset-0 w-full h-full object-contain z-0 scale-[1.9] md:scale-[1.5] lg:scale-130"
+        data-aos="zoom-out"
+        data-aos-duration="1500"
+        data-aos-delay="600"
       />
 
       <div
@@ -160,6 +170,9 @@ const tripleTestimonios = [...testimonios, ...testimonios, ...testimonios];
           textElement.textContent = `"${nuevoTexto}"`;
           textElement.style.opacity = "1";
           textElement.style.transform = "translateY(0)";
+          if (window.AOS) {
+            (window as any).AOS?.refresh();;
+          }
         }, 300);
       }
     };

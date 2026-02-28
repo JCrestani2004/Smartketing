@@ -25,13 +25,28 @@ import Footer from "../components/Footer.astro";
     <slot />
     <Footer />
   </body>
-  <script is:inline src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script is:inline>
+ <script is:inline src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script is:inline>
+  // 1. Definimos la función de inicialización
+  function initAOS() {
     AOS.init({
-      duration: 1000, // Duración de la animación (1 segundo)
-      once: true, // Que solo se anime la primera vez que se ve
-      offset: 100, // Distancia antes de que empiece la animación
+      duration: 1000,
+      once: true,
+      offset: 100,
     });
-  </script>
+  }
+
+  // 2. La ejecutamos cuando carga la página por primera vez
+  initAOS();
+
+  // 3. ¡ESTA ES LA CLAVE! 
+  // Cada vez que Astro cambia de página (evento astro:after-swap), 
+  // le decimos a AOS que refresque y vuelva a buscar elementos.
+  document.addEventListener('astro:after-swap', () => {
+    AOS.refresh(); // Despierta a AOS
+    initAOS();     // Reinicia la configuración
+  });
+</script>
 
 </html>
