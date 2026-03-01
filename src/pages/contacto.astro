@@ -3,15 +3,89 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Contacto | Smartketing">
-        <section class="relative w-full min-h-screen bg-brand-gray overflow-hidden">
+  <section class="relative w-full min-h-screen flex flex-col items-center overflow-hidden py-20">
+    
+    <div class="absolute inset-0 z-0 pointer-events-none">
+      <img 
+        src="/background/background-p-equipo.svg" 
+        alt="" 
+        class="w-full h-full object-cover object-top scale-110" 
+      />
+    </div>
 
-    <!-- Fondo decorativo -->
-    <img 
-      src="/background/background-p-servicios.svg"
-      alt=""
-      class="absolute inset-0 w-full h-full object-cover object-top pointer-events-none"
-    />
+    <div
+      class="relative z-10 text-center pt-25 md:-mb-16 lg:-mb-18 xl:-mb-22 w-full"
+      data-aos="fade-down"
+    >
+      <h1 class="text-white text-3xl md:text-4xl">
+        <span class="text-brand-coral font-bold">Contáctanos</span>
+      </h1>
+    </div>
 
+    <div class="relative z-10 w-full flex justify-center mb-5 md:mb-10" data-aos="zoom-in">
+      <img
+        src="/assets/division-01.svg"
+        alt=""
+        class="w-full max-w-5xl mix-blend-screen"
+      />
+    </div>
 
+    <div class="relative z-10 max-w-5xl mx-auto px-10 w-full lg:px-20 xl:px-20">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        
+        <div class="flex flex-col gap-12 md:gap-32">
+          <p class="text-brand-gray text-sm md:text-base font-extralight font-body italic leading-tight max-w-60 tracking-tight"
+             data-aos="fade-up" data-aos-delay="200">
+            Si buscas un equipo creativo que piense en tu marca a largo plazo, ordene tu comunicación y te acompañe con estrategia y coherencia, estamos listos para trabajar contigo.
+          </p>
+          
+          <h2 class="text-3xl md:text-4xl leading-[0.95] font-extralight italic font-title tracking-tight text-white"
+              data-aos="fade-up" data-aos-delay="400">
+            <span class="text-brand-coral font-bold">Construyamos</span> <br />
+            juntos tu marca <br />
+            con <span class="text-brand-cyan font-bold">criterio</span>
+          </h2>
+        </div>
+
+        <div class="w-full flex flex-col items-end">
+          <div class="w-full bg-black/10 backdrop-blur-md border border-white/10 p-6 md:p-8 shadow-[inset_0_4px_20px_rgba(0,0,0,0.8)]"
+               data-aos="fade-left" data-aos-delay="600">
+            <form class="flex flex-col gap-4">
+              <input 
+                type="text" 
+                placeholder="Nombre y apellido" 
+                class="bg-white/5 border border-white/10 p-4 text-white placeholder:text-white/20 focus:outline-none focus:border-brand-cyan transition-colors"
+              />
+              <input 
+                type="tel" 
+                placeholder="Teléfono" 
+                class="bg-white/5 border border-white/10 p-4 text-white placeholder:text-white/20 focus:outline-none focus:border-brand-cyan transition-colors"
+              />
+              <input 
+                type="email" 
+                placeholder="Correo Electrónico" 
+                class="bg-white/5 border border-white/10 p-4 text-white placeholder:text-white/20 focus:outline-none focus:border-brand-cyan transition-colors"
+              />
+              <textarea 
+                placeholder="Escribir Mensaje" 
+                rows="4"
+                class="bg-white/5 border border-white/10 p-4 text-white placeholder:text-white/20 focus:outline-none focus:border-brand-cyan transition-colors resize-none"
+              ></textarea>
+            </form>
+          </div>
+
+          <div class="w-full flex justify-center md:justify-end mt-6">
+            <button 
+              type="submit" 
+              class="bg-brand-coral hover:bg-brand-coral/90 text-sm italic text-white font-normal py-3 px-8 rounded-xl transition-all shadow-lg hover:scale-105"
+              data-aos="zoom-in-up" data-aos-delay="800"
+            >
+              Conversemos sobre tu marca 
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </section>
 </Layout>
