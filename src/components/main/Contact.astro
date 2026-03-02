@@ -1,80 +1,107 @@
 ---
 // Seccion de Contacto con formulario
-import background from '../../assets/background/Backgroundcontacto.svg'
+import background from "../../assets/background/Backgroundcontacto.svg";
 ---
 
-<section class="relative w-full py-15 md:py-20 text-white min-h-screen flex items-center overflow-hidden">
+<section
+  class="relative w-full py-15 md:py-20 text-white min-h-screen flex items-center overflow-hidden"
+>
   <div class="absolute inset-0 z-0 pointer-events-none">
-    <img 
+    <img
       src={background.src}
-      alt="Fondo de servicios" 
-      class="w-full h-full object-cover object-bottom-right scale-200" 
+      alt="Fondo de servicios"
+      class="w-full h-full object-cover object-bottom-right scale-200"
     />
   </div>
 
-  <div class="relative z-10 max-w-5xl mx-auto px-10 w-full mt-10 lg:px-30 xl:px-10">
+  <div
+    class="relative z-10 max-w-5xl mx-auto px-10 w-full mt-10 lg:px-30 xl:px-10"
+  >
     <div class="grid grid-cols-1 md:grid-cols-2 lg:gap-2 xl:gap-8 items-center">
-      
       <div class="flex flex-col gap-12 md:gap-32 -mt-10 md:-mt-25">
-        <p class="text-brand-gray text-sm md:text-base font-extralight font-body italic leading-tight max-w-60 tracking-tight"
-        data-aos="fade-up" data-aos-delay="200"
+        <p
+          class="text-brand-gray text-sm md:text-base font-extralight font-body italic leading-tight max-w-60 tracking-tight"
+          data-aos="fade-up"
+          data-aos-delay="200"
         >
-          Si buscas un equipo creativo que piense en tu marca a largo plazo, ordene tu comunicación y te acompañe con estrategia y coherencia, estamos listos para trabajar contigo.
+          Si buscas un equipo creativo que piense en tu marca a largo plazo,
+          ordene tu comunicación y te acompañe con estrategia y coherencia,
+          estamos listos para trabajar contigo.
         </p>
-        
-        <h2 class="text-2xl md:text-4xl leading-[0.95] font-extralight italic font-title tracking-tight"
-        data-aos="fade-up" data-aos-delay="400"
+
+        <h2
+          class="text-2xl md:text-4xl leading-[0.95] font-extralight italic font-title tracking-tight"
+          data-aos="fade-up"
+          data-aos-delay="400"
         >
-          <span class="text-brand-coral font-bold">Construyamos</span> <br />
+          <span class="text-brand-coral font-bold">Construyamos</span>
+          <br />
           juntos tu marca <br />
           con <span class="text-brand-cyan font-bold">criterio</span>
         </h2>
       </div>
 
       <div class="w-full text-right items-end">
-        <h3 class="text-brand-coral text-xl md:text-4xl font-bold mb-3"
-        data-aos="fade-down" data-aos-delay="500"
+        <h3
+          class="text-brand-coral text-xl md:text-4xl font-bold mb-3"
+          data-aos="fade-down"
+          data-aos-delay="500"
         >
-          Contáctanos 
+          Contáctanos
         </h3>
-        
-        <div class="bg-[#101F72] backdrop-blur-lg border border-white/10 p-2 md:p-3 shadow-2xl"
-        data-aos="fade-left" data-aos-delay="600" data-aos-duration="1000"
-        >
-        <form class="flex flex-col gap-4">
-          <input 
-            type="text" 
-            placeholder="Nombre y apellido" 
-            class="bg-[#10247D] border border-blue-900/30 p-4 rounded-sm focus:outline-none focus:border-brand-cyan transition-colors placeholder:text-blue-200/40"
-          />
-          <input 
-            type="tel" 
-            placeholder="Teléfono" 
-            class="bg-[#10247D] border border-blue-900/30 p-4 rounded-sm focus:outline-none focus:border-brand-cyan transition-colors placeholder:text-blue-200/40"
-          />
-          <input 
-            type="email" 
-            placeholder="Correo Electrónico" 
-            class="bg-[#10247D] border border-blue-900/30 p-4 rounded-sm focus:outline-none focus:border-brand-cyan transition-colors placeholder:text-blue-200/40"
-          />
-          <textarea 
-            placeholder="Escribir Mensaje" 
-            rows="4"
-            class="bg-[#10247D] border border-blue-900/30 p-4 rounded-sm focus:outline-none focus:border-brand-cyan transition-colors resize-none placeholder:text-blue-200/40"
-          ></textarea>
-        </form>
-    </div>
-    <div class="flex justify-center md:justify-end mt-4">
-  <button 
-    type="submit" 
-    class="bg-brand-coral hover:bg-brand-coral/90 text-sm italic text-white font-normal py-3 px-6 rounded-xl transition-all shadow-lg hover:scale-105"
-    data-aos="zoom-in-up" data-aos-delay="900" data-aos-anchor-placement="bottom-bottom"
-  >
-    Conversemos sobre tu marca 
-  </button>
-</div>
-      </div>
 
+        <div
+          class="bg-[#101F72] backdrop-blur-lg border border-white/10 p-2 md:p-3 shadow-2xl"
+          data-aos="fade-left"
+          data-aos-delay="600"
+          data-aos-duration="1000"
+        >
+          <form
+            id="contactForm"
+            class="flex flex-col gap-4"
+            action="/smartketing/php/send.php"
+            method="POST"
+          >
+            <input
+              type="text"
+              name="name"
+              placeholder="Nombre y apellido"
+              class="bg-[#10247D] border border-blue-900/30 p-4 rounded-sm focus:outline-none focus:border-brand-cyan transition-colors placeholder:text-blue-200/40"
+              required
+            />
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Teléfono"
+              class="bg-[#10247D] border border-blue-900/30 p-4 rounded-sm focus:outline-none focus:border-brand-cyan transition-colors placeholder:text-blue-200/40"
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Correo Electrónico"
+              class="bg-[#10247D] border border-blue-900/30 p-4 rounded-sm focus:outline-none focus:border-brand-cyan transition-colors placeholder:text-blue-200/40"
+              required
+            />
+            <textarea
+              name="message"
+              placeholder="Escribir Mensaje"
+              rows="4"
+              class="bg-[#10247D] border border-blue-900/30 p-4 rounded-sm focus:outline-none focus:border-brand-cyan transition-colors resize-none placeholder:text-blue-200/40"
+              required
+            ></textarea>
+            <input type="text" name="website" style="display:none" />
+          </form>
+        </div>
+        <div class="flex justify-center md:justify-end mt-4">
+          <button
+            type="submit" 
+            form="contactForm"
+            class="bg-brand-coral hover:bg-brand-coral/90 text-sm italic text-white font-normal py-3 px-6 rounded-xl transition-all shadow-lg hover:scale-105 duration-400"
+          >
+            Conversemos sobre tu marca
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </section>

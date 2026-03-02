@@ -3,7 +3,7 @@ import logo from "../assets/logo_svg/logo.svg";
 ---
 
 <nav id="main-nav" class="fixed top-0 w-full z-100 bg-transparent font-body transition-all duration-300">
-  <div class="max-w-8xl mx-auto px-6 md:px-20 lg:px-25 py-6 flex justify-between items-center">
+  <div class="max-w-8xl mx-auto px-6 md:px-15 lg:px-20 py-6 flex justify-between items-center gap-5">
 
     <a href="/">
       <img src={logo.src} alt="Smartketing" class="h-10 md:h-13 transition-transform duration-300 hover:scale-105"
@@ -12,7 +12,10 @@ import logo from "../assets/logo_svg/logo.svg";
       />
     </a>
 
-    <ul class="hidden md:flex gap-14 md:text-xs lg:text-base text-brand-gray font-extralight">
+    <ul class="hidden lg:flex gap-14 md:text-xs lg:text-base text-brand-gray font-extralight">
+        <li><a href="/" class="nav-link hover:text-white transition-all duration-300"
+          data-aos="fade-down" data-aos-delay="100"
+          >Inicio</a></li>
         <li><a href="/about" class="nav-link hover:text-white transition-all duration-300"
           data-aos="fade-down" data-aos-delay="100"
           >Quiénes somos</a></li>
@@ -27,16 +30,17 @@ import logo from "../assets/logo_svg/logo.svg";
         >Contáctenos</a></li>
     </ul>
 
-    <button id="menu-btn" class="md:hidden z-101 flex flex-col gap-1.5 pointer-events-auto">
+    <button id="menu-btn" class="lg:hidden z-101 flex flex-col gap-1.5 pointer-events-auto">
       <span class="w-8 h-0.5 bg-brand-gray transition-all origin-center"></span>
       <span class="w-8 h-0.5 bg-brand-gray transition-all"></span>
       <span class="w-8 h-0.5 bg-brand-gray transition-all origin-center"></span>
     </button>
 
-    <div id="mobile-menu" class="fixed top-0 left-0 w-full h-screen z-100 bg-brand-blue/95 backdrop-blur-md flex flex-col items-center justify-center gap-8 translate-x-full transition-transform duration-500 md:hidden">
+    <div id="mobile-menu" class="fixed top-0 left-0 w-full h-screen z-100 bg-brand-blue/95 backdrop-blur-md flex flex-col items-center justify-center gap-8 translate-x-full transition-transform duration-500 lg:hidden">
       <a href="/">
       <img src={logo.src} alt="Smartketing" class="h-20 md:h-24 transition-transform duration-300 hover:scale-105 mb-8" />
     </a>
+      <a href="/" class="text-2xl text-white font-light hover:text-brand-cyan">Inicio</a>
       <a href="/about" class="text-2xl text-white font-light hover:text-brand-cyan">Quiénes somos</a>
       <a href="/servicio" class="text-2xl text-white font-light hover:text-brand-cyan">Servicio</a>
       <a href="/equipo" class="text-2xl text-white font-light hover:text-brand-cyan">Equipo</a>
