@@ -1,29 +1,39 @@
 ---
+// Definicion de imagenes
+import background from '../../assets/background/Background-testimonios.svg';
+import division from '../../assets/assets/division-01.svg';
+import damaschke from '../../assets/clientes/damaschke.svg';
+import energy from '../../assets/clientes/energy.svg';
+import simel from '../../assets/clientes/simel.svg';
+import hunter from '../../assets/clientes/hunter.svg';
+import onda from '../../assets/assets/onda_clientes.svg'
+
+// Lista de Testimonios
 const testimonios = [
   {
     id: "damaschke",
-    logo: "/clientes/damaschke.svg",
+    logo: damaschke,
     alt: "Damaschke Premium Line",
     texto:
       "Más allá de los números, valoramos la comunicación fluida, la escucha activa y la capacidad para adaptarse a nuestras necesidades. Son, sin duda, un aliado estratégico de confianza.",
   },
   {
     id: "energy",
-    logo: "/clientes/energy.svg",
+    logo: energy,
     alt: "Energy Control",
     texto:
       "Su equipo ha asumido con excelencia la gestión de nuestras redes sociales y campañas. Nos gusta la pronta atención y respuesta a nuestros requerimientos, eso es importante.",
   },
   {
     id: "simel",
-    logo: "/clientes/simel.svg",
+    logo: simel,
     alt: "Simel Panama",
     texto:
       "Smartketing ha sido clave en nuestro crecimiento, gestionando con excelencia nuestras redes sociales, estrategias de marketing y campañas pagadas con contenido creativo, siempre con una atención valiosa y constante.",
   },
   {
     id: "hunter",
-    logo: "/clientes/hunter.svg",
+    logo: hunter,
     alt: "Hunter Panama",
     texto:
       "El profesionalismo, proactividad y calidad del servicio que ofrece Smarketing ha superado nuestras expectativas de manera constante. Recomendamos plenamente sus servicios.",
@@ -37,7 +47,7 @@ const tripleTestimonios = [...testimonios, ...testimonios, ...testimonios];
   data-aos="fade"
 >
   <img
-    src="background/Background-testimonios.svg"
+    src={background.src}
     alt="Fondo de clientes"
     class="absolute inset-0 w-full h-full object-cover object-bottom z-0 pointer-events-none scale-110"
     data-aos="fade"
@@ -47,7 +57,7 @@ const tripleTestimonios = [...testimonios, ...testimonios, ...testimonios];
     class="absolute w-full flex justify-center pointer-events-none select-none -mt-25 z-50"
   >
     <img
-      src="/assets/division-01.svg"
+      src={division.src}
       alt=""
       class="w-full max-w-5xl h-auto mix-blend-screen"
       data-aos="zoom-in"
@@ -75,7 +85,7 @@ const tripleTestimonios = [...testimonios, ...testimonios, ...testimonios];
               data-texto={item.texto}
             >
               <img
-                src={item.logo}
+                src={item.logo.src}
                 alt={item.alt}
                 class="w-30 md:w-38 lg:w-40 object-contain pointer-events-none opacity-30 grayscale scale-75 lg:scale-90 transition-all duration-500"
               />
@@ -89,7 +99,7 @@ const tripleTestimonios = [...testimonios, ...testimonios, ...testimonios];
       class="lg:col-span-8 relative flex items-center justify-center w-full min-h-112.5 md:min-h-137.5 lg:min-h-162.5"
     >
       <img
-        src="/assets/onda_clientes.svg"
+        src={onda.src}
         alt="Marco de testimonio"
         class="absolute inset-0 w-full h-full object-contain z-0 scale-[1.9] md:scale-[1.5] lg:scale-130"
         data-aos="zoom-out"

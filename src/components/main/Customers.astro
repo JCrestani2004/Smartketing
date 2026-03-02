@@ -1,17 +1,30 @@
 ---
+import backgroundImage from '../../assets/background/Bannerlogos.svg';
+import miami from '../../assets/clientes/miami.svg';
+import energy from '../../assets/clientes/energy.svg';
+import gel from '../../assets/clientes/gel.svg';
+import illuminations from '../../assets/clientes/illuminations.svg';
+import osumed from '../../assets/clientes/osumed.svg';
+import simel from '../../assets/clientes/simel.svg';
+import vicone from '../../assets/clientes/vicone.svg';
+import damaschke from '../../assets/clientes/damaschke.svg';
+import hunter from '../../assets/clientes/hunter.svg';
+import luxolar from '../../assets/clientes/luxolar.svg';
+import epcom from '../../assets/clientes/epcom.svg';
 /* Seccion Confiaron en Nosotros */
-const backgroundImage = '/background/Bannerlogos.svg';
+
 const clients = [
-    { name: 'MiamiFoodTrucksEvents', logo: '/clientes/miami.svg' },
-    { name: 'Energy Control', logo: '/clientes/energy.svg' },
-    { name: 'Gel Smart', logo: '/clientes/gel.svg' },
-    { name: 'Illuminations', logo: '/clientes/illuminations.svg' },
-    { name: 'Osumed', logo: '/clientes/osumed.svg' },
-    { name: 'Simel', logo: '/clientes/simel.svg' },
-    { name: 'Vicone', logo: '/clientes/vicone.svg' },
-    { name: 'Damaschke', logo: '/clientes/damaschke.svg' },
-    { name: 'Hunter', logo: '/clientes/hunter.svg' },
-    { name: 'Epcom', logo: '/clientes/epcom.svg' }
+    { name: 'MiamiFoodTrucksEvents', logo: miami },
+    { name: 'Energy Control', logo: energy },
+    { name: 'Gel Smart', logo: gel },
+    { name: 'Illuminations', logo: illuminations },
+    { name: 'Osumed', logo: osumed },
+    { name: 'Simel', logo: simel },
+    { name: 'Vicone', logo: vicone },
+    { name: 'Damaschke', logo: damaschke },
+    { name: 'Hunter', logo: hunter },
+    { name: 'Luxolar', logo: luxolar },
+    { name: 'Epcom', logo: epcom }
 ];
 const doubleClients = [...clients, ...clients];
 ---
@@ -21,7 +34,7 @@ data-aos="fade-up" data-aos-duration="200" data-aos-delay="600"
 >
   <div class="absolute inset-0 -z-10 w-full">
     <img
-      src={backgroundImage}
+      src={backgroundImage.src}
       alt="Fondo decorativo"
       class="h-full w-full scale-110 object-cover object-left lg:object-top-right"
       data-aos="zoom-out" data-aos-duration="200" data-aos-delay="600"
@@ -32,7 +45,7 @@ data-aos="fade-up" data-aos-duration="200" data-aos-delay="600"
     <div class="flex w-max animate-marquee items-center gap-8 md:gap-16 transition:persist">
       {doubleClients.map((client) => (
         <img 
-          src={client.logo} 
+          src={client.logo.src} 
           alt={client.name} 
           class="h-8 md:h-14 w-auto object-contain brightness-0 invert px-2 lg:mt-4"
         />

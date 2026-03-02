@@ -1,5 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import background from '../assets/background/background-p-servicios.svg'
+import division from '../assets/assets/division-01.svg';
+import iconoA from '../assets/iconos/analisis.svg'; // Analisis
+import iconoD from '../assets/iconos/icono-hero.svg'; // Direccion
+import iconoI from '../assets/iconos/intencion.svg'; // Intencion
+import iconoPr from '../assets/iconos/proceso.svg'; // Proceso
+import iconoCa from '../assets/iconos/calendario.svg'; // Calendario
 ---
 
 <Layout title="Quiénes Somos | Smartketing">
@@ -7,7 +14,7 @@ import Layout from "../layouts/Layout.astro";
     class="relative w-full min-h-screen bg-brand-blue overflow-hidden pt-42 pb-20 px-6 lg:px-20"
   >
     <img
-      src="/background/background-p-servicios.svg"
+      src={background.src}
       alt=""
       class="absolute inset-0 w-full h-full object-cover object-top pointer-events-none"
     />
@@ -21,7 +28,7 @@ import Layout from "../layouts/Layout.astro";
 
       <div class="w-full flex justify-center" data-aos="zoom-in">
         <img
-          src="/assets/division-01.svg"
+          src={division.src}
           alt=""
           class="w-full max-w-5xl mix-blend-screen"
         />
@@ -34,7 +41,7 @@ import Layout from "../layouts/Layout.astro";
         <p
           class="text-brand-gray/90 text-sm md:text-lg font-body font-extralight leading-relaxed"
         >
-          En Smartketing somos unestudio de comunicación estratégica que
+          En Smartketing somos un estudio de comunicación estratégica que
           acompaña a pequeñas y medianas empresas a construir y posicionar su
           marca en el tiempo.
         </p>
@@ -74,7 +81,7 @@ import Layout from "../layouts/Layout.astro";
 
       <div class="w-full flex justify-center" data-aos="zoom-in">
         <img
-          src="/assets/division-01.svg"
+          src={division.src}
           alt=""
           class="w-full max-w-5xl mix-blend-screen"
         />
@@ -87,38 +94,38 @@ import Layout from "../layouts/Layout.astro";
               num: "1.  ",
               title: "Entendemos la marca",
               text: "Antes de crear cualquier pieza, nos tomamos el tiempo de conocer la historia, el contexto y los objetivos del negocio. Analizamos dónde está la marca hoy y hacia dónde quiere ir, para que cada decisión tenga sentido.",
-              logo: "/iconos/analisis.svg",
+              logo: iconoA,
             },
             {
               num: "2.  ",
               title: "Definimos una dirección clara",
               text: "A partir de ese entendimiento, establecemos una dirección creativa y estratégica: cómo debe verse la marca, cómo debe comunicar y qué tipo de contenido necesita para posicionarse de forma coherente en el tiempo.",
-              logo: "/iconos/icono-hero.svg",
+              logo: iconoD,
             },
             {
               num: "3.  ",
               title: "Creamos con intención",
               text: "Desarrollamos contenido, diseño y piezas de comunicación alineadas a esa dirección. No trabajamos por volumen, sino por coherencia, calidad y consistencia, cuidando cada punto de contacto de la marca.",
-              logo: "/iconos/intencion.svg",
+              logo: iconoI,
             },
             {
               num: "4.  ",
               title: "Acompañamos el proceso",
               text: "Trabajamos de forma cercana y continua, ajustando, organizando y acompañando la evolución de la marca. Nos integramos como equipo externo, para que la comunicación fluya sin improvisación.",
-              logo: "/iconos/proceso.svg",
+              logo: iconoPr,
             },
             {
               num: "5.  ",
               title: "Pensamos a largo plazo",
               text: "Creemos en procesos sostenibles. Nuestro enfoque no es inmediato ni reactivo, sino estratégico: construir una marca sólida que pueda crecer con claridad y visión.",
-              logo: "/iconos/calendario.svg",
+              logo: iconoCa,
             },
           ].map((step, index) => (
             <>
               <div class="-mb-3 md:-mb-15" data-aos="fade-up" data-aos-delay={index * 100}>
                 <div class="flex flex-col gap-3 items-center">
                   <img
-                    src={step.logo}
+                    src={step.logo.src}
                     alt={step.title}
                     class="w-32 h-auto mb-2 object-contain scale-105"
                   
@@ -145,7 +152,7 @@ import Layout from "../layouts/Layout.astro";
                   data-aos-offset="100"
                 >
                   <img
-                    src="/assets/division-01.svg"
+                    src={division.src}
                     alt=""
                     class="w-full max-w-4xl h-auto mix-blend-screen"
                   />

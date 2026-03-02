@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 const { title = "Smartketing" } = Astro.props;
+import fav from "../assets/smart/smart-simbolo.svg"
 import { ClientRouter } from "astro:transitions";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
@@ -11,8 +12,8 @@ import Footer from "../components/Footer.astro";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/smartketing/smart-simbolo.svg" />
-    <link rel="icon" href="/smartketing/smart-simbolo.ico" />
+    <link rel="icon" type="image/svg+xml" href={fav.src} />
+    <link rel="icon" href={fav.src} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />

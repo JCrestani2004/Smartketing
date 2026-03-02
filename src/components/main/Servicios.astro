@@ -1,9 +1,22 @@
+---
+import background from '../../assets/background/Backgroundservicios.svg';
+import iconoP from '../../assets/iconos/posicionamiento.svg'; // Posicionamiento
+import iconoC from '../../assets/iconos/consultoria.svg'; // Consultoria
+import iconoB from '../../assets/iconos/branding.svg'; // Branding
+import iconoW from '../../assets/iconos/web.svg'; // Web
+import iconoA from '../../assets/iconos/analisis.svg'; // Analisis
+import iconoD from '../../assets/iconos/icono-hero.svg'; // Direccion
+import iconoI from '../../assets/iconos/intencion.svg'; // Intencion
+import iconoPr from '../../assets/iconos/proceso.svg'; // Proceso
+import iconoCa from '../../assets/iconos/calendario.svg'; // Calendario
+---
+
 <section
   class="relative w-full py-16 md:py-34 text-white min-h-screen flex items-start overflow-hidden"
 >
   <div class="absolute inset-0 z-0 pointer-events-none">
     <img
-      src="/background/Backgroundservicios.svg"
+      src={background.src}
       alt="Fondo de servicios"
       class="w-full h-full object-cover object-bottom-right md:object-center scale-150 -translate-y-20 md:scale-105 md:-translate-y-40"
       data-aos="fade"
@@ -35,7 +48,7 @@
         >
           <div class="h-14 md:h-18 pt-2">
             <img
-              src="/iconos/consultoria.svg"
+              src={iconoC.src}
               alt="Consultoría"
               class="h-full w-auto scale-110 lg:-ml-5 object-contain"
             />
@@ -59,7 +72,7 @@
         >
           <div class="h-14 md:h-18 pt-2">
             <img
-              src="/iconos/posicionamiento.svg"
+              src={iconoP.src}
               alt="Posicionamiento"
               class="h-full w-auto scale-110 lg:-ml-5 object-contain"
             />
@@ -83,7 +96,7 @@
         >
           <div class="h-14 md:h-18 pt-2">
             <img
-              src="/iconos/branding.svg"
+              src={iconoB.src}
               alt="Branding"
               class="h-full w-auto scale-110 lg:-ml-5 object-contain"
             />
@@ -107,7 +120,7 @@
         >
           <div class="h-14 md:h-18">
             <img
-              src="/iconos/web.svg"
+              src={iconoW.src}
               alt="Diseño Web"
               class="h-full w-auto scale-110 lg:-ml-5 object-contain"
             />
@@ -157,7 +170,7 @@
               </p>
               <div class="w-20 md:w-24 flex justify-center">
                 <img
-                  src="/iconos/analisis.svg"
+                  src={iconoA.src}
                   alt=""
                   class="w-full h-auto object-contain"
                 />
@@ -175,7 +188,7 @@
               </p>
               <div class="w-20 md:w-24 flex justify-center">
                 <img
-                  src="/iconos/icono-hero.svg"
+                  src={iconoD.src}
                   alt=""
                   class="w-full h-auto object-contain"
                 />
@@ -196,7 +209,7 @@
               </p>
               <div class="w-20 md:w-24 flex justify-center">
                 <img
-                  src="/iconos/intencion.svg"
+                  src={iconoI.src}
                   alt=""
                   class="w-full h-auto object-contain"
                 />
@@ -214,7 +227,7 @@
               </p>
               <div class="w-20 md:w-24 flex justify-center">
                 <img
-                  src="/iconos/proceso.svg"
+                  src={iconoPr.src}
                   alt=""
                   class="w-full h-auto object-contain"
                 />
@@ -232,7 +245,7 @@
               </p>
               <div class="w-20 md:w-24 flex justify-center">
                 <img
-                  src="/iconos/calendario.svg"
+                  src={iconoCa.src}
                   alt=""
                   class="w-full h-auto object-contain"
                 />

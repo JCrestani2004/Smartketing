@@ -1,5 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import background from '../assets/background/background-p-equipo.svg';
+import division from '../assets/assets/division-01.svg';
 ---
 
 <Layout title="Contacto | Smartketing">
@@ -7,7 +9,7 @@ import Layout from "../layouts/Layout.astro";
     
     <div class="absolute inset-0 z-0 pointer-events-none">
       <img 
-        src="/background/background-p-equipo.svg" 
+        src={background.src}
         alt="" 
         class="w-full h-full object-cover object-top scale-110" 
       />
@@ -24,7 +26,7 @@ import Layout from "../layouts/Layout.astro";
 
     <div class="relative z-10 w-full flex justify-center mb-5 md:mb-10" data-aos="zoom-in">
       <img
-        src="/assets/division-01.svg"
+        src={division.src}
         alt=""
         class="w-full max-w-5xl mix-blend-screen"
       />
@@ -48,7 +50,7 @@ import Layout from "../layouts/Layout.astro";
         </div>
 
         <div class="w-full flex flex-col items-end">
-          <div class="w-full bg-black/10 backdrop-blur-md border border-white/10 p-6 md:p-8 shadow-[inset_0_4px_20px_rgba(0,0,0,0.8)]"
+          <div class="w-full bg-black/5 backdrop-blur-md border border-brand-blue/90 p-6 md:p-8 shadow-[inset_0_1px_10px_rgba(0,0,0,0.3)]"
                data-aos="fade-left" data-aos-delay="600">
             <form class="flex flex-col gap-4">
               <input 
@@ -74,11 +76,11 @@ import Layout from "../layouts/Layout.astro";
             </form>
           </div>
 
-          <div class="w-full flex justify-center md:justify-end mt-6">
+          <div class="w-full flex justify-center md:justify-end mt-6" data-aos="zoom-in-up" data-aos-delay="800">
             <button 
               type="submit" 
-              class="bg-brand-coral hover:bg-brand-coral/90 text-sm italic text-white font-normal py-3 px-8 rounded-xl transition-all shadow-lg hover:scale-105"
-              data-aos="zoom-in-up" data-aos-delay="800"
+              class="bg-brand-coral hover:bg-brand-coral/90 text-sm italic text-white font-normal py-3 px-8 rounded-xl transition-all shadow-lg hover:scale-105 duration-300"
+              
             >
               Conversemos sobre tu marca 
             </button>

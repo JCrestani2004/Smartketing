@@ -1,5 +1,16 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import background from '../assets/background/background-p-equipo.svg';
+import division from '../assets/assets/division-01.svg';
+import iluminacion from '../assets/assets/iluminacion-perfil.svg'
+import maria from '../assets/equipo/daniela.png'
+import santiago from '../assets/equipo/santiago.png'
+import ruben from '../assets/equipo/ruben.png'
+import jean from '../assets/equipo/jean.png'
+// import jose from '../assets/equipo/jose.png'
+// import brito from '../assets/equipo/brito.png'
+
+
 
 const equipo = [
   {
@@ -8,8 +19,8 @@ const equipo = [
     apellido: "Conde",
     cargo: "Comunicadora social, periodista y directora creativa.",
     bio: "Con más de 10 años de experiencia en medios de comunicación tradicionales y digitales, María Daniela ha trabajado en la construcción de marcas desde la estrategia, la narrativa y la comunicación con propósito. \n\n Su enfoque combina el análisis periodístico con la visión de negocio, ayudando a empresas y emprendedores a ordenar su mensaje, fortalecer su identidad y comunicar con coherencia en el tiempo. \n\n Como fundadora y directora de Smartketing, lidera proyectos de comunicación estratégica, contenido y posicionamiento de marca, acompañando a pequeñas y medianas empresas a crecer con criterio, claridad y visión a largo plazo.",
-    imagen: "/equipo/daniela.png",
-    glow: "/assets/iluminacion-perfil.svg",
+    imagen: maria,
+    glow: iluminacion,
     offset: "translate-y-0",
   },
   {
@@ -18,8 +29,8 @@ const equipo = [
     apellido: "Díaz",
     cargo: "Director de proyectos y consultoría comercial.",
     bio: "Administrador de Empresas, con formación en Marketing Digital y Comercio Electrónico. Santiago cuenta con más de 12 años de experiencia en el sector financiero y en la gestión de procesos comerciales. \n\n Su enfoque está en el análisis de negocio, la optimización de embudos de venta y la toma de decisiones basadas en estructura y resultados. \n\n Como co-fundador de Smartketing, lidera los procesos de auditoría comercial y consultoría estratégica, ayudando a las empresas a ordenar sus sistemas de venta, identificar oportunidades de mejora y construir bases sólidas para crecer de forma sostenible.",
-    imagen: "/equipo/santiago.png",
-    glow: "/assets/iluminacion-perfil.svg",
+    imagen: santiago,
+    glow: iluminacion,
     offset: "translate-y-0",
   },
   {
@@ -28,8 +39,8 @@ const equipo = [
     apellido: "Riaño",
     cargo: "Director de Servicio al Cliente",
     bio: "Administrador de Empresas con más de 5 años de experiencia en la gestión de cuentas y marcas en Colombia y Panamá. En Smartketing, Rubén es una pieza clave en la atención y acompañamiento de los clientes, destacándose por su capacidad para coordinar proyectos, liderar procesos operativos y asegurar que cada estrategia se ejecute de forma ordenada y consistente. \n\n Con más de 4 años formando parte del equipo, su rol es fundamental para mantener la calidad del servicio, la comunicación fluida con los clientes y la correcta implementación de los proyectos.", 
-    imagen: "/equipo/ruben.png",
-    glow: "/assets/iluminacion-perfil.svg",
+    imagen: ruben,
+    glow: iluminacion,
     offset: "translate-y-0",
   },
   // {
@@ -38,8 +49,8 @@ const equipo = [
   //   apellido: "De Avila",
   //   cargo: "Director de Arte",
   //   bio: "Diseñador Gráfico egresado de la Universidad Autónoma del Caribe con más de 10 años de experiencia en el desarrollo de identidades visuales y estrategias de diseño de marca en Venezuela, Colombia y Panamá. Su trabajo se caracteriza por una visión estratégica del diseño, cuidando tanto la estética como la coherencia visual de cada proyecto. \n\n En Smartketing lidera el área de dirección de arte, siendo responsable de traducir las estrategias en conceptos visuales sólidos, funcionales y alineados con la identidad de cada marca.",
-  //   imagen: "/equipo/jose-saravia.png",
-  //   glow: "/assets/iluminacion-perfil.svg",
+  //   imagen: jose,
+  //   glow: iluminacion,
   // offset: "translate-y-0",
   // },
   // {
@@ -48,8 +59,8 @@ const equipo = [
   //   apellido: "Brito",
   //   cargo: "Desarrollador Web Senior",
   //   bio: "Ingeniero Informático egresado de la Universidad Territorial Deltaica Francisco Tamayo, con más de 10 años de experiencia en desarrollo web. En Smartketing lidera el desarrollo técnico de los proyectos digitales, asegurando soluciones funcionales, estables y alineadas a los objetivos de cada negocio. \n\n Su rol es clave para transformar la estrategia y el diseño en plataformas digitales sólidas y bien estructuradas.",
-  //   imagen: "/equipo/jose-brito.png",
-  //   glow: "/assets/iluminacion-perfil.svg",
+  //   imagen: brito,
+  //   glow: iluminacion,
   // offset: "translate-y-0",
   // },
   {
@@ -58,8 +69,8 @@ const equipo = [
     apellido: "Crestani",
     cargo: "Community Manager & Soporte en Programación",
     bio: "TSJ en Análisis de Sistemas con experiencia en gestión de comunidades digitales y apoyo en desarrollo web. En Smartketing participa en la ejecución de contenidos, la atención de redes sociales y el soporte técnico de los proyectos, aportando versatilidad y continuidad operativa al equipo.",
-    imagen: "/equipo/jean.png",
-    glow: "/assets/iluminacion-perfil.svg",
+    imagen: jean,
+    glow: iluminacion,
     offset: "translate-y-[8px]",
   }
 ];
@@ -71,7 +82,7 @@ const equipo = [
     class="relative w-full min-h-screen bg-brand-gray overflow-hidden pt-42 pb-20 px-6 lg:px-20"
   >
     <img
-      src="/background/background-p-equipo.svg"
+      src={background.src}
       alt=""
       class="absolute inset-0 w-full h-full object-cover object-top pointer-events-none"
     />
@@ -82,12 +93,12 @@ const equipo = [
         data-aos="fade-down"
       >
         <h1 class="text-white text-3xl md:text-4xl font-light">
-          Nuestro <span class="text-brand-coral font-bold">equipo</span>
+          Nuestro <span class="text-brand-coral font-bold">Equipo</span>
         </h1>
       </div>
       <div class="w-full flex justify-center mb-20" data-aos="zoom-in">
         <img
-          src="/assets/division-01.svg"
+          src={division.src}
           alt=""
           class="w-full max-w-5xl mix-blend-screen"
         />
@@ -102,17 +113,17 @@ const equipo = [
             >
               <div class="absolute w-full z-20 min-h-75 flex lg:min-h-full">
                   <img
-                    src={persona.glow}
-                    class="absolute left-1/2 lg:left-0 -translate-x-1/2 lg:-translate-x-90 xl:-translate-x-105 -translate-y-45 w-[180%] h-[180%] mix-blend-screen  pointer-events-none"
+                    src={persona.glow.src}
+                    class="absolute left-1/2 lg:left-0 -translate-x-1/2 lg:-translate-x-90 xl:-translate-x-100 -translate-y-25 w-[170%] h-[170%] mix-blend-screen  pointer-events-none"
                   />
 
                   <img
-                    src={persona.imagen}
+                    src={persona.imagen.src}
                     alt={persona.nombre}
-                    class={`absolute bottom-20 lg:bottom-0 left-1/2 -translate-x-1/2 lg:translate-x-0 lg:-left-35 h-[120%] lg:h-[145%] w-auto object-contain drop-shadow-2xl scale-100 ${persona.offset}`}
+                    class={`absolute bottom-20 lg:bottom-0 left-1/2 -translate-x-1/2 lg:translate-x-0 lg:-left-30 h-[120%] lg:h-[145%] w-auto object-contain drop-shadow-2xl scale-100 ${persona.offset}`}
                   />
                 </div>
-              <div class="relative w-full h-auto min-h-87.5 bg-black/10 backdrop-blur-md border border-white/10 shadow-[inset_0_4px_20px_rgba(0,0,0,0.8)] flex flex-col lg:flex-row justify-end items-stretch lg:items-center xl:items-stretch gap-5 ml-8 py-8 px-10 mt-24 lg:mt-0 pt-40 lg:pt-10">
+              <div class="relative w-full h-auto min-h-87.5 bg-black/5 backdrop-blur-lg border border-brand-blue/90 shadow-[inset_0_1px_10px_rgba(0,0,0,0.3)] flex flex-col lg:flex-row justify-end items-stretch lg:items-center xl:items-stretch gap-5 ml-8 lg:ml-16 py-8 px-10 mt-24 lg:mt-0 pt-40 lg:pt-10">
                 
 
                 <div class="relative z-30 flex flex-col justify-between py-2 lg:w-[35%]">
@@ -150,5 +161,13 @@ const equipo = [
         }
       </div>
     </div>
+          <div class="w-full flex justify-center md:justify-center mt-6 " data-aos="zoom-in-up" data-aos-delay="800">
+            <button 
+              type="submit" 
+              class="bg-brand-coral hover:bg-brand-coral/90 text-base italic text-white font-normal py-3 px-8 rounded-xl transition-all shadow-lg hover:scale-105 "
+            >
+              Conversemos sobre tu marca 
+            </button>
+          </div>
   </section>
 </Layout>

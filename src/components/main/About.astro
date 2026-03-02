@@ -1,3 +1,9 @@
+---
+import onda from '../../assets/assets/onda_about.svg'
+import sombra from '../../assets/assets/sombra.svg'
+import problema from '../../assets/assets/problema.svg'
+---
+
 <section
   class="relative w-full bg-transparent pb-20 pt-32 px-6 md:px-10 lg:px-20 items-center overflow-hidden"
   data-aos-anchor-placement="top-center"
@@ -88,7 +94,7 @@
     class="relative left-1/2 -translate-x-1/2 w-screen md:absolute md:top-[30%] md:-left-18 lg:top-[25%] xl:top-[35%] lg:-left-18 md:w-full z-0 pointer-events-none p-0 mt-25 md:my-0 md:translate-x-0"
   >
     <img
-      src="/assets/onda_about.svg"
+      src={onda.src}
       alt=""
       class="w-full h-auto scale-[2.5] md:scale-140 lg:scale-130 object-cover object-top"
       data-aos="fade" data-aos-duration="2000"
@@ -121,13 +127,13 @@
             data-aos="zoom-in" data-aos-delay="100"
           >
             <img
-              src="/assets/sombra.svg"
+              src={sombra.src}
               class="absolute translate-y-5 translate-x-14 w-12 md:w-56 rotate-[-50deg] md:translate-y-15 md:-translate-x-10 -z-10"
             />
             <p
               class="text-brand-coral font-body font-bold text-xs md:text-[1rem] text-center leading-tight"
             >
-              Clientes<br />que no<br />llegan.
+              Clientes<br />que no<br />llegan
             </p>
           </div>
 
@@ -136,13 +142,13 @@
             data-aos="zoom-in" data-aos-delay="300"
           >
             <img
-              src="/assets/sombra.svg"
+              src={sombra.src}
               class="absolute translate-y-10 translate-x-8 rotate-[-30deg] md:rotate-0 w-10 md:w-56 md:translate-y-4 md:-translate-x-12 -z-10"
             />
             <p
               class="text-brand-coral font-body font-bold text-xs md:text-[1rem] text-center leading-tight"
             >
-              Equipos<br />que no<br />responden.
+              Equipos<br />que no<br />responden
             </p>
           </div>
 
@@ -151,13 +157,13 @@
             data-aos="zoom-in" data-aos-delay="500"
           >
             <img
-              src="/assets/sombra.svg"
+              src={sombra.src}
               class="absolute translate-y-5 -translate-x-1 rotate-[-330deg] w-10 md:w-56 md:rotate-[-70deg] md:translate-x-9 md:-translate-y-9 -z-10"
             />
             <p
               class="text-brand-coral font-body font-bold text-xs md:text-[1rem] text-center md:text-right leading-tight"
             >
-              Identidad<br />de marca<br />indefinida.
+              Identidad<br />de marca<br />indefinida
             </p>
           </div>
 
@@ -166,13 +172,13 @@
             data-aos="zoom-in" data-aos-delay="700"
           >
             <img
-              src="/assets/sombra.svg"
+              src={sombra.src}
               class="absolute w-12 md:w-56 translate-y-2 -translate-x-12 -rotate-310 md:-rotate-90 md:translate-x-12 md:-translate-y-35 -z-10"
             />
             <p
               class="text-brand-coral font-body font-bold text-xs md:text-[1rem] text-center md:text-left leading-tight"
             >
-              Falta de<br />tiempo para<br />crear contenido.
+              Falta de<br />tiempo para<br />crear contenido
             </p>
           </div>
         </div>
@@ -181,7 +187,7 @@
           class="absolute -bottom-5 md:-bottom-7.5 left-1/2 -translate-x-1/2 z-10 md:absolute md:left-[70%] md:-translate-x-1/2 md:translate-y-[25%] md:z-40 pointer-events-none"
         >
           <img
-            src="/assets/problema.png"
+            src={problema.src}
             alt="Problemas"
             class="w-64 md:w-105 max-w-none h-auto object-contain object-bottom opacity-80"
             data-aos="fade-up" data-aos-duration="1200"
@@ -198,7 +204,7 @@
         >
           <span class="block text-brand-purple font-extrabold">Nosotros</span>
           <span class="block text-brand-coral font-light">tenemos la</span>
-          <span class="block text-brand-purple font-extrabold">solución.</span>
+          <span class="block text-brand-purple font-extrabold">solución</span>
         </h3>
         <a
           class="bg-brand-purple text-white px-4 md:px-10 py-4 rounded-xl font-body text-md shadow-lg hover:scale-105 transition-all cursor-pointer w-auto lg:w-auto"
