@@ -6,6 +6,7 @@ import iconoP from "../assets/iconos/posicionamiento.svg"; // Posicionamiento
 import iconoC from "../assets/iconos/consultoria.svg"; // Consultoria
 import iconoB from "../assets/iconos/branding.svg"; // Branding
 import iconoW from "../assets/iconos/web.svg"; // Web
+import Link from "../components/Link.astro";
 ---
 
 <Layout title="Servicios | Smartketing">
@@ -408,12 +409,12 @@ import iconoW from "../assets/iconos/web.svg"; // Web
       </div>
     </div>
           <div class="w-full flex justify-center md:justify-center mt-16" data-aos="zoom-in-up" data-aos-delay="800">
-            <a 
+            <Link
               href="/contacto" 
               class="bg-brand-coral hover:bg-brand-coral/90 text-sm italic text-white font-normal py-3 px-8 rounded-xl transition-all shadow-lg hover:scale-105 duration-300"
             >
               Conversemos sobre tu marca 
-            </a>
+            </Link>
           </div>
   </section>
 </Layout>

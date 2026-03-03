@@ -2,6 +2,7 @@
 // Componente Footer para Smartketing con gradiente
 import logo from "../assets/logo_svg/logo.svg";
 import { Icon } from 'astro-icon/components';
+import Link from "../components/Link.astro";
 ---
 
 <footer
@@ -13,7 +14,7 @@ import { Icon } from 'astro-icon/components';
         <h3
           class="hover:text-brand-coral text-xl font-bold font-title tracking-wider transition-all duration-300"
         >
-          <a href="/servicio">Quiénes somos</a>
+          <Link href="/servicio">Quiénes somos</Link>
         </h3>
         <p
           class="text-gray-400 font-light font-body leading-relaxed text-sm max-w-xs"
@@ -27,24 +28,24 @@ import { Icon } from 'astro-icon/components';
         <h3
           class="hover:text-brand-coral text-xl font-bold font-title tracking-wider transition-all duration-300"
         >
-          <a href="/servicio">Servicios</a>
+          <Link href="/servicio">Servicios</Link>
         </h3>
         <ul
           class="flex flex-col gap-3 text-gray-400 font-light font-body text-sm transition-all duration-300"
         >
           <li class="hover:text-brand-cyan transition-colors cursor-pointer">
-            <a href="/servicio#auditoria">Consultoría comercial y de ventas</a>
+            <Link href="/servicio#auditoria">Consultoría comercial y de ventas</Link>
           </li>
           <li class="hover:text-brand-cyan transition-colors cursor-pointer">
-            <a href="/servicio#posicionamiento"
-              >Posicionamiento & Comunicación de marca</a
+            <Link href="/servicio#posicionamiento"
+              >Posicionamiento & Comunicación de marca</Link
             >
           </li>
           <li class="hover:text-brand-cyan transition-colors cursor-pointer">
-            <a href="/servicio#branding">Branding y Dirección Visual</a>
+            <Link href="/servicio#branding">Branding y Dirección Visual</Link>
           </li>
           <li class="hover:text-brand-cyan transition-colors cursor-pointer">
-            <a href="/servicio#web">Experiencia Digital en Diseño Web</a>
+            <Link href="/servicio#web">Experiencia Digital en Diseño Web</Link>
           </li>
         </ul>
       </div>
@@ -54,12 +55,12 @@ import { Icon } from 'astro-icon/components';
           <h3
             class="text-xl font-bold font-title tracking-wider hover:text-brand-coral transition-colors cursor-pointer  duration-300"
           >
-            <a href="/equipo">Nuestro Equipo</a>
+            <Link href="/equipo">Nuestro Equipo</Link>
           </h3>
           <h3
             class="text-xl font-bold font-title tracking-wider hover:text-brand-coral transition-colors cursor-pointer  duration-300"
           >
-            <a href="/contacto">Contáctanos</a>
+            <Link href="/contacto">Contáctanos</Link>
           </h3>
         </div>
       </div>
@@ -72,31 +73,31 @@ import { Icon } from 'astro-icon/components';
             Síguenos
           </h3>
           <div class="flex">
-            <a
+            <Link
               href="https://instagram.com/smartketing360"
               target="_blank"
               rel="noopener noreferrer"
               class="w-10 h-10 rounded-xl flex items-center justify-center shadow-lg hover:scale-110 hover:bg-brand-cyan transition-all duration-300 group"
             >
               <Icon name="simple-icons:instagram" class="w-6 h-6" />
-            </a>
+            </Link>
           </div>
         </div>
 
-        <a
+        <Link
           href="#"
           class="text-sm font-light font-subtitle text-brand-gray hover:text-brand-cyan transition-all duration-300"
         >
           Política de Privacidad
-        </a>
+        </Link>
 
-        <a href="/" class="group">
+        <Link href="/" class="group">
           <img
             src={logo.src}
             alt="Smartketing Logo"
             class="h-15 w-auto object-contain group-hover:opacity-100 transition-opacity"
           />
-        </a>
+        </Link>
       </div>
     </div>
 
