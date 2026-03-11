@@ -1,5 +1,5 @@
 ---
-import heroFondo from "../../assets/background/BackgroundHero.svg";
+import heroFondo from "../../assets/background/backgroundhero.webp";
 import onda from "../../assets/assets/onda1.svg";
 import iconoP from "../../assets/iconos/posicionamiento.svg";
 import iconoH from "../../assets/iconos/icono-hero.svg";
@@ -77,15 +77,15 @@ import Link from "../Link.astro";
           class="w-28 lg:w-32 mb-4
            lg:absolute
            lg:-top-12 lg:left-26
-           z-30 animate-pulse"
+           z-30"
            data-aos="zoom-in" data-aos-delay="1200"
+           loading="lazy"
         />
 
-        <div class="lg:mt-32">
+        <div class="lg:mt-32" data-aos="fade-up" data-aos-delay="1000">
           <Link
             href="/contacto"
-            class="font-body bg-brand-cyan text-brand-blue px-8 py-3 lg:px-4 lg:py-3 rounded-xl font-bold text-[1.02rem] hover:bg-brand-purple transition active:scale-95 shadow-lg"
-            data-aos="fade-up" data-aos-delay="1000"
+            class="font-body bg-brand-cyan text-brand-blue px-8 py-3 lg:px-4 lg:py-3 rounded-xl font-bold text-[1.02rem] hover:bg-brand-cyan/80 hover:scale-105 transition-all shadow-lg duration-400"
           >
             Agenda una llamada
           </Link>
@@ -95,7 +95,7 @@ import Link from "../Link.astro";
   </div>
 
   <h2
-    class="w-full text-center lg:w-auto lg:absolute lg:right-36 xl:right-50 lg:bottom-10 font-body text-sm lg:text-base xl:text-lg z-20 text-white font-light antialiased tracking-widest mt-3 md:mt-auto pb-30 lg:pb-0"
+    class="w-full text-center lg:w-auto lg:absolute lg:right-36 xl:right-50 2xl:right-80 lg:bottom-10 font-body text-sm lg:text-base xl:text-lg z-20 text-white font-light antialiased tracking-widest mt-3 md:mt-auto pb-30 lg:pb-0 2xl:pb-8 2xl:text-xl"
     data-aos="fade-in" data-aos-delay="1100"
   >
     Confiaron en nosotros

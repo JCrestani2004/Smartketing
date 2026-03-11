@@ -29,7 +29,7 @@ const clients = [
 const doubleClients = [...clients, ...clients];
 ---
 
-<section class="relative w-full overflow-hidden py-8 lg:py-16 z-30 -mt-22 lg:-mt-16 overflow-x-clip"
+<section class="relative w-full overflow-hidden py-8 lg:py-16 z-30 -mt-22 lg:-mt-16 2xl:-mt-25 overflow-x-clip"
 >
   <div class="absolute inset-0 -z-10 w-full">
     <img
@@ -45,7 +45,7 @@ const doubleClients = [...clients, ...clients];
         <img 
           src={client.logo.src} 
           alt={client.name} 
-          class="h-8 md:h-14 w-auto object-contain brightness-0 invert px-2 lg:mt-4"
+          class="h-8 md:h-14 w-auto object-contain brightness-0 invert px-2 lg:mt-4 2xl:mt-8"
         />
       ))}
     </div>

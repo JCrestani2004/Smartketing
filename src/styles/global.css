@@ -69,6 +69,28 @@ body {
     padding-bottom: 8rem;
   }
 
+  body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    /* Color base un poco más profundo para que las luces resalten */
+    background-color: #1e296b; 
+    
+background-image: 
+        /* 1. Brillo Cian en la esquina superior derecha (Luz de energía) */
+        radial-gradient(circle at 95% 5%, rgba(0, 194, 255, 0.35) 0%, transparent 45%),
+        
+        /* 2. Brillo Coral en el lateral izquierdo medio (Toque de marca) */
+        radial-gradient(circle at 15% 30%, rgba(255, 107, 107, 0.65) 0%, transparent 40%),
+        
+        /* 3. Brillo Cian suave inferior derecho (Equilibrio) */
+        radial-gradient(circle at 70% 90%, rgba(0, 194, 255, 0.45) 0%, transparent 40%);
+
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 
 
 }
