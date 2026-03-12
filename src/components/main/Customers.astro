@@ -14,76 +14,88 @@ import epcom from '../../assets/clientes/epcom.svg';
 /* Seccion Confiaron en Nosotros */
 
 const clients = [
-    { name: 'MiamiFoodTrucksEvents', logo: miami },
-    { name: 'Energy Control', logo: energy },
-    { name: 'Gel Smart', logo: gel },
-    { name: 'Illuminations', logo: illuminations },
-    { name: 'Osumed', logo: osumed },
-    { name: 'Simel', logo: simel },
-    { name: 'Vicone', logo: vicone },
-    { name: 'Damaschke', logo: damaschke },
-    { name: 'Hunter', logo: hunter },
-    { name: 'Luxolar', logo: luxolar },
-    { name: 'Epcom', logo: epcom }
+    { name: 'MiamiFoodTrucksEvents', logo: miami, scale: "scale-100" },
+    { name: 'Energy Control', logo: energy, scale: "scale-140" },
+    { name: 'Gel Smart', logo: gel, scale: "scale-130" },
+    { name: 'Illuminations', logo: illuminations, scale: "scale-200" },
+    { name: 'Osumed', logo: osumed, scale: "scale-85" },
+    { name: 'Simel', logo: simel, scale: "scale-100" },
+    { name: 'Vicone', logo: vicone, scale: "scale-120" },
+    { name: 'Damaschke', logo: damaschke, scale: "scale-140" },
+    { name: 'Hunter', logo: hunter, scale: "scale-100" },
+    { name: 'Luxolar', logo: luxolar, scale: "scale-120" },
+    { name: 'Epcom', logo: epcom, scale: "scale-120" }
 ];
 const doubleClients = [...clients, ...clients];
 ---
 
 <section class="relative w-full overflow-hidden py-8 lg:py-16 z-30 -mt-22 lg:-mt-16 2xl:-mt-25 overflow-x-clip"
 >
-  <div class="absolute inset-0 -z-10 w-full">
+  <!-- <div class="absolute inset-0 -z-10 w-full">
     <img
       src={backgroundImage.src}
       alt="Fondo decorativo"
       class="h-full w-full scale-110 object-cover object-left lg:object-top-right"
     />
-  </div>
+  </div> -->
 
-  <div class="relative flex items-center overflow-hidden max-w-[100vw]">
+  <div class="logo-marquee relative mx-auto flex items-center overflow-hidden w-full max-w-4xl">
     <div class="flex w-max animate-marquee items-center gap-8 md:gap-16 transition:persist">
       {doubleClients.map((client) => (
+        <div class="felx-shrink-0 flex items-center justify-center h-24 md:h-32 w-24 md:w-32 py-2">
         <img 
           src={client.logo.src} 
           alt={client.name} 
-          class="h-8 md:h-14 w-auto object-contain brightness-0 invert px-2 lg:mt-4 2xl:mt-8"
+          class={`max-h-full max-w-full object-contain brightness-0 invert px-2 lg:mt-4 2xl:mt-8 ${client.scale}`}
         />
+        </div>
       ))}
     </div>
   </div>
 </section>
 
 <style>
+ 
   @keyframes marquee {
     0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    100% { transform: translateX(-50%); } /* Mueve exactamente la mitad del contenido duplicado */
   }
 
   .animate-marquee {
     display: flex;
-    white-space: nowrap;
-    animation: marquee 25s linear infinite; /* Un poco más rápido para compensar el gap menor */
+    width: max-content;
+    animation: marquee 30s linear infinite; /* Aumenté el tiempo para más suavidad */
   }
 
-  /* Pausar al pasar el mouse */
+  /* Optimización para evitar tirones de GPU */
+  .will-change-transform {
+    will-change: transform;
+  }
+
   .animate-marquee:hover {
     animation-play-state: paused;
   }
 
-  /* Añade esto a tu etiqueta img dentro del map */
-.animate-marquee img {
-  transition: all 0.4s ease;
-  filter: brightness(0) invert(1) opacity(0.7); /* Logos un poco más tenues por defecto */
-}
+  /* Tu máscara de desvanecimiento está perfecta */
+  .logo-marquee {
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 15%,
+      black 85%,
+      transparent
+    );
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 15%,
+      black 85%,
+      transparent
+    );
+  }
 
-.animate-marquee img:hover {
-  filter: brightness(0) invert(1) opacity(1); /* Resaltan al pasar el mouse */
-  scale: 1.1;
-}
-
-  /* Evita saltos visuales en móviles */
-  @media (max-width: 768px) {
-    .animate-marquee {
-      animation-duration: 20s;
-    }
+  /* Ajuste de ancho para que no se vea cortado si el contenido es poco */
+  .logo-marquee {
+    max-width: 60%; /* Ajusta según tu diseño, pero evita que sea muy pequeño */
   }
 </style>
