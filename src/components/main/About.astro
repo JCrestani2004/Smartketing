@@ -62,14 +62,19 @@ import Link from "../Link.astro";
 
   <div class="max-w-5xl mx-auto mt-30 text-center">
 
-  <h2 class="font-title text-3xl md:text-[2.3rem] leading-[1.1]">
+  <h2 class="font-title text-3xl md:text-[2.3rem] leading-[1.1]"
+  data-aos="fade-down"
+    data-aos-duration="1000"
+    >
     <span class="text-brand-coral font-light">Dile adiós a tus</span>
     <span class="text-brand-gray font-extrabold"> problemas</span>
   </h2>
 
   <div class="grid grid-cols-2 md:grid-cols-4 gap-25 mt-18 font-body max-w-4xl justify-self-center">
 
-    <div class="flex flex-col items-center w-full max-w-80">
+    <div class="flex flex-col items-center w-full max-w-80"
+    data-aos="zoom-in-up"
+      data-aos-delay="100">
       <div class="w-8 h-8 bg-brand-coral rounded-full flex items-center justify-center text-white font-bold">
         !
       </div>
@@ -78,7 +83,9 @@ import Link from "../Link.astro";
       </p>
     </div>
 
-    <div class="flex flex-col items-center w-full max-w-80">
+    <div class="flex flex-col items-center w-full max-w-80"
+    data-aos="zoom-in-up"
+      data-aos-delay="250">
       <div class="w-8 h-8 bg-brand-coral rounded-full flex items-center justify-center text-white font-bold">
         !
       </div>
@@ -87,7 +94,9 @@ import Link from "../Link.astro";
       </p>
     </div>
 
-    <div class="flex flex-col items-center w-full max-w-80">
+    <div class="flex flex-col items-center w-full max-w-80"
+    data-aos="zoom-in-up"
+      data-aos-delay="400">
       <div class="w-8 h-8 bg-brand-coral rounded-full flex items-center justify-center text-white font-bold">
         !
       </div>
@@ -96,7 +105,9 @@ import Link from "../Link.astro";
       </p>
     </div>
 
-    <div class="flex flex-col items-center w-full max-w-80">
+    <div class="flex flex-col items-center w-full max-w-80"
+    data-aos="zoom-in-up"
+      data-aos-delay="550">
       <div class="w-8 h-8 bg-brand-coral rounded-full flex items-center justify-center text-white font-bold">
         !
       </div>
@@ -110,19 +121,21 @@ import Link from "../Link.astro";
 </div>
 <div class="max-w-5xl mx-auto mt-24 flex flex-col md:flex-row items-center justify-between gap-10">
 
-  <h3 class="font-title text-4xl md:text-[2.8rem] leading-[0.9] text-center md:text-left">
+  <h3 class="font-title text-4xl md:text-[2.8rem] leading-[0.9] text-center md:text-left"
+  data-aos="fade-right"
+    data-aos-duration="1200">
     <span class="block text-brand-gray font-extrabold">Nosotros</span>
     <span class="block text-brand-cyan font-light">tenemos la</span>
     <span class="block text-brand-gray font-extrabold">solución.</span>
   </h3>
-
+  <div data-aos="fade-left" data-aos-duration="1200" data-aos-delay="200">
   <Link
     href="/about"
     class="bg-brand-coral text-white px-8 py-3 rounded-xl font-body hover:scale-105 transition duration-300"
   >
     Más sobre nosotros
   </Link>
-
+</div>
 </div>
   
 </section>
