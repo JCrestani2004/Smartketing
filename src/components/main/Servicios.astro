@@ -1,14 +1,14 @@
 ---
-import background from '../../assets/background/backgroundst.webp';
-import iconoP from '../../assets/iconos/posicionamiento.svg'; // Posicionamiento
-import iconoC from '../../assets/iconos/consultoria.svg'; // Consultoria
-import iconoB from '../../assets/iconos/branding.svg'; // Branding
-import iconoW from '../../assets/iconos/web.svg'; // Web
-import iconoA from '../../assets/iconos/analisis.svg'; // Analisis
-import iconoD from '../../assets/iconos/icono-hero.svg'; // Direccion
-import iconoI from '../../assets/iconos/intencion.svg'; // Intencion
-import iconoPr from '../../assets/iconos/proceso.svg'; // Proceso
-import iconoCa from '../../assets/iconos/calendario.svg'; // Calendario
+import background from "../../assets/background/backgroundst.webp";
+import iconoP from "../../assets/iconos/posicionamiento.svg"; // Posicionamiento
+import iconoC from "../../assets/iconos/consultoria.svg"; // Consultoria
+import iconoB from "../../assets/iconos/branding.svg"; // Branding
+import iconoW from "../../assets/iconos/web.svg"; // Web
+import iconoA from "../../assets/iconos/analisis.svg"; // Analisis
+import iconoD from "../../assets/iconos/icono-hero.svg"; // Direccion
+import iconoI from "../../assets/iconos/intencion.svg"; // Intencion
+import iconoPr from "../../assets/iconos/proceso.svg"; // Proceso
+import iconoCa from "../../assets/iconos/calendario.svg"; // Calendario
 import Link from "../Link.astro";
 ---
 
@@ -26,21 +26,21 @@ import Link from "../Link.astro";
   <div
     class="max-w-screen-2xl mx-auto z-10 h-full flex flex-col items-center gap-16 lg:gap-20 mb-30 px-6"
   >
-    <div
-      class="flex flex-col w-full items-center text-center"
-    >
+    <div class="flex flex-col w-full items-center text-center">
       <div class="mb-10 md:mb-14">
         <h2
           class="font-title text-4xl md:text-[2.73rem] leading-[0.95] tracking-normal"
           data-aos="fade-right"
           data-aos-duration="1000"
         >
-          <span class=" font-light text-white">Nuestros</span>
-          <span class=" text-brand-coral font-bold">servicios</span>
+          <span class="font-light text-white">Nuestros</span>
+          <span class="text-brand-coral font-bold">servicios</span>
         </h2>
       </div>
 
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-10 md:gap-x-20 md:gap-y-16">
+      <div
+        class="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-10 md:gap-x-20 md:gap-y-16"
+      >
         <div
           class="flex flex-col items-center lg:items-start"
           data-aos="fade-up"
@@ -54,18 +54,18 @@ import Link from "../Link.astro";
             />
           </div>
           <div class="flex flex-col justify-between h-30">
-          <Link href="/servicio#auditoria">
-            <h3
-            class="text-brand-cyan/90 font-bold text-[0.75rem] md:text-[1.2rem] leading-tight mt-3 text-left"
-          >
-            Consultoría <br /> Comercial y <br /> de Ventas
-          </h3>
-        </Link>
-          <p
-            class="text-white font-body text-[0.7rem] md:text-[1rem] font-extralight leading-snug mt-1 text-left"
-          >
-            Análisis del proceso <br class="hidden md:block" /> comercial.
-          </p>
+            <Link href="/servicio#auditoria">
+              <h3
+                class="text-brand-cyan/90 font-bold text-[0.75rem] md:text-[1.2rem] leading-tight mt-3 text-left"
+              >
+                Consultoría <br /> Comercial y <br /> de Ventas
+              </h3>
+            </Link>
+            <p
+              class="text-white font-body text-[0.7rem] md:text-[1rem] font-extralight leading-snug mt-1 text-left"
+            >
+              Análisis del proceso <br class="hidden md:block" /> comercial.
+            </p>
           </div>
         </div>
 
@@ -82,18 +82,18 @@ import Link from "../Link.astro";
             />
           </div>
           <div class="flex flex-col justify-between h-30">
-          <Link href="/servicio#posicionamiento">
-          <h3
-            class="text-brand-cyan/90 font-bold text-[0.75rem] md:text-[1.2rem] leading-tight mt-3 md:text-left"
-          >
-            Posicionamiento & <br /> Comunicación
-          </h3>
-        </Link>
-          <p
-            class="text-white font-body text-[0.7rem] font-extralight md:text-[1rem] leading-snug mt-1 md:text-left"
-          >
-            Acompañamiento <br class="hidden md:block" /> estratégico mensual.
-          </p>
+            <Link href="/servicio#posicionamiento">
+              <h3
+                class="text-brand-cyan/90 font-bold text-[0.75rem] md:text-[1.2rem] leading-tight mt-3 md:text-left"
+              >
+                Posicionamiento & <br /> Comunicación
+              </h3>
+            </Link>
+            <p
+              class="text-white font-body text-[0.7rem] font-extralight md:text-[1rem] leading-snug mt-1 md:text-left"
+            >
+              Acompañamiento <br class="hidden md:block" /> estratégico mensual.
+            </p>
           </div>
         </div>
 
@@ -111,18 +111,18 @@ import Link from "../Link.astro";
           </div>
           <div class="flex flex-col justify-between h-30">
             <Link href="/servicio#branding">
-          <h3
-            class="text-brand-cyan/90 font-bold text-[0.75rem] md:text-[1.2rem] leading-tight mt-3 md:text-left"
-          >
-            Branding & <br /> Dirección Visual
-          </h3>
-        </Link>
-          <p
-            class="text-white font-body text-[0.7rem] md:text-[1rem] font-extralight leading-snug mt-1 md:text-left"
-          >
-            Construcción y evolución <br class="hidden md:block" /> de identidad.
-          </p>
-        </div>
+              <h3
+                class="text-brand-cyan/90 font-bold text-[0.75rem] md:text-[1.2rem] leading-tight mt-3 md:text-left"
+              >
+                Branding & <br /> Dirección Visual
+              </h3>
+            </Link>
+            <p
+              class="text-white font-body text-[0.7rem] md:text-[1rem] font-extralight leading-snug mt-1 md:text-left"
+            >
+              Construcción y evolución <br class="hidden md:block" /> de identidad.
+            </p>
+          </div>
         </div>
 
         <div
@@ -139,77 +139,85 @@ import Link from "../Link.astro";
           </div>
           <div class="flex flex-col justify-between h-30">
             <Link href="/servicio#web">
-          <h3
-            class="text-brand-cyan/90 font-bold text-[0.75rem] md:text-[1.2rem] leading-tight mt-3 md:text-left"
-          >
-            Experiencia <br /> Digital Web
-          </h3>
-        </Link>
-          <p
-            class="text-white font-body text-[0.7rem] md:text-[1rem] font-extralight leading-snug mt-1 md:text-left"
-          >
-            Páginas web alineadas al <br class="hidden md:block" /> posicionamiento.
-          </p>
+              <h3
+                class="text-brand-cyan/90 font-bold text-[0.75rem] md:text-[1.2rem] leading-tight mt-3 md:text-left"
+              >
+                Experiencia <br /> Digital Web
+              </h3>
+            </Link>
+            <p
+              class="text-white font-body text-[0.7rem] md:text-[1rem] font-extralight leading-snug mt-1 md:text-left"
+            >
+              Páginas web alineadas al <br class="hidden md:block" /> posicionamiento.
+            </p>
+          </div>
         </div>
-      </div>
       </div>
     </div>
 
     <div class="mt-24 w-full text-center">
+      <h2 class="font-title text-4xl md:text-[2.8rem] leading-[0.95]">
+        <span class="text-white font-light">Cómo</span>
+        <span class="text-brand-coral font-bold"> trabajamos</span>
+      </h2>
 
-  <h2 class="font-title text-4xl md:text-[2.8rem] leading-[0.95]">
-    <span class="text-white font-light">Cómo</span>
-    <span class="text-brand-coral font-bold"> trabajamos</span>
-  </h2>
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-10 mt-14 font-bold">
+        <div
+          class="flex flex-col items-center gap-3"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          <img src={iconoA.src} class="w-24" />
+          <p class="text-brand-coral text-sm">
+            Consultoría y <br /> análisis de marca
+          </p>
+        </div>
 
-  <div class="grid grid-cols-2 md:grid-cols-5 gap-10 mt-14 font-bold">
+        <div class="flex flex-col items-center gap-3"
+        data-aos="fade-up"
+          data-aos-delay="400">
+          <img src={iconoD.src} class="w-24" />
+          <p class="text-brand-coral text-sm">
+            Definimos una <br /> dirección clara
+          </p>
+        </div>
 
-    <div class="flex flex-col items-center gap-3">
-      <img src={iconoA.src} class="w-24">
-      <p class="text-brand-coral text-sm">
-        Consultoría y <br> análisis de marca
-      </p>
+        <div class="flex flex-col items-center gap-3"
+        data-aos="fade-up"
+          data-aos-delay="600">
+          <img src={iconoI.src} class="w-24" />
+          <p class="text-brand-coral text-sm">
+            Creamos con <br /> intención
+          </p>
+        </div>
+
+        <div class="flex flex-col items-center gap-3"
+        data-aos="fade-up"
+          data-aos-delay="800">
+          <img src={iconoPr.src} class="w-24" />
+          <p class="text-brand-coral text-sm">
+            Acompañamos <br /> el proceso
+          </p>
+        </div>
+
+        <div class="flex flex-col items-center gap-3"
+        data-aos="fade-up"
+          data-aos-delay="1000">
+          <img src={iconoCa.src} class="w-24" />
+          <p class="text-brand-coral text-sm">
+            Pensamos a <br /> largo plazo
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-16">
+        <Link
+          href="/servicio"
+          class="bg-brand-coral text-white px-10 py-3 rounded-2xl font-bold font-body text-lg hover:scale-105 transition-transform shadow-lg shadow-brand-coral/30 duration-300"
+        >
+          Ver servicios
+        </Link>
+      </div>
     </div>
-
-    <div class="flex flex-col items-center gap-3">
-      <img src={iconoD.src} class="w-24">
-      <p class="text-brand-coral text-sm">
-        Definimos una <br> dirección clara
-      </p>
-    </div>
-
-    <div class="flex flex-col items-center gap-3">
-      <img src={iconoI.src} class="w-24">
-      <p class="text-brand-coral text-sm">
-        Creamos con <br> intención
-      </p>
-    </div>
-
-    <div class="flex flex-col items-center gap-3">
-      <img src={iconoPr.src} class="w-24">
-      <p class="text-brand-coral text-sm">
-        Acompañamos <br> el proceso
-      </p>
-    </div>
-
-    <div class="flex flex-col items-center gap-3">
-      <img src={iconoCa.src} class="w-24">
-      <p class="text-brand-coral text-sm">
-        Pensamos a <br> largo plazo
-      </p>
-    </div>
-
-  </div>
-
-  <div class="mt-16">
-    <Link
-      href="/servicio"
-      class="bg-brand-coral text-white px-10 py-3 rounded-2xl font-bold font-body text-lg hover:scale-105 transition-transform shadow-lg shadow-brand-coral/30 duration-300"
-    >
-      Ver servicios
-    </Link>
-  </div>
-
-</div>
   </div>
 </section>
