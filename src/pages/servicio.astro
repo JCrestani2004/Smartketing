@@ -40,7 +40,8 @@ import Link from "../components/Link.astro";
 
       <div class="flex flex-col">
         <article
-          class="grid grid-cols-1 md:grid-cols-[320px_auto_320px] md:gap-x-4 items-start justify-center"
+          id="auditoria"
+          class="scroll-mt-32 grid grid-cols-1 md:grid-cols-[320px_auto_320px] md:gap-x-4 items-start justify-center"
         >
           <div class="flex flex-col" data-aos="fade-right" data-aos-delay="200">
             <img
@@ -55,10 +56,7 @@ import Link from "../components/Link.astro";
               Auditoría Comercial <br /> y de Ventas
             </h2>
 
-            <div
-              id="auditoria"
-              class="pr-2 py-6 flex flex-col font-body gap-3 text-[0.85rem]"
-            >
+            <div class="pr-2 py-6 flex flex-col font-body gap-3 text-[0.85rem]">
               <h3 class="text-white mb-5">Qué es</h3>
               <p
                 class="text-brand-gray/90 leading-tight mb-8 font-extralight tracking-wide"
@@ -138,7 +136,8 @@ import Link from "../components/Link.astro";
         </div>
 
         <article
-          class="grid grid-cols-1 md:grid-cols-[320px_auto_320px] md:gap-x-4 items-start justify-center -mt-20 md:-mt-25"
+          id="posicionamiento"
+          class="scroll-mt-0 grid grid-cols-1 md:grid-cols-[320px_auto_320px] md:gap-x-4 items-start justify-center -mt-20 md:-mt-25"
         >
           <div
             class="flex flex-col pt-25"
@@ -158,7 +157,6 @@ import Link from "../components/Link.astro";
             </h2>
 
             <div
-              id="posicionamiento"
               class="pr-2 pt-15 pb-6 flex flex-col font-body gap-3 text-[0.85rem]"
             >
               <h3 class="text-white mb-5">Qué es</h3>
@@ -243,7 +241,8 @@ import Link from "../components/Link.astro";
         </div>
 
         <article
-          class="grid grid-cols-1 md:grid-cols-[320px_auto_320px] md:gap-x-4 items-start justify-center -mt-12 md:-mt-20"
+          id="branding"
+          class="scroll-mt-10 grid grid-cols-1 md:grid-cols-[320px_auto_320px] md:gap-x-4 items-start justify-center -mt-12 md:-mt-20"
         >
           <div
             class="flex flex-col pt-10"
@@ -263,7 +262,6 @@ import Link from "../components/Link.astro";
             </h2>
 
             <div
-              id="branding"
               class="pr-2 pt-4 pb-6 flex flex-col font-body gap-3 text-[0.85rem]"
             >
               <h3 class="text-white mb-5">Qué es</h3>
@@ -330,7 +328,8 @@ import Link from "../components/Link.astro";
         </div>
 
         <article
-          class="grid grid-cols-1 md:grid-cols-[320px_auto_320px] md:gap-x-4 items-start justify-center -mt-12 md:-mt-20"
+          id="web"
+          class="scroll-mt-32 grid grid-cols-1 md:grid-cols-[320px_auto_320px] md:gap-x-4 items-start justify-center -mt-12 md:-mt-20"
         >
           <div
             class="flex flex-col pt-10"
@@ -356,7 +355,6 @@ import Link from "../components/Link.astro";
             <div class="pr-2 pb-6 flex flex-col font-body gap-3 text-[0.85rem]">
               <h3 class="text-white mb-5">Qué es</h3>
               <p
-                id="web"
                 class="text-brand-gray/90 leading-tight font-extralight tracking-wide"
               >
                 Diseño y desarrollo de páginas web alineadas al branding y al
@@ -408,13 +406,50 @@ import Link from "../components/Link.astro";
         </article>
       </div>
     </div>
-          <div class="w-full flex justify-center md:justify-center mt-16" data-aos="zoom-in-up" data-aos-delay="800">
-            <Link
-              href="/contacto" 
-              class="bg-brand-coral hover:bg-brand-coral/90 text-sm italic text-white font-normal py-3 px-8 rounded-xl transition-all shadow-lg hover:scale-105 duration-300"
-            >
-              Conversemos sobre tu marca 
-            </Link>
-          </div>
+    <div
+      class="w-full flex justify-center md:justify-center mt-16"
+      data-aos="zoom-in-up"
+      data-aos-delay="800"
+    >
+      <Link
+        href="/contacto"
+        class="bg-brand-coral hover:bg-brand-coral/90 text-sm italic text-white font-normal py-3 px-8 rounded-xl transition-all shadow-lg hover:scale-105 duration-300"
+      >
+        Conversemos sobre tu marca
+      </Link>
+    </div>
   </section>
+ <script>
+function handleHashScroll() {
+  const hash = window.location.hash;
+  if (!hash) return;
+
+  const element = document.querySelector(hash);
+  if (!element) return;
+
+  setTimeout(() => {
+    const offset = 160;
+
+    const y =
+      element.getBoundingClientRect().top +
+      window.pageYOffset -
+      offset;
+
+    window.scrollTo({
+      top: y,
+      behavior: "smooth"
+    });
+
+    element.classList.add("service-highlight");
+
+    setTimeout(() => {
+      element.classList.remove("service-highlight");
+    }, 2000);
+
+  }, 600);
+}
+
+window.addEventListener("load", handleHashScroll);
+document.addEventListener("astro:page-load", handleHashScroll);
+</script>
 </Layout>

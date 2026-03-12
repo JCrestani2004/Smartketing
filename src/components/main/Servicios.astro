@@ -13,15 +13,15 @@ import Link from "../Link.astro";
 ---
 
 <section
-  class="relative w-full py-16 md:py-34 text-white min-h-screen flex items-start overflow-hidden"
+  class="relative bg-transparent w-full py-16 md:py-34 text-white min-h-screen flex items-start overflow-hidden"
 >
-  <div class="absolute inset-0 z-0 pointer-events-none">
+  <!-- <div class="absolute inset-0 z-0 pointer-events-none">
     <img
       src={background.src}
       alt="Fondo de servicios"
       class="w-full h-full object-cover object-top md:object-top-left scale-150 -translate-y-20 md:scale-105 md:-translate-y-40"
     />
-  </div>
+  </div> -->
 
   <div
     class="max-w-7xl mx-auto z-10 h-full flex flex-col items-center gap-16 lg:gap-20 mb-30 px-6"
@@ -54,11 +54,13 @@ import Link from "../Link.astro";
             />
           </div>
           <div class="flex flex-col justify-between h-30">
-          <h3
+          <Link href="/servicio#auditoria">
+            <h3
             class="text-brand-cyan/90 font-bold text-[0.75rem] md:text-[0.92rem] leading-tight mt-3 text-left"
           >
             Consultoría <br /> Comercial y <br /> de Ventas
           </h3>
+        </Link>
           <p
             class="text-white font-body text-[0.7rem] md:text-[0.85rem] font-extralight leading-snug mt-1 text-left"
           >
@@ -80,11 +82,13 @@ import Link from "../Link.astro";
             />
           </div>
           <div class="flex flex-col justify-between h-30">
+          <Link href="/servicio#posicionamiento">
           <h3
             class="text-brand-cyan/90 font-bold text-[0.75rem] md:text-[0.92rem] leading-tight mt-3 md:text-left"
           >
             Posicionamiento & <br /> Comunicación
           </h3>
+        </Link>
           <p
             class="text-white font-body text-[0.7rem] font-extralight md:text-[0.85rem] leading-snug mt-1 md:text-left"
           >
@@ -106,11 +110,13 @@ import Link from "../Link.astro";
             />
           </div>
           <div class="flex flex-col justify-between h-30">
+            <Link href="/servicio#branding">
           <h3
             class="text-brand-cyan/90 font-bold text-[0.75rem] md:text-[0.92rem] leading-tight mt-3 md:text-left"
           >
             Branding & <br /> Dirección Visual
           </h3>
+        </Link>
           <p
             class="text-white font-body text-[0.7rem] md:text-[0.85rem] font-extralight leading-snug mt-1 md:text-left"
           >
@@ -132,11 +138,13 @@ import Link from "../Link.astro";
             />
           </div>
           <div class="flex flex-col justify-between h-30">
+            <Link href="/servicio#web">
           <h3
             class="text-brand-cyan/90 font-bold text-[0.75rem] md:text-[0.92rem] leading-tight mt-3 md:text-left"
           >
             Experiencia <br /> Digital Web
           </h3>
+        </Link>
           <p
             class="text-white font-body text-[0.7rem] md:text-[0.85rem] font-extralight leading-snug mt-1 md:text-left"
           >

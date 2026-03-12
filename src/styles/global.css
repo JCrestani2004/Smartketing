@@ -91,6 +91,21 @@ background-image:
     background-size: cover;
 }
 
+@keyframes highlightService {
+  0% {
+    background-color: rgba(0, 194, 255, 0);
+  }
+  30% {
+    background-color: rgba(0, 194, 255, 0.15);
+  }
+  100% {
+    background-color: rgba(0, 194, 255, 0);
+  }
+}
 
+.service-highlight {
+  animation: highlightService 2s ease;
+  border-radius: 10px;
+}
 
 }
