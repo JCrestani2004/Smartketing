@@ -1,5 +1,6 @@
 ---
 import backgroundImage from '../../assets/background/Bannerlogos.svg';
+import Separador from './Separator.astro';
 import miami from '../../assets/clientes/miami.svg';
 import energy from '../../assets/clientes/energy.svg';
 import gel from '../../assets/clientes/gel.svg';
@@ -29,7 +30,7 @@ const clients = [
 const doubleClients = [...clients, ...clients];
 ---
 
-<section class="relative w-full overflow-hidden py-8 lg:py-16 z-30 -mt-22 lg:-mt-16 2xl:-mt-25 overflow-x-clip"
+<section class="relative w-full py-8 lg:py-16 z-30 -mt-22 lg:-mt-16 2xl:-mt-25 overflow-x-clip"
 data-aos="fade-in" data-aos-delay="600"
 >
   <!-- <div class="absolute inset-0 -z-10 w-full">
@@ -40,10 +41,10 @@ data-aos="fade-in" data-aos-delay="600"
     />
   </div> -->
     <h2
-    class="w-full text-center font-body text-xl lg:text-2xl xl:text-2xl z-20 text-white font-light antialiased tracking-widest mt-3 md:mt-auto pb-30 lg:pb-0 2xl:pb-8 2xl:text-4xl"
+    class="w-full text-center font-title text-xl lg:text-2xl xl:text-4xl z-20 text-white font-light antialiased tracking-widest mt-3 md:mt-auto pb-30 lg:pb-0 2xl:pb-8 2xl:text-4xl"
     
   >
-    Confiaron en nosotros
+    <span class="text-brand-cyan font-bold">Algunos</span> de nuestros clientes
   </h2>
   <div class="logo-marquee relative mx-auto flex items-center overflow-hidden w-full max-w-4xl">
     <div class="flex w-max animate-marquee items-center gap-8 md:gap-16 transition:persist">
@@ -58,6 +59,8 @@ data-aos="fade-in" data-aos-delay="600"
       ))}
     </div>
   </div>
+
+  <Separador />
 </section>
 
 <style>

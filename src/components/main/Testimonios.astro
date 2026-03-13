@@ -1,7 +1,7 @@
 ---
 // Definicion de imagenes
 import background from '../../assets/background/backgroundst.webp';
-import division from '../../assets/assets/division-01.svg';
+import Separador from './Separator.astro';
 import damaschke from '../../assets/clientes/damaschke.svg';
 import energy from '../../assets/clientes/energy.svg';
 import simel from '../../assets/clientes/simel.svg';
@@ -43,7 +43,7 @@ const tripleTestimonios = [...testimonios, ...testimonios, ...testimonios];
 ---
 
 <section
-  class="relative w-full bg-transparent pb-20 overflow-hidden pt-12 lg:pt-0 -mt-20 md:-mt-40 lg:-mt-40"
+  class="relative w-full bg-transparent pb-30 pt-12 lg:pt-0 mt-16"
 >
   <!-- <img
     src={background.src}
@@ -115,6 +115,8 @@ const tripleTestimonios = [...testimonios, ...testimonios, ...testimonios];
       </div>
     </div>
   </div>
+
+  <Separador />
 </section>
 
 <style>
