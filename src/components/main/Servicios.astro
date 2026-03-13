@@ -183,48 +183,73 @@ const servicios = [
 </section>
 <Separador />
 <style>
-  /* Animación de flotado para el icono */
+  /* Animación de flotado suave para el icono */
   @keyframes float {
-    0% { transform: translateY(0px) scale(1.1); }
-    50% { transform: translateY(-10px) scale(1.15); }
-    100% { transform: translateY(0px) scale(1.1); }
+    0% { transform: translateY(0px) scale(1); }
+    50% { transform: translateY(-12px) scale(1.1); }
+    100% { transform: translateY(0px) scale(1); }
   }
 
   .group:hover .service-icon {
     animation: float 4s ease-in-out infinite;
   }
 
-  /* El resplandor (Glow) */
   .glow-effect {
     position: absolute;
+    /* Centrado absoluto */
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    width: 120px;
-    height: 120px;
+    /* Mantenemos el translate y un scale inicial pequeño */
+    transform: translate(-50%, -50%) scale(0.6);
+    
+    /* Tamaño aumentado para que resalte más */
+    width: 280px; 
+    height: 280px;
     border-radius: 50%;
-    filter: blur(40px);
     opacity: 0;
-    transition: opacity 0.5s ease;
-    z-index: -1; /* Para que quede detrás del icono */
+    
+    /* Aceleración por hardware y optimización de renderizado */
+    will-change: transform, opacity;
+    backface-visibility: hidden;
     pointer-events: none;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    z-index: -1;
+    
+    /* Mezcla de color aditiva para que 'brille' sobre el fondo oscuro */
+    mix-blend-mode: screen;
+
+    /* Transición ultra fluida (Quintic Out) */
+    transition: 
+      opacity 0.8s cubic-bezier(0.23, 1, 0.32, 1),
+      transform 0.8s cubic-bezier(0.23, 1, 0.32, 1),
+      filter 0.8s cubic-bezier(0.23, 1, 0.32, 1);
   }
 
-  /* Colores específicos para cada glow según prefieras */
-/* Coral más vibrante (Usando HSL para saturación máxima) */
+  /* Colores con gradientes potentes */
   .glow-coral { 
-    background: radial-gradient(circle, rgba(255,127,80,0.8) 0%, rgba(255,70,50,0) 100%);
-    filter: blur(25px); /* Bajamos un poco el blur para que no se disperse tanto */
+    background: radial-gradient(circle, rgba(255, 127, 80, 0.9) 0%, rgba(255, 70, 50, 0.2) 50%, rgba(255, 70, 50, 0) 100%);
+    filter: blur(50px);
+    box-shadow: inset 0 0 30px rgba(255, 255, 255, 0.1);
   }
 
-  /* Cyan eléctrico */
   .glow-cyan { 
-    background: radial-gradient(circle, rgba(0,255,255,0.7) 0%, rgba(0,150,255,0) 100%);
-    filter: blur(25px);
+    background: radial-gradient(circle, rgba(0, 255, 255, 0.8) 0%, rgba(0, 150, 255, 0.2) 50%, rgba(0, 150, 255, 0) 100%);
+    filter: blur(50px);
+    box-shadow: inset 0 0 30px rgba(255, 255, 255, 0.1);
   }
 
+  /* Estado Hover: Entrada suave y expansión */
   .group:hover .glow-effect {
     opacity: 1;
+    /* Escala final ligeramente mayor para dar sensación de 'encendido' */
+    transform: translate(-50%, -50%) scale(1.1);
+    filter: blur(40px); /* El blur se reduce ligeramente al acercarse para ganar intensidad */
+  }
+
+  /* Ajuste para el icono para que no dé tirones */
+  .service-icon {
+    position: relative;
+    z-index: 10;
+    will-change: transform;
+    transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
   }
 </style>
