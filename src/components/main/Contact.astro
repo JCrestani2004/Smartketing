@@ -50,48 +50,45 @@ import background from "../../assets/background/Backgroundcontacto.webp";
           Contáctanos
         </h3>
 
-        <div
-          class="bg-[#101F72] backdrop-blur-lg border border-white/10 rounded-lg p-2 md:p-3 shadow-2xl"
-          data-aos="fade-left"
-          data-aos-delay="600"
-          data-aos-duration="1000"
-        >
-          <form
-            id="contactForm"
-            class="flex flex-col gap-4"
-            action="/php/send.php"
-            method="POST"
+       <div
+            class="w-full bg-black/5 backdrop-blur-md border border-brand-blue/90 rounded-2xl p-6 md:p-8 shadow-[inset_0_1px_10px_rgba(0,0,0,0.3)]"
+            data-aos="fade-left"
+            data-aos-delay="600"
           >
-            <input
-              type="text"
-              name="name"
-              placeholder="Nombre y apellido"
-              class="bg-[#10247D] border border-blue-900/30 p-4 rounded-sm focus:outline-none focus:border-brand-cyan transition-colors placeholder:text-blue-200/40"
-              required
-            />
-            <input
-              type="tel"
-              name="phone"
-              placeholder="Teléfono"
-              class="bg-[#10247D] border border-blue-900/30 p-4 rounded-sm focus:outline-none focus:border-brand-cyan transition-colors placeholder:text-blue-200/40"
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Correo Electrónico"
-              class="bg-[#10247D] border border-blue-900/30 p-4 rounded-sm focus:outline-none focus:border-brand-cyan transition-colors placeholder:text-blue-200/40"
-              required
-            />
-            <textarea
-              name="message"
-              placeholder="Escribir Mensaje"
-              rows="4"
-              class="bg-[#10247D] border border-blue-900/30 p-4 rounded-sm focus:outline-none focus:border-brand-cyan transition-colors resize-none placeholder:text-blue-200/40"
-              required
-            ></textarea>
-            <input type="text" name="website" style="display:none" />
-          </form>
-        </div>
+            <form
+              id="contactForm"
+              class="flex flex-col gap-4"
+              action="/php/send.php"
+              method="POST"
+            >
+              <input
+                type="text"
+                name="name"
+                placeholder="Nombre y apellido"
+                class="bg-white/5 border border-white/10 p-4 text-white placeholder:text-white/20 focus:outline-none focus:border-brand-cyan transition-colors"
+                required
+              />
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Teléfono"
+                class="bg-white/5 border border-white/10 p-4 text-white placeholder:text-white/20 focus:outline-none focus:border-brand-cyan transition-colors"
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Correo Electrónico"
+                class="bg-white/5 border border-white/10 p-4 text-white placeholder:text-white/20 focus:outline-none focus:border-brand-cyan transition-colors"
+                required
+              />
+              <textarea
+                name="message"
+                placeholder="Escribir Mensaje"
+                rows="4"
+                class="bg-white/5 border border-white/10 p-4 text-white placeholder:text-white/20 focus:outline-none focus:border-brand-cyan transition-colors resize-none"
+                required></textarea>
+            </form>
+          </div>
         <div class="flex justify-center md:justify-end mt-4">
           <button
             type="submit" 
