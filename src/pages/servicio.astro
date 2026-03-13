@@ -9,7 +9,10 @@ import iconoW from "../assets/iconos/web.svg"; // Web
 import Link from "../components/Link.astro";
 ---
 
-<Layout title="Servicios | Smartketing">
+<Layout
+  title="Servicios | Smartketing"
+  description="Elevamos tu marca con consultoría comercial, posicionamiento estratégico, branding visual y diseño web. Tu aliado creativo para vender mejor."
+>
   <section
     class="relative w-full min-h-screen bg-transparent overflow-hidden pt-42 pb-20 px-6 lg:px-20"
   >
@@ -419,37 +422,34 @@ import Link from "../components/Link.astro";
       </Link>
     </div>
   </section>
- <script>
-function handleHashScroll() {
-  const hash = window.location.hash;
-  if (!hash) return;
+  <script>
+    function handleHashScroll() {
+      const hash = window.location.hash;
+      if (!hash) return;
 
-  const element = document.querySelector(hash);
-  if (!element) return;
+      const element = document.querySelector(hash);
+      if (!element) return;
 
-  setTimeout(() => {
-    const offset = 160;
+      setTimeout(() => {
+        const offset = 160;
 
-    const y =
-      element.getBoundingClientRect().top +
-      window.pageYOffset -
-      offset;
+        const y =
+          element.getBoundingClientRect().top + window.pageYOffset - offset;
 
-    window.scrollTo({
-      top: y,
-      behavior: "smooth"
-    });
+        window.scrollTo({
+          top: y,
+          behavior: "smooth",
+        });
 
-    element.classList.add("service-highlight");
+        element.classList.add("service-highlight");
 
-    setTimeout(() => {
-      element.classList.remove("service-highlight");
-    }, 2000);
+        setTimeout(() => {
+          element.classList.remove("service-highlight");
+        }, 2000);
+      }, 600);
+    }
 
-  }, 600);
-}
-
-window.addEventListener("load", handleHashScroll);
-document.addEventListener("astro:page-load", handleHashScroll);
-</script>
+    window.addEventListener("load", handleHashScroll);
+    document.addEventListener("astro:page-load", handleHashScroll);
+  </script>
 </Layout>

@@ -4,7 +4,10 @@ import background from "../assets/background/background-p-equipo.webp";
 import division from "../assets/assets/division-01.svg";
 ---
 
-<Layout title="Contacto | Smartketing">
+<Layout
+  title="Contacto | Smartketing"
+  description="¿Listo para llevar tu marca al siguiente nivel? Agenda una llamada con Smartketing y conversemos sobre tu próximo proyecto creativo."
+>
   <section
     class="relative bg-transparent w-full min-h-screen flex flex-col items-center overflow-hidden py-20"
   >
@@ -68,11 +71,11 @@ import division from "../assets/assets/division-01.svg";
             data-aos-delay="600"
           >
             <form
-             id="contactForm"
-             class="flex flex-col gap-4"
-             action="/php/send.php"
-             method="POST"
-             >
+              id="contactForm"
+              class="flex flex-col gap-4"
+              action="/php/send.php"
+              method="POST"
+            >
               <input
                 type="text"
                 name="name"

@@ -1,17 +1,15 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import background from '../assets/background/background-p-equipo.webp';
-import division from '../assets/assets/division-01.svg';
-import iluminacion from '../assets/assets/iluminacion-perfil.svg'
-import maria from '../assets/equipo/daniela.png'
-import santiago from '../assets/equipo/santiago.png'
-import ruben from '../assets/equipo/ruben.png'
-import jean from '../assets/equipo/jean.png'
+import background from "../assets/background/background-p-equipo.webp";
+import division from "../assets/assets/division-01.svg";
+import iluminacion from "../assets/assets/iluminacion-perfil.svg";
+import maria from "../assets/equipo/daniela.png";
+import santiago from "../assets/equipo/santiago.png";
+import ruben from "../assets/equipo/ruben.png";
+import jean from "../assets/equipo/jean.png";
 // import jose from '../assets/equipo/jose.png'
 // import brito from '../assets/equipo/brito.png'
 import Link from "../components/Link.astro";
-
-
 
 const equipo = [
   {
@@ -39,7 +37,7 @@ const equipo = [
     nombre2: "Darío",
     apellido: "Riaño",
     cargo: "Director de Servicio al Cliente",
-    bio: "Administrador de Empresas con más de 5 años de experiencia en la gestión de cuentas y marcas en Colombia y Panamá. En Smartketing, Rubén es una pieza clave en la atención y acompañamiento de los clientes, destacándose por su capacidad para coordinar proyectos, liderar procesos operativos y asegurar que cada estrategia se ejecute de forma ordenada y consistente. \n\n Con más de 4 años formando parte del equipo, su rol es fundamental para mantener la calidad del servicio, la comunicación fluida con los clientes y la correcta implementación de los proyectos.", 
+    bio: "Administrador de Empresas con más de 5 años de experiencia en la gestión de cuentas y marcas en Colombia y Panamá. En Smartketing, Rubén es una pieza clave en la atención y acompañamiento de los clientes, destacándose por su capacidad para coordinar proyectos, liderar procesos operativos y asegurar que cada estrategia se ejecute de forma ordenada y consistente. \n\n Con más de 4 años formando parte del equipo, su rol es fundamental para mantener la calidad del servicio, la comunicación fluida con los clientes y la correcta implementación de los proyectos.",
     imagen: ruben,
     glow: iluminacion,
     offset: "translate-y-0",
@@ -73,12 +71,14 @@ const equipo = [
     imagen: jean,
     glow: iluminacion,
     offset: "translate-y-[8px]",
-  }
+  },
 ];
-
 ---
 
-<Layout title="Equipo | Smartketing">
+<Layout
+  title="Equipo | Smartketing"
+  description="Conoce al equipo detrás de Smartketing. Expertos en comunicación y diseño trabajando para que tu marca se destaque con coherencia y propósito."
+>
   <section
     class="relative bg-transparent w-full min-h-screen overflow-hidden pt-42 pb-20 px-6 lg:px-20"
   >
@@ -113,20 +113,18 @@ const equipo = [
               data-aos="fade-up"
             >
               <div class="absolute w-full z-20 min-h-75 flex lg:min-h-full">
-                  <img
-                    src={persona.glow.src}
-                    class="absolute left-1/2 lg:left-0 -translate-x-1/2 lg:-translate-x-85 xl:-translate-x-85 -translate-y-25 w-[170%] h-[170%] mix-blend-screen  pointer-events-none"
-                  />
+                <img
+                  src={persona.glow.src}
+                  class="absolute left-1/2 lg:left-0 -translate-x-1/2 lg:-translate-x-85 xl:-translate-x-85 -translate-y-25 w-[170%] h-[170%] mix-blend-screen  pointer-events-none"
+                />
 
-                  <img
-                    src={persona.imagen.src}
-                    alt={persona.nombre}
-                    class={`absolute bottom-20 lg:bottom-0 left-1/2 -translate-x-1/2 lg:translate-x-0 lg:-left-30 xl:-left-15 h-[120%] lg:h-[145%] w-auto object-contain drop-shadow-2xl scale-100 ${persona.offset}`}
-                  />
-                </div>
+                <img
+                  src={persona.imagen.src}
+                  alt={persona.nombre}
+                  class={`absolute bottom-20 lg:bottom-0 left-1/2 -translate-x-1/2 lg:translate-x-0 lg:-left-30 xl:-left-15 h-[120%] lg:h-[145%] w-auto object-contain drop-shadow-2xl scale-100 ${persona.offset}`}
+                />
+              </div>
               <div class="relative w-full h-auto min-h-87.5 bg-black/5 backdrop-blur-lg border border-brand-blue/90 shadow-[inset_0_1px_10px_rgba(0,0,0,0.3)] flex flex-col lg:flex-row justify-end items-stretch lg:items-center xl:items-stretch gap-5 ml-8 lg:ml-16 xl:ml-25 py-8 px-10 mt-24 lg:mt-0 pt-40 lg:pt-10">
-                
-
                 <div class="relative z-30 flex flex-col justify-between py-2 lg:w-[35%]">
                   <div>
                     <h2 class="font-title text-2xl lg:text-3xl leading-none">
@@ -162,13 +160,17 @@ const equipo = [
         }
       </div>
     </div>
-          <div class="w-full flex justify-center md:justify-center mt-6 " data-aos="zoom-in-up" data-aos-delay="800">
-            <Link 
-               href="/contacto"
-              class="bg-brand-coral hover:bg-brand-coral/90 text-base italic text-white font-normal py-3 px-8 rounded-xl transition-all shadow-lg hover:scale-105 "
-            >
-              Conversemos sobre tu marca 
-            </Link>
-          </div>
+    <div
+      class="w-full flex justify-center md:justify-center mt-6"
+      data-aos="zoom-in-up"
+      data-aos-delay="800"
+    >
+      <Link
+        href="/contacto"
+        class="bg-brand-coral hover:bg-brand-coral/90 text-base italic text-white font-normal py-3 px-8 rounded-xl transition-all shadow-lg hover:scale-105"
+      >
+        Conversemos sobre tu marca
+      </Link>
+    </div>
   </section>
 </Layout>

@@ -1,6 +1,6 @@
 ---
 import "../styles/global.css";
-const { title = "Smartketing" } = Astro.props;
+const { title = "Smartketing", description = "Tu agencia de comunicación creativa para marcas en crecimiento." } = Astro.props;
 import fav from "../assets/smart/smart-simbolo.svg"
 import { ClientRouter } from "astro:transitions";
 import Header from "../components/Header.astro";
@@ -19,6 +19,11 @@ import Footer from "../components/Footer.astro";
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <meta name="description" content={description} />
+    
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
   </head>
   <ClientRouter />
   <body class="bg-brand-gray/85">
