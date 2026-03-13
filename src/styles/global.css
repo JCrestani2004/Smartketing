@@ -7,15 +7,21 @@ html, body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
 
 /* Evita scroll horizontal por imágenes que sobresalgan */
-html, body {
+
   overflow-x: hidden !important;
   width: 100%;
   position: relative;
+  -webkit-overflow-scrolling: touch;
 }
 
+[data-aos] {
+  pointer-events: none;
+}
+.aos-animate {
+  pointer-events: auto;
+}
 /* =========================
    🎨 TOKENS DE MARCA
 ========================= */

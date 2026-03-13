@@ -1,6 +1,5 @@
 ---
-import background from "../../assets/background/backgroundst.webp";
-import Separador from './Separator.astro';
+import Separador from "./Separator.astro";
 import iconoP from "../../assets/iconos/posicionamiento.svg"; // Posicionamiento
 import iconoC from "../../assets/iconos/consultoria.svg"; // Consultoria
 import iconoB from "../../assets/iconos/branding.svg"; // Branding
@@ -11,19 +10,46 @@ import iconoI from "../../assets/iconos/intencion.svg"; // Intencion
 import iconoPr from "../../assets/iconos/proceso.svg"; // Proceso
 import iconoCa from "../../assets/iconos/calendario.svg"; // Calendario
 import Link from "../Link.astro";
+
+const servicios = [
+  {
+    title: "Consultoría <br /> Comercial y <br /> de Ventas",
+    desc: "Análisis del proceso <br class='hidden md:block' /> comercial.",
+    href: "/servicio#auditoria",
+    icon: iconoC,
+    delay: "200",
+    glowClass: "glow-cyan",
+  },
+  {
+    title: "Posicionamiento & <br /> Comunicación",
+    desc: "Acompañamiento <br class='hidden md:block' /> estratégico mensual.",
+    href: "/servicio#posicionamiento",
+    icon: iconoP,
+    delay: "400",
+    glowClass: "glow-cyan",
+  },
+  {
+    title: "Branding & <br /> Dirección Visual",
+    desc: "Construcción y evolución <br class='hidden md:block' /> de identidad.",
+    href: "/servicio#branding",
+    icon: iconoB,
+    delay: "600",
+    glowClass: "glow-coral",
+  },
+  {
+    title: "Experiencia <br /> Digital Web",
+    desc: "Páginas web alineadas al <br class='hidden md:block' /> posicionamiento.",
+    href: "/servicio#web",
+    icon: iconoW,
+    delay: "800",
+    glowClass: "glow-coral",
+  },
+];
 ---
 
 <section
   class="relative bg-transparent w-full pt-8 md:pt-4 pb-8 text-white min-h-screen flex items-start"
 >
-  <!-- <div class="absolute inset-0 z-0 pointer-events-none">
-    <img
-      src={background.src}
-      alt="Fondo de servicios"
-      class="w-full h-full object-cover object-top md:object-top-left scale-150 -translate-y-20 md:scale-105 md:-translate-y-40"
-    />
-  </div> -->
-
   <div
     class="max-w-screen-2xl mx-auto z-10 h-full flex flex-col items-center gap-10 lg:gap-12 px-6"
   >
@@ -42,122 +68,44 @@ import Link from "../Link.astro";
       <div
         class="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-6 md:gap-x-20 md:gap-y-16 pb-8 mt-6 md:mt-0"
       >
-        <div
-          class="flex flex-col items-center lg:items-start"
-          data-aos="fade-up"
-          data-aos-delay="200"
-        >
-          <div class="h-14 md:h-40 pt-2">
-            <img
-              src={iconoC.src}
-              alt="Consultoría"
-              class="h-full w-auto scale-110 lg:-ml-6 object-contain"
-            />
-          </div>
-          <div class="flex flex-col justify-between h-30">
-            <Link href="/servicio#auditoria">
-              <h3
-                class="text-brand-cyan/90 font-bold text-[0.75rem] md:text-[1.2rem] leading-tight mt-3 md:text-left"
-              >
-                Consultoría <br /> Comercial y <br /> de Ventas
-              </h3>
-            </Link>
-            <p
-              class="text-white font-body text-[0.7rem] md:text-[1rem] font-extralight leading-snug mt-1 md:text-left"
+        {
+          servicios.map((s) => (
+            <Link
+              href={s.href}
+              class="group relative block p-4 rounded-2xl transition-all duration-500 cursor-pointer"
+              data-aos="fade-up"
+              data-aos-delay={s.delay}
             >
-              Análisis del proceso <br class="hidden md:block" /> comercial.
-            </p>
-          </div>
-        </div>
-
-        <div
-          class="flex flex-col items-center lg:items-start"
-          data-aos="fade-up"
-          data-aos-delay="400"
-        >
-          <div class="h-14 md:h-40 pt-2">
-            <img
-              src={iconoP.src}
-              alt="Posicionamiento"
-              class="h-full w-auto scale-110 lg:-ml-6 object-contain"
-            />
-          </div>
-          <div class="flex flex-col justify-between h-30">
-            <Link href="/servicio#posicionamiento">
-              <h3
-                class="text-brand-cyan/90 font-bold text-[0.75rem] md:text-[1.2rem] leading-tight mt-3 md:text-left"
+              <div
+                class="flex flex-col items-center lg:items-start"
+                data-aos="fade-up"
+                data-aos-delay={s.delay}
               >
-                Posicionamiento & <br /> Comunicación
-              </h3>
+                <div class="h-14 md:h-40 pt-2 relative flex items-center justify-center">
+                  <div class={`glow-effect ${s.glowClass || 'glow-coral'}`}></div>
+                  <img
+                    src={s.icon.src}
+                    alt="Icono de servicio"
+                    class="service-icon h-full w-auto scale-110 lg:-ml-6 object-contain relative z-10"
+                  />
+                </div>
+                <div class="flex flex-col justify-between h-35">
+                  <h3
+                    class="text-brand-cyan/90 font-bold text-[0.75rem] md:text-[1.2rem] leading-tight mt-3 md:text-left"
+                    set:html={s.title}
+                  />
+                  <p
+                    class="text-white font-body text-[0.7rem] md:text-[1rem] font-extralight leading-snug mt-1 md:text-left"
+                    set:html={s.desc}
+                  />
+                </div>
+              </div>
             </Link>
-            <p
-              class="text-white font-body text-[0.7rem] font-extralight md:text-[1rem] leading-snug mt-1 md:text-left"
-            >
-              Acompañamiento <br class="hidden md:block" /> estratégico mensual.
-            </p>
-          </div>
-        </div>
-
-        <div
-          class="flex flex-col items-center lg:items-start"
-          data-aos="fade-up"
-          data-aos-delay="600"
-        >
-          <div class="h-14 md:h-40 pt-2">
-            <img
-              src={iconoB.src}
-              alt="Branding"
-              class="h-full w-auto scale-110 lg:-ml-6 object-contain"
-            />
-          </div>
-          <div class="flex flex-col justify-between h-30">
-            <Link href="/servicio#branding">
-              <h3
-                class="text-brand-cyan/90 font-bold text-[0.75rem] md:text-[1.2rem] leading-tight mt-3 md:text-left"
-              >
-                Branding & <br /> Dirección Visual
-              </h3>
-            </Link>
-            <p
-              class="text-white font-body text-[0.7rem] md:text-[1rem] font-extralight leading-snug mt-1 md:text-left"
-            >
-              Construcción y evolución <br class="hidden md:block" /> de identidad.
-            </p>
-          </div>
-        </div>
-
-        <div
-          class="flex flex-col items-center lg:items-start"
-          data-aos="fade-up"
-          data-aos-delay="800"
-        >
-          <div class="h-14 md:h-40">
-            <img
-              src={iconoW.src}
-              alt="Diseño Web"
-              class="h-full w-auto scale-110 lg:-ml-6 object-contain"
-            />
-          </div>
-          <div class="flex flex-col justify-between h-30">
-            <Link href="/servicio#web">
-              <h3
-                class="text-brand-cyan/90 font-bold text-[0.75rem] md:text-[1.2rem] leading-tight mt-3 md:text-left"
-              >
-                Experiencia <br /> Digital Web
-              </h3>
-            </Link>
-            <p
-              class="text-white font-body text-[0.7rem] md:text-[1rem] font-extralight leading-snug mt-1 md:text-left"
-            >
-              Páginas web alineadas al <br class="hidden md:block" /> posicionamiento.
-            </p>
-          </div>
-        </div>
+          ))
+        }
       </div>
       <Separador />
     </div>
-
-    
 
     <div class="mt-4 w-full text-center">
       <h2 class="font-title text-4xl md:text-[2.8rem] leading-[0.95]">
@@ -177,36 +125,44 @@ import Link from "../Link.astro";
           </p>
         </div>
 
-        <div class="flex flex-col items-center gap-3"
-        data-aos="fade-up"
-          data-aos-delay="400">
+        <div
+          class="flex flex-col items-center gap-3"
+          data-aos="fade-up"
+          data-aos-delay="400"
+        >
           <img src={iconoD.src} class="w-28" />
           <p class="text-brand-coral text-[1.1rem]">
             Definimos una <br /> dirección clara
           </p>
         </div>
 
-        <div class="flex flex-col items-center gap-3"
-        data-aos="fade-up"
-          data-aos-delay="600">
+        <div
+          class="flex flex-col items-center gap-3"
+          data-aos="fade-up"
+          data-aos-delay="600"
+        >
           <img src={iconoI.src} class="w-28" />
           <p class="text-brand-coral text-[1.1rem]">
             Creamos con <br /> intención
           </p>
         </div>
 
-        <div class="flex flex-col items-center gap-3"
-        data-aos="fade-up"
-          data-aos-delay="800">
+        <div
+          class="flex flex-col items-center gap-3"
+          data-aos="fade-up"
+          data-aos-delay="800"
+        >
           <img src={iconoPr.src} class="w-28" />
           <p class="text-brand-coral text-[1.1rem]">
             Acompañamos <br /> el proceso
           </p>
         </div>
 
-        <div class="flex flex-col items-center gap-3"
-        data-aos="fade-up"
-          data-aos-delay="1000">
+        <div
+          class="flex flex-col items-center gap-3"
+          data-aos="fade-up"
+          data-aos-delay="1000"
+        >
           <img src={iconoCa.src} class="w-28" />
           <p class="text-brand-coral text-[1.1rem]">
             Pensamos a <br /> largo plazo
@@ -224,7 +180,51 @@ import Link from "../Link.astro";
       </div>
     </div>
   </div>
-
-  
 </section>
 <Separador />
+<style>
+  /* Animación de flotado para el icono */
+  @keyframes float {
+    0% { transform: translateY(0px) scale(1.1); }
+    50% { transform: translateY(-10px) scale(1.15); }
+    100% { transform: translateY(0px) scale(1.1); }
+  }
+
+  .group:hover .service-icon {
+    animation: float 4s ease-in-out infinite;
+  }
+
+  /* El resplandor (Glow) */
+  .glow-effect {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    filter: blur(40px);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: -1; /* Para que quede detrás del icono */
+    pointer-events: none;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  }
+
+  /* Colores específicos para cada glow según prefieras */
+/* Coral más vibrante (Usando HSL para saturación máxima) */
+  .glow-coral { 
+    background: radial-gradient(circle, rgba(255,127,80,0.8) 0%, rgba(255,70,50,0) 100%);
+    filter: blur(25px); /* Bajamos un poco el blur para que no se disperse tanto */
+  }
+
+  /* Cyan eléctrico */
+  .glow-cyan { 
+    background: radial-gradient(circle, rgba(0,255,255,0.7) 0%, rgba(0,150,255,0) 100%);
+    filter: blur(25px);
+  }
+
+  .group:hover .glow-effect {
+    opacity: 1;
+  }
+</style>
