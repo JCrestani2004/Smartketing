@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import background from "../assets/background/background-p-servicios.webp";
-import division from "../assets/assets/division-01.svg";
+import Separador from '../components/main/Separator.astro';
 import iconoA from "../assets/iconos/analisis.svg"; // Analisis
 import iconoD from "../assets/iconos/icono-hero.svg"; // Direccion
 import iconoI from "../assets/iconos/intencion.svg"; // Intencion
@@ -33,13 +33,7 @@ import Link from "../components/Link.astro";
         </h1>
       </div>
 
-      <div class="w-full flex justify-center" data-aos="zoom-in">
-        <img
-          src={division.src}
-          alt=""
-          class="w-full max-w-5xl mix-blend-screen"
-        />
-      </div>
+      <Separador />
 
       <article
         class="space-y-10 -mb-10 max-w-3xl mx-auto text-justify"
@@ -89,13 +83,7 @@ import Link from "../components/Link.astro";
         </h2>
       </div>
 
-      <div class="w-full flex justify-center" data-aos="zoom-in">
-        <img
-          src={division.src}
-          alt=""
-          class="w-full max-w-5xl mix-blend-screen"
-        />
-      </div>
+      <Separador />
 
       <div class="space-y-12">
         {
@@ -159,17 +147,7 @@ import Link from "../components/Link.astro";
 
               {/* LA DIVISIÓN: Aparece después de cada paso menos el último */}
               {index < 4 && (
-                <div
-                  class="w-full flex justify-center -mb-3"
-                  data-aos="zoom-in"
-                  data-aos-offset="100"
-                >
-                  <img
-                    src={division.src}
-                    alt=""
-                    class="w-full max-w-4xl h-auto mix-blend-screen"
-                  />
-                </div>
+            <Separador />
               )}
             </>
           ))

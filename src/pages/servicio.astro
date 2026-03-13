@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import background from "../assets/background/background-p-servicios.webp";
-import division from "../assets/assets/division-01.svg";
+import Separador from '../components/main/Separator.astro';
 import iconoP from "../assets/iconos/posicionamiento.svg"; // Posicionamiento
 import iconoC from "../assets/iconos/consultoria.svg"; // Consultoria
 import iconoB from "../assets/iconos/branding.svg"; // Branding
@@ -29,17 +29,7 @@ import Link from "../components/Link.astro";
         </h1>
       </div>
 
-      <div
-        class="relative w-full flex justify-center pointer-events-none select-none"
-        data-aos="zoom-in"
-        data-aos-delay="300"
-      >
-        <img
-          src={division.src}
-          alt=""
-          class="w-full max-w-5xl h-auto mix-blend-screen"
-        />
-      </div>
+<Separador />
 
       <div class="flex flex-col">
         <article
@@ -126,17 +116,7 @@ import Link from "../components/Link.astro";
           </div>
         </article>
 
-        <div
-          class="relative w-full flex md:-mt-10 justify-center pointer-events-none select-none"
-          data-aos="zoom-out"
-          data-aos-offset="200"
-        >
-          <img
-            src={division.src}
-            alt=""
-            class="w-full max-w-5xl h-auto mix-blend-screen"
-          />
-        </div>
+<Separador />
 
         <article
           id="posicionamiento"
@@ -231,17 +211,7 @@ import Link from "../components/Link.astro";
           </div>
         </article>
 
-        <div
-          class="relative w-full flex md:-mt-10 justify-center pointer-events-none select-none"
-          data-aos="zoom-out"
-          data-aos-offset="200"
-        >
-          <img
-            src={division.src}
-            alt=""
-            class="w-full max-w-5xl h-auto mix-blend-screen"
-          />
-        </div>
+<Separador />
 
         <article
           id="branding"
@@ -318,17 +288,7 @@ import Link from "../components/Link.astro";
           </div>
         </article>
 
-        <div
-          class="relative w-full flex md:-mt-10 justify-center pointer-events-none select-none"
-          data-aos="zoom-out"
-          data-aos-offset="200"
-        >
-          <img
-            src={division.src}
-            alt=""
-            class="w-full max-w-5xl h-auto mix-blend-screen"
-          />
-        </div>
+<Separador />
 
         <article
           id="web"
