@@ -10,8 +10,10 @@ html, body {
 }
 
 /* Evita scroll horizontal por imágenes que sobresalgan */
-body {
-  overflow-x: hidden;
+html, body {
+  overflow-x: hidden !important;
+  width: 100%;
+  position: relative;
 }
 
 /* =========================
