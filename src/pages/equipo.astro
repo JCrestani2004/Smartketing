@@ -183,12 +183,15 @@ En Smartketing participa en la ejecución de contenidos, la gestión de redes so
             mApellido &&
             mCargo &&
             mBio
-          ) {
+          ) 
+          {
             mImg.src = img || "";
             mNombre.innerText = nombre || "";
             mApellido.innerText = apellido || "";
             mCargo.innerText = cargo || "";
             mBio.innerHTML = bio || "";
+
+            mBio.scrollTop = 0;
 
             modal.classList.remove("hidden");
             setTimeout(() => {
