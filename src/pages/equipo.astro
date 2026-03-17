@@ -5,7 +5,7 @@ import iluminacion from "../assets/assets/iluminacion-perfil.svg";
 import daniela from "../assets/equipo/cortas/daniela.png";
 import santiago from "../assets/equipo/cortas/santiago.png";
 import ruben from "../assets/equipo/cortas/ruben.png";
-import jean from "../assets/equipo/cortas/jeanB.png";
+import jean from "../assets/equipo/cortas/jean.png";
 import jose from "../assets/equipo/cortas/jose.png";
 import brito from "../assets/equipo/cortas/brito.png";
 import Link from "../components/Link.astro";
@@ -41,6 +41,8 @@ En Smartketing es una pieza clave en la atención y acompañamiento de los clien
 Con más de cuatro años formando parte del equipo, su rol es fundamental para mantener la calidad del servicio, la comunicación fluida con los clientes y la correcta implementación de los proyectos.
 `,
   },
+];
+const asociados = [
   {
     nombre: "José Rafael",
     apellido: "Saravia",
@@ -79,13 +81,26 @@ En Smartketing participa en la ejecución de contenidos, la gestión de redes so
   <section
     class="relative bg-transparent w-full min-h-screen overflow-hidden pt-42 pb-20 px-6 lg:px-20"
   >
+  <div class="max-w-3xl mx-auto text-center pt-15 mb-10 md:mb-16" data-aos="fade-down">
+    <h1 class="text-white text-3xl md:text-4xl font-light mb-6 font-title">
+      Nuestro <span class="text-brand-coral font-bold">Equipo</span>
+    </h1>
+    <Separador />
+    <p class="text-brand-gray/80 font-body font-light text-sm md:text-lg leading-relaxed mt-10 text-justify">
+      Detrás de cada proyecto hay un equipo que combina estrategia, creatividad y ejecución. 
+      En Smartketing trabajamos con una estructura flexible 
+      que integra dirección y talento creativo especializado para acompañar a cada cliente en su proceso de crecimiento.
+    </p>
+  </div>
+
+      
     <div class="relative z-10 max-w-5xl mx-auto">
       <div
         class="text-center pt-15 md:-mb-16 lg:-mb-18 xl:-mb-22"
         data-aos="fade-down"
       >
         <h1 class="text-white text-3xl md:text-4xl font-light">
-          Nuestro <span class="text-brand-coral font-bold">Equipo</span>
+          Equipo <span class="text-brand-coral font-bold">Directivo</span>
         </h1>
       </div>
 
@@ -96,6 +111,69 @@ En Smartketing participa en la ejecución de contenidos, la gestión de redes so
       >
         {
           equipo.map((persona) => (
+            <div data-aos="fade-up">
+              <article
+                class="team-card group cursor-pointer relative flex flex-col h-full transition-all duration-500 hover:-translate-y-2"
+                data-nombre={persona.nombre}
+                data-apellido={persona.apellido}
+                data-cargo={persona.cargo}
+                data-bio={persona.bio}
+                data-img={persona.imagen.src}
+              >
+                <div class="relative aspect-[1/1.1] overflow-hidden flex items-end border border-transparent bg-white/2 backdrop-blur-[2px] rounded-t-2xl">
+                  <img
+                    src={iluminacion.src}
+                    class="absolute inset-0 w-[130%] h-[130%] -translate-x-[5%] -translate-y-[5%] object-cover mix-blend-screen opacity-60 group-hover:opacity-90 transition-opacity duration-500 pointer-events-none"
+                    alt=""
+                    style="z-index: 1;"
+                  />
+
+                  <img
+                    src={persona.imagen.src}
+                    alt={persona.nombre}
+                    class="relative w-full h-[98%] object-contain object-bottom transition-transform duration-500 group-hover:scale-105 pointer-events-none"
+                    style="z-index: 2;"
+                  />
+                </div>
+
+                <div
+                  class="flex-1 flex flex-col justify-center items-center text-center bg-white/10 backdrop-blur-md p-6 rounded-b-2xl z-10 min-h-10 gap-2"
+                  style="z-index: 3;"
+                >
+                  <h3 class="font-title text-xl leading-tight">
+                    <span class="block text-brand-coral font-bold">
+                      {persona.nombre} {persona.apellido}
+                    </span>
+                  </h3>
+
+                  <p class="text-brand-cyan font-body font-medium text-xs uppercase tracking-[0.2em]">
+                    {persona.cargo}
+                  </p>
+                </div>
+              </article>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="relative z-10 max-w-5xl mx-auto mt-10">
+      <div
+        class="text-center pt-15 md:-mb-16 lg:-mb-18 xl:-mb-22"
+        data-aos="fade-down"
+      >
+        <h1 class="text-white text-3xl md:text-4xl font-light">
+          Asociados <span class="text-brand-coral font-bold">Creativos</span>
+        </h1>
+      </div>
+
+      <Separador />
+
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-16 mt-8 lg:mt-15"
+      >
+        {
+          asociados.map((persona) => (
             <div data-aos="fade-up">
               <article
                 class="team-card group cursor-pointer relative flex flex-col h-full transition-all duration-500 hover:-translate-y-2"
