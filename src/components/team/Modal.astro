@@ -6,7 +6,7 @@ import iluminacion from "../../assets/assets/iluminacion-perfil.svg";
 <div id="team-modal" class="fixed inset-0 z-100 flex items-center justify-center hidden opacity-0 transition-all duration-500">
   <div class="absolute inset-0 bg-black/60 backdrop-blur-xl" id="modal-overlay"></div>
 
-  <div class="relative w-[95%] max-w-5xl h-[70vh] md:h-137.5 bg-white/10 backdrop-blur-3xl border border-white/20 rounded-[2.5rem] overflow-hidden shadow-2xl flex flex-col md:flex-row transform scale-95 transition-transform duration-500" id="modal-content">
+  <div class="relative w-[95%] max-w-5xl h-[85vh] md:h-137.5 bg-white/10 backdrop-blur-3xl border border-white/20 rounded-[2.5rem] overflow-hidden shadow-2xl flex flex-col md:flex-row transform scale-95 transition-transform duration-500" id="modal-content">
     
     <button id="close-modal" class="absolute top-6 right-6 z-50 text-white/50 hover:text-brand-coral transition-colors">
       <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -14,12 +14,12 @@ import iluminacion from "../../assets/assets/iluminacion-perfil.svg";
       </svg>
     </button>
 
-    <div class="md:w-5/12 relative bg-white/5 flex items-end justify-center overflow-hidden min-h-75">
+    <div class="w-full md:w-5/12 h-[35%] md:h-full relative bg-white/5 flex items-end justify-center overflow-hidden min-h-75">
       <img src={iluminacion.src} class="absolute inset-0 w-[130%] h-[130%] object-cover mix-blend-screen" />
       <img id="modal-img" src="" alt="" class="relative z-10 w-full h-[90%] object-contain object-bottom" />
     </div>
 
-    <div class="md:w-7/12 p-8 md:p-14 flex flex-col justify-center">
+    <div class="w-full md:w-7/12 h-[65%] md:h-full p-8 md:p-14 flex flex-col justify-center">
       <h2 class="font-title text-3xl md:text-5xl leading-tight mb-2">
         <span id="modal-nombre" class="text-brand-coral font-bold block"></span>
         <span id="modal-apellido" class="text-white font-extralight block"></span>
@@ -27,7 +27,7 @@ import iluminacion from "../../assets/assets/iluminacion-perfil.svg";
       
       <p id="modal-cargo" class="text-brand-cyan font-body font-medium text-xs md:text-sm uppercase tracking-[0.3em] mb-8"></p>
       
-      <div id="modal-bio" class="text-brand-gray/90 font-body font-light text-sm md:text-base leading-relaxed space-y-4 max-h-75 overflow-y-auto pr-4 custom-scrollbar text-justify">
+      <div id="modal-bio" class="text-brand-gray/90 font-body font-light text-sm md:text-base leading-relaxed space-y-4 max-h-75 overflow-y-auto pr-4 custom-scrollbar text-justify flex-1">
         </div>
     </div>
   </div>

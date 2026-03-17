@@ -97,45 +97,45 @@ En Smartketing participa en la ejecución de contenidos, la gestión de redes so
         {
           equipo.map((persona) => (
             <div data-aos="fade-up">
-            <article
-              class="team-card group cursor-pointer relative flex flex-col h-full transition-all duration-500 hover:-translate-y-2"
-              data-nombre={persona.nombre}
-              data-apellido={persona.apellido}
-              data-cargo={persona.cargo}
-              data-bio={persona.bio}
-              data-img={persona.imagen.src}
-            >
-              <div class="relative aspect-[1/1.1] overflow-hidden flex items-end border border-transparent bg-white/2 backdrop-blur-[2px] rounded-t-2xl">
-                <img
-                  src={iluminacion.src}
-                  class="absolute inset-0 w-[130%] h-[130%] -translate-x-[5%] -translate-y-[5%] object-cover mix-blend-screen opacity-60 group-hover:opacity-90 transition-opacity duration-500 pointer-events-none"
-                  alt=""
-                  style="z-index: 1;"
-                />
-
-                <img
-                  src={persona.imagen.src}
-                  alt={persona.nombre}
-                  class="relative w-full h-[98%] object-contain object-bottom transition-transform duration-500 group-hover:scale-105 pointer-events-none"
-                  style="z-index: 2;"
-                />
-              </div>
-
-              <div
-                class="flex-1 flex flex-col justify-center items-center text-center bg-white/10 backdrop-blur-md p-6 rounded-b-2xl z-10 min-h-10 gap-2"
-                style="z-index: 3;"
+              <article
+                class="team-card group cursor-pointer relative flex flex-col h-full transition-all duration-500 hover:-translate-y-2"
+                data-nombre={persona.nombre}
+                data-apellido={persona.apellido}
+                data-cargo={persona.cargo}
+                data-bio={persona.bio}
+                data-img={persona.imagen.src}
               >
-                <h3 class="font-title text-xl leading-tight">
-                  <span class="block text-brand-coral font-bold">
-                    {persona.nombre} {persona.apellido}
-                  </span>
-                </h3>
+                <div class="relative aspect-[1/1.1] overflow-hidden flex items-end border border-transparent bg-white/2 backdrop-blur-[2px] rounded-t-2xl">
+                  <img
+                    src={iluminacion.src}
+                    class="absolute inset-0 w-[130%] h-[130%] -translate-x-[5%] -translate-y-[5%] object-cover mix-blend-screen opacity-60 group-hover:opacity-90 transition-opacity duration-500 pointer-events-none"
+                    alt=""
+                    style="z-index: 1;"
+                  />
 
-                <p class="text-brand-cyan font-body font-medium text-xs uppercase tracking-[0.2em]">
-                  {persona.cargo}
-                </p>
-              </div>
-            </article>
+                  <img
+                    src={persona.imagen.src}
+                    alt={persona.nombre}
+                    class="relative w-full h-[98%] object-contain object-bottom transition-transform duration-500 group-hover:scale-105 pointer-events-none"
+                    style="z-index: 2;"
+                  />
+                </div>
+
+                <div
+                  class="flex-1 flex flex-col justify-center items-center text-center bg-white/10 backdrop-blur-md p-6 rounded-b-2xl z-10 min-h-10 gap-2"
+                  style="z-index: 3;"
+                >
+                  <h3 class="font-title text-xl leading-tight">
+                    <span class="block text-brand-coral font-bold">
+                      {persona.nombre} {persona.apellido}
+                    </span>
+                  </h3>
+
+                  <p class="text-brand-cyan font-body font-medium text-xs uppercase tracking-[0.2em]">
+                    {persona.cargo}
+                  </p>
+                </div>
+              </article>
             </div>
           ))
         }
@@ -152,57 +152,71 @@ En Smartketing participa en la ejecución de contenidos, la gestión de redes so
     </div>
     <Modal />
     <script>
-  // 1. Usamos "as" para decirle a TS que son HTMLElements (y así reconozca .dataset)
-  const cards = document.querySelectorAll('.team-card') as NodeListOf<HTMLElement>;
-  const modal = document.getElementById('team-modal');
-  const modalContent = document.getElementById('modal-content');
-  const closeBtn = document.getElementById('close-modal');
-  const overlay = document.getElementById('modal-overlay');
+      // 1. Usamos "as" para decirle a TS que son HTMLElements (y así reconozca .dataset)
+      const cards = document.querySelectorAll(
+        ".team-card",
+      ) as NodeListOf<HTMLElement>;
+      const modal = document.getElementById("team-modal");
+      const modalContent = document.getElementById("modal-content");
+      const closeBtn = document.getElementById("close-modal");
+      const overlay = document.getElementById("modal-overlay");
 
-  // 2. Especificamos que es un HTMLImageElement para que acepte la propiedad .src
-  const mImg = document.getElementById('modal-img') as HTMLImageElement;
-  
-  const mNombre = document.getElementById('modal-nombre');
-  const mApellido = document.getElementById('modal-apellido');
-  const mCargo = document.getElementById('modal-cargo');
-  const mBio = document.getElementById('modal-bio');
+      // 2. Especificamos que es un HTMLImageElement para que acepte la propiedad .src
+      const mImg = document.getElementById("modal-img") as HTMLImageElement;
 
-  cards.forEach(card => {
-    card.addEventListener('click', () => {
-      // Extraemos los datos del dataset (ahora sin errores)
-      const { nombre, apellido, cargo, bio, img } = card.dataset;
+      const mNombre = document.getElementById("modal-nombre");
+      const mApellido = document.getElementById("modal-apellido");
+      const mCargo = document.getElementById("modal-cargo");
+      const mBio = document.getElementById("modal-bio");
 
-      // Verificamos que todo exista antes de usarlo (para evitar el error de "posiblemente null")
-      if (modal && modalContent && mImg && mNombre && mApellido && mCargo && mBio) {
-        mImg.src = img || '';
-        mNombre.innerText = nombre || '';
-        mApellido.innerText = apellido || '';
-        mCargo.innerText = cargo || '';
-        mBio.innerHTML = bio || '';
+      cards.forEach((card) => {
+        card.addEventListener("click", () => {
+          // Extraemos los datos del dataset (ahora sin errores)
+          const { nombre, apellido, cargo, bio, img } = card.dataset;
 
-        modal.classList.remove('hidden');
-        setTimeout(() => {
-          modal.classList.remove('opacity-0');
-          modalContent.classList.remove('scale-95');
-        }, 10);
-        document.body.style.overflow = 'hidden';
+          // Verificamos que todo exista antes de usarlo (para evitar el error de "posiblemente null")
+          if (
+            modal &&
+            modalContent &&
+            mImg &&
+            mNombre &&
+            mApellido &&
+            mCargo &&
+            mBio
+          ) {
+            mImg.src = img || "";
+            mNombre.innerText = nombre || "";
+            mApellido.innerText = apellido || "";
+            mCargo.innerText = cargo || "";
+            mBio.innerHTML = bio || "";
+
+            modal.classList.remove("hidden");
+            setTimeout(() => {
+              modal.classList.remove("opacity-0");
+              modalContent.classList.remove("scale-95");
+            }, 10);
+            // Scroll
+            document.documentElement.style.overflow = "hidden";
+            document.body.style.overflow = "hidden";
+          }
+        });
+      });
+
+      function closeModal() {
+        if (modal && modalContent) {
+          modal.classList.add("opacity-0");
+          modalContent.classList.add("scale-95");
+          setTimeout(() => {
+            modal.classList.add("hidden");
+            // Scroll
+            document.documentElement.style.overflow = "";
+            document.body.style.overflow = "";
+          }, 500);
+        }
       }
-    });
-  });
 
-  function closeModal() {
-    if (modal && modalContent) {
-      modal.classList.add('opacity-0');
-      modalContent.classList.add('scale-95');
-      setTimeout(() => {
-        modal.classList.add('hidden');
-        document.body.style.overflow = 'auto';
-      }, 500);
-    }
-  }
-
-  closeBtn?.addEventListener('click', closeModal);
-  overlay?.addEventListener('click', closeModal);
-</script>
+      closeBtn?.addEventListener("click", closeModal);
+      overlay?.addEventListener("click", closeModal);
+    </script>
   </section>
 </Layout>
