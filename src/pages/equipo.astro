@@ -92,13 +92,13 @@ En Smartketing participa en la ejecución de contenidos, la gestión de redes so
       <Separador />
 
       <div
-        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-16 mt-20 lg:mt-32"
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-16 mt-8 lg:mt-15"
       >
         {
           equipo.map((persona) => (
+            <div data-aos="fade-up">
             <article
-              class="team-card group cursor-pointer relative flex flex-col h-full transition-all duration-300 hover:-translate-y-2"
-              data-aos="fade-up"
+              class="team-card group cursor-pointer relative flex flex-col h-full transition-all duration-500 hover:-translate-y-2"
               data-nombre={persona.nombre}
               data-apellido={persona.apellido}
               data-cargo={persona.cargo}
@@ -136,6 +136,7 @@ En Smartketing participa en la ejecución de contenidos, la gestión de redes so
                 </p>
               </div>
             </article>
+            </div>
           ))
         }
       </div>
