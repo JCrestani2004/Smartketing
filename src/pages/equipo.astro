@@ -1,64 +1,89 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Separador from '../components/main/Separator.astro';
+import Separador from "../components/main/Separator.astro";
 import iluminacion from "../assets/assets/iluminacion-perfil.svg";
 import daniela from "../assets/equipo/cortas/daniela.png";
 import santiago from "../assets/equipo/cortas/santiago.png";
 import ruben from "../assets/equipo/cortas/ruben.png";
 import jean from "../assets/equipo/cortas/jeanB.png";
-import jose from '../assets/equipo/cortas/jose.png';
-import brito from '../assets/equipo/cortas/brito.png';
+import jose from "../assets/equipo/cortas/jose.png";
+import brito from "../assets/equipo/cortas/brito.png";
 import Link from "../components/Link.astro";
+import Modal from "../components/team/Modal.astro";
 
 const equipo = [
   {
     nombre: "Santiago",
     apellido: "Peña Díaz",
-    cargo: "Co-Founder & CEO",
+    cargo: "Director de Proyectos y Consultoría Comercial",
     imagen: santiago,
+    bio: `Administrador de Empresas con formación en Marketing Digital y Comercio Electrónico. Cuenta con más de 12 años de experiencia en el sector financiero y en la gestión de procesos comerciales. <br/><br/>
+          Su enfoque se centra en el análisis del negocio, la optimización de embudos de venta y la toma de decisiones basadas en estructura y resultados. <br/><br/>
+          Como cofundador de Smartketing lidera los procesos de auditoría comercial y consultoría estratégica, ayudando a las empresas a ordenar sus sistemas de venta, identificar oportunidades de mejora y construir bases sólidas para crecer de forma sostenible.`,
   },
-    {
+  {
     nombre: "María Daniela",
     apellido: "Martínez",
-    cargo: "Creative Director",
+    cargo: "Directora Creativa y de Comunicaciones",
     imagen: daniela,
+    bio: `Con más de 10 años de experiencia en medios de comunicación tradicionales y digitales, María Daniela ha trabajado en la construcción de marcas desde la estrategia, la narrativa y la comunicación con propósito.
+Su enfoque combina el análisis periodístico con la visión de negocio, ayudando a empresas y emprendedores a ordenar su mensaje, fortalecer su identidad y comunicar con coherencia en el tiempo.
+Como fundadora y directora de Smartketing, lidera proyectos de comunicación estratégica, contenido y posicionamiento de marca, acompañando a pequeñas y medianas empresas a crecer con criterio, claridad y visión a largo plazo.
+`,
   },
   {
     nombre: "Rubén",
     apellido: "Riaño",
-    cargo: "Client Success",
-    bio: "Administrador de Empresas...",
+    cargo: "Director Comercial",
     imagen: ruben,
+    bio: `Administrador de Empresas con experiencia en la gestión de cuentas y marcas en Colombia y Panamá.
+En Smartketing es una pieza clave en la atención y acompañamiento de los clientes, destacándose por su capacidad para coordinar proyectos, liderar procesos operativos y asegurar que cada estrategia se ejecute de forma organizada y consistente.
+Con más de cuatro años formando parte del equipo, su rol es fundamental para mantener la calidad del servicio, la comunicación fluida con los clientes y la correcta implementación de los proyectos.
+`,
   },
   {
     nombre: "José Rafael",
     apellido: "Saravia",
-    cargo: "Graphic Designer",
+    cargo: "Director de Arte",
     imagen: jose,
+    bio: `Diseñador gráfico egresado de la Universidad Autónoma del Caribe, con más de 10 años de experiencia en el desarrollo de identidades visuales y estrategias de diseño de marca en Venezuela, Colombia y Panamá.
+En Smartketing lidera el área de dirección de arte, siendo responsable de traducir las estrategias en conceptos visuales sólidos, funcionales y alineados con la identidad de cada marca.
+`,
   },
   {
     nombre: "José Antonio",
     apellido: "Brito",
-    cargo: "Web Programmer",
+    cargo: "Desarrollador Web Senior",
     imagen: brito,
+    bio: `Ingeniero Informático egresado de la Universidad Territorial Deltaica Francisco Tamayo, con más de 10 años de experiencia en desarrollo web.
+En Smartketing lidera el desarrollo técnico de los proyectos digitales, asegurando soluciones funcionales, estables y alineadas con los objetivos de cada negocio.
+Su rol es clave para transformar la estrategia y el diseño en plataformas digitales sólidas y bien estructuradas.
+`,
   },
   {
     nombre: "Jean Franco",
     apellido: "Crestani",
-    cargo: "Full Stack Developer",
+    cargo: "Programador Junior y Community Manager",
     imagen: jean,
+    bio: `TSU en Análisis de Sistemas, con experiencia en gestión de comunidades digitales y apoyo en desarrollo web.
+En Smartketing participa en la ejecución de contenidos, la gestión de redes sociales y el soporte técnico de los proyectos, aportando versatilidad y continuidad operativa al equipo.
+`,
   },
 ];
 ---
 
-<Layout 
+<Layout
   title="Equipo | Smartketing"
   description="Conoce al equipo detrás de Smartketing. Expertos en comunicación y diseño."
 >
-  <section class="relative bg-transparent w-full min-h-screen overflow-hidden pt-42 pb-20 px-6 lg:px-20">
-    
+  <section
+    class="relative bg-transparent w-full min-h-screen overflow-hidden pt-42 pb-20 px-6 lg:px-20"
+  >
     <div class="relative z-10 max-w-5xl mx-auto">
-      <div class="text-center pt-15 md:-mb-16 lg:-mb-18 xl:-mb-22" data-aos="fade-down">
+      <div
+        class="text-center pt-15 md:-mb-16 lg:-mb-18 xl:-mb-22"
+        data-aos="fade-down"
+      >
         <h1 class="text-white text-3xl md:text-4xl font-light">
           Nuestro <span class="text-brand-coral font-bold">Equipo</span>
         </h1>
@@ -66,47 +91,117 @@ const equipo = [
 
       <Separador />
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-16 mt-20 lg:mt-32">
-        {equipo.map((persona) => (
-          <article 
-            class="group relative flex flex-col transition-all duration-300 hover:-translate-y-2"
-            data-aos="fade-up"
-          >
-            <div class="relative aspect-[1/1.1] overflow-hidden flex items-end border border-transparent bg-white/2 backdrop-blur-[2px] rounded-t-2xl">
-              <img 
-                src={iluminacion.src} 
-                class="absolute inset-0 w-[130%] h-[130%] -translate-x-[5%] -translate-y-[5%] object-cover mix-blend-screen opacity-60 group-hover:opacity-90 transition-opacity duration-500 pointer-events-none" 
-                alt=""
-                style="z-index: 1;" />
-              
-              <img 
-                src={persona.imagen.src} 
-                alt={persona.nombre} 
-                class="relative w-full h-[98%] object-contain object-bottom transition-transform duration-500 group-hover:scale-105 pointer-events-none"
-                style="z-index: 2;" />
-            </div>
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-16 mt-20 lg:mt-32"
+      >
+        {
+          equipo.map((persona) => (
+            <article
+              class="team-card group cursor-pointer relative flex flex-col h-full transition-all duration-300 hover:-translate-y-2"
+              data-aos="fade-up"
+              data-nombre={persona.nombre}
+              data-apellido={persona.apellido}
+              data-cargo={persona.cargo}
+              data-bio={persona.bio}
+              data-img={persona.imagen.src}
+            >
+              <div class="relative aspect-[1/1.1] overflow-hidden flex items-end border border-transparent bg-white/2 backdrop-blur-[2px] rounded-t-2xl">
+                <img
+                  src={iluminacion.src}
+                  class="absolute inset-0 w-[130%] h-[130%] -translate-x-[5%] -translate-y-[5%] object-cover mix-blend-screen opacity-60 group-hover:opacity-90 transition-opacity duration-500 pointer-events-none"
+                  alt=""
+                  style="z-index: 1;"
+                />
 
-            <div class="bg-white/10 backdrop-blur-md py-4 px-4 text-center shadow-2xl rounded-b-2xl border-x border-b border-white/10 -mt-1 relative" style="z-index: 3;">
-              <h3 class="font-title text-xl leading-tight">
-                <span class="block text-brand-coral font-bold">{persona.nombre} {persona.apellido}</span>
-              </h3>
-              
-              <p class="text-brand-cyan font-body font-medium text-[0.9rem] uppercase tracking-[0.2em] mt-3">
-                {persona.cargo}
-              </p>
-            </div>
-          </article>
-        ))}
+                <img
+                  src={persona.imagen.src}
+                  alt={persona.nombre}
+                  class="relative w-full h-[98%] object-contain object-bottom transition-transform duration-500 group-hover:scale-105 pointer-events-none"
+                  style="z-index: 2;"
+                />
+              </div>
+
+              <div
+                class="flex-1 flex flex-col justify-center items-center text-center bg-white/10 backdrop-blur-md p-6 rounded-b-2xl z-10 min-h-10 gap-2"
+                style="z-index: 3;"
+              >
+                <h3 class="font-title text-xl leading-tight">
+                  <span class="block text-brand-coral font-bold">
+                    {persona.nombre} {persona.apellido}
+                  </span>
+                </h3>
+
+                <p class="text-brand-cyan font-body font-medium text-xs uppercase tracking-[0.2em]">
+                  {persona.cargo}
+                </p>
+              </div>
+            </article>
+          ))
+        }
       </div>
     </div>
 
     <div class="w-full flex justify-center mt-20" data-aos="zoom-in-up">
-      <Link 
-        href="/contacto" 
+      <Link
+        href="/contacto"
         class="bg-brand-coral hover:bg-brand-coral/90 text-base italic text-white font-normal py-3 px-8 rounded-xl transition-all shadow-lg hover:scale-105"
       >
         Conversemos sobre tu marca
       </Link>
     </div>
+    <Modal />
+    <script>
+  // 1. Usamos "as" para decirle a TS que son HTMLElements (y así reconozca .dataset)
+  const cards = document.querySelectorAll('.team-card') as NodeListOf<HTMLElement>;
+  const modal = document.getElementById('team-modal');
+  const modalContent = document.getElementById('modal-content');
+  const closeBtn = document.getElementById('close-modal');
+  const overlay = document.getElementById('modal-overlay');
+
+  // 2. Especificamos que es un HTMLImageElement para que acepte la propiedad .src
+  const mImg = document.getElementById('modal-img') as HTMLImageElement;
+  
+  const mNombre = document.getElementById('modal-nombre');
+  const mApellido = document.getElementById('modal-apellido');
+  const mCargo = document.getElementById('modal-cargo');
+  const mBio = document.getElementById('modal-bio');
+
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      // Extraemos los datos del dataset (ahora sin errores)
+      const { nombre, apellido, cargo, bio, img } = card.dataset;
+
+      // Verificamos que todo exista antes de usarlo (para evitar el error de "posiblemente null")
+      if (modal && modalContent && mImg && mNombre && mApellido && mCargo && mBio) {
+        mImg.src = img || '';
+        mNombre.innerText = nombre || '';
+        mApellido.innerText = apellido || '';
+        mCargo.innerText = cargo || '';
+        mBio.innerHTML = bio || '';
+
+        modal.classList.remove('hidden');
+        setTimeout(() => {
+          modal.classList.remove('opacity-0');
+          modalContent.classList.remove('scale-95');
+        }, 10);
+        document.body.style.overflow = 'hidden';
+      }
+    });
+  });
+
+  function closeModal() {
+    if (modal && modalContent) {
+      modal.classList.add('opacity-0');
+      modalContent.classList.add('scale-95');
+      setTimeout(() => {
+        modal.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+      }, 500);
+    }
+  }
+
+  closeBtn?.addEventListener('click', closeModal);
+  overlay?.addEventListener('click', closeModal);
+</script>
   </section>
 </Layout>
