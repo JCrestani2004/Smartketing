@@ -44,22 +44,6 @@ const tripleTestimonios = [...testimonios, ...testimonios, ...testimonios];
 <section
   class="relative w-full bg-transparent pb-8 pt-12 lg:pt-0 mt-16 overflow-hidden"
 >
-  <!-- <img
-    src={background.src}
-    alt="Fondo de clientes"
-    class="absolute inset-0 w-full h-full object-cover object-bottom z-0 pointer-events-none scale-110"
-  /> -->
-  <!-- <div
-    class="absolute w-full flex justify-center pointer-events-none select-none -mt-25 z-50"
-  >
-    <img
-      src={division.src}
-      alt=""
-      class="w-full max-w-5xl h-auto mix-blend-screen"
-      data-aos="zoom-in"
-      data-aos-delay="200"
-    />
-  </div> -->
       <h2
     class="w-full text-center font-title  text-4xl md:text-[2.73rem] z-20 text-white font-bold mt-3 md:mt-auto pb-30 lg:pb-0 2xl:pb-8 2xl:text-4xl"
     
@@ -71,7 +55,7 @@ const tripleTestimonios = [...testimonios, ...testimonios, ...testimonios];
     class="relative w-full max-w-7xl mx-auto px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-12 gap-0 lg:gap-10 items-center z-10"
   >
     <div
-      class="lg:col-span-4 flex flex-col items-center relative h-20 md:h-24 lg:h-90 lg:overflow-hidden"
+      class="lg:col-span-4 flex flex-col items-center relative h-20 md:h-24 lg:h-90 2xl:h-125 lg:overflow-hidden"
     >
       <div
         id="logo-track"
@@ -82,14 +66,14 @@ const tripleTestimonios = [...testimonios, ...testimonios, ...testimonios];
         {
           tripleTestimonios.map((item, index) => (
             <div
-              class="logo-item cursor-pointer flex items-center justify-center shrink-0 w-full lg:w-full h-full md:h-20 lg:h-30"
+              class="logo-item cursor-pointer flex items-center justify-center shrink-0 w-full lg:w-full h-full md:h-20 lg:h-30 2xl:h-50"
               data-index={index % testimonios.length}
               data-texto={item.texto}
             >
               <img
                 src={item.logo.src}
                 alt={item.alt}
-                class="z-10 w-30 md:w-38 lg:w-40 object-contain pointer-events-none grayscale scale-75 lg:scale-90 transition-all duration-500"
+                class="z-10 w-30 md:w-38 lg:w-40 2xl:w-50 object-contain pointer-events-none grayscale scale-75 lg:scale-90 transition-all duration-500"
               />
             </div>
           ))
@@ -98,23 +82,23 @@ const tripleTestimonios = [...testimonios, ...testimonios, ...testimonios];
     </div>
 
     <div
-      class="lg:col-span-8 relative flex items-center justify-center w-full min-h-112.5 md:min-h-137.5 lg:min-h-162.5"
+      class="lg:col-span-8 relative flex items-center justify-center w-full min-h-112.5 md:min-h-137.5 lg:min-h-162.5 2xl:min-h-185"
     >
       <img
         src={onda.src}
         alt="Marco de testimonio"
-        class="absolute inset-0 w-full h-full object-contain z-0 scale-[1.9] md:scale-[1.5] lg:scale-130"
+        class="absolute inset-0 w-full h-full object-contain z-0 scale-[1.9] md:scale-[1.5] lg:scale-130 2xl:scale-160"
         data-aos="zoom-out"
         data-aos-duration="1500"
         data-aos-delay="600"
       />
 
       <div
-        class="relative z-10 w-full max-w-lg px-16 md:px-24 lg:px-24 flex items-center justify-center -mt-12 lg:mt-0 lg:pb-13"
+        class="relative z-10 w-full max-w-lg px-16 md:px-24 lg:px-24 flex items-center justify-center -mt-12 lg:mt-0 lg:pb-13 2xl:pb-18"
       >
         <p
           id="testimonial-text"
-          class="text-brand-gray/90 text-[10px] min-[375px]:text-[0.7] text-sm md:text-sm lg:text-lg font-extralight italic text-center transition-all duration-500 tracking-tight leading-relaxed lg:leading-tight"
+          class="text-brand-gray/90 text-[10px] min-[375px]:text-[0.7] text-sm md:text-sm lg:text-lg 2xl:text-2xl font-extralight italic text-center transition-all duration-500 tracking-tight leading-relaxed lg:leading-tight"
         >
         </p>
       </div>
@@ -138,26 +122,26 @@ const tripleTestimonios = [...testimonios, ...testimonios, ...testimonios];
 
 <script>
   document.addEventListener("astro:page-load", () => {
-    const track = document.getElementById("logo-track");
+   const track = document.getElementById("logo-track");
     const textElement = document.getElementById("testimonial-text");
     const logos = document.querySelectorAll(".logo-item");
 
     let currentIndex = 0;
-    const itemHeight = 120; // Altura en Desktop
     let autoPlayInterval;
     const intervalTime = 5000;
 
     const updateCarousel = (index) => {
       const isMobile = window.innerWidth < 1024;
 
-      if (track) {
+      if (track && logos[index]) {
         if (isMobile) {
-          // Desplazamiento Horizontal en Móvil
+          // Desplazamiento Horizontal
           const container = track.parentElement;
           const itemWidth = container.offsetWidth;
           track.style.transform = `translateX(-${index * itemWidth}px)`;
         } else {
-          // Desplazamiento Vertical en Desktop
+          // SOLUCIÓN: Calculamos la altura real del item en lugar de usar 120
+          const itemHeight = (logos[index] as HTMLElement).offsetHeight; 
           track.style.transform = `translateY(-${index * itemHeight}px)`;
         }
       }
