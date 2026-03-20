@@ -55,40 +55,77 @@ import Footer from "../components/Footer.astro";
   });
 </script>
 <script>
-  const params = new URLSearchParams(window.location.search);
-  const status = params.get("status");
+  document.addEventListener("astro:page-load", () => {
+    const params = new URLSearchParams(window.location.search);
+    const status = params.get("status");
 
-  if (status === "success") {
-    showAlert("Mensaje enviado correctamente ✅", "success");
-  }
-
-  if (status === "error") {
-    showAlert("Hubo un error al enviar el mensaje ❌", "error");
-  }
-
-  function showAlert(message, type) {
-    const alert = document.createElement("div");
-    alert.innerText = message;
-
-    alert.className =
-      "fixed font-title top-6 right-6 px-6 py-4 rounded-xl shadow-lg text-brand-gray z-50 transition-all duration-500";
-
-    if (type === "success") {
-      alert.classList.add("bg-green-600");
-    } else {
-      alert.classList.add("bg-red-600");
+    if (status === "success") {
+      showSmartAlert(
+        "¡Gracias por escribirnos!", 
+        "Recibimos tu mensaje y muy pronto estaremos en contacto contigo.", 
+        "success"
+      );
     }
 
-    document.body.appendChild(alert);
+    if (status === "error") {
+      showSmartAlert(
+        "Algo no salió bien", 
+        "Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo.", 
+        "error"
+      );
+    }
 
-    setTimeout(() => {
-      alert.style.opacity = "0";
-      setTimeout(() => alert.remove(), 800);
-    }, 3000);
+    function showSmartAlert(title, message, type) {
+      const alertContainer = document.createElement("div");
+      
+      // CLAVES DEL CAMBIO:
+      // 1. Centrado: left-1/2 junto con -translate-x-1/2
+      // 2. Interacción: cursor-pointer para indicar que es clickeable
+      alertContainer.className = `
+        fixed top-24 left-1/2 -translate-x-1/2 z-[100] 
+        w-[90%] max-w-md p-1 rounded-[2rem] cursor-pointer
+        bg-gradient-to-br ${type === 'success' ? 'from-brand-cyan/40 to-brand-coral/40' : 'from-red-500/40 to-orange-500/40'}
+        backdrop-blur-2xl shadow-2xl opacity-0 -translate-y-4 transition-all duration-500 ease-out
+        hover:scale-[1.02] active:scale-95
+      `;
 
-    // Limpiar la URL después
-    window.history.replaceState({}, document.title, "/");
-  }
+      alertContainer.innerHTML = `
+        <div class="bg-[#1e296b]/95 rounded-[1.9rem] p-8 flex flex-col items-center text-center border border-white/10 select-none">
+          <div class="w-16 h-16 mb-6 rounded-full flex items-center justify-center ${type === 'success' ? 'bg-brand-cyan/20 text-brand-cyan' : 'bg-red-500/20 text-red-500'}">
+            ${type === 'success' 
+              ? '<svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>'
+              : '<svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>'
+            }
+          </div>
+          <h3 class="text-white font-title text-2xl font-bold mb-2">${title}</h3>
+          <p class="text-white/70 font-light leading-relaxed mb-2">${message}</p>
+          <span class="text-white/30 text-[10px] uppercase tracking-widest mt-4">Click para cerrar</span>
+        </div>
+      `;
+
+      document.body.appendChild(alertContainer);
+
+      // Función para cerrar con animación
+      const closeAlert = () => {
+        alertContainer.classList.add("opacity-0", "-translate-y-4");
+        setTimeout(() => {
+          alertContainer.remove();
+          // Limpiamos la URL para evitar que el pop-up salga al recargar
+          if (window.location.search.includes('status=')) {
+            window.history.replaceState({}, document.title, window.location.pathname);
+          }
+        }, 500);
+      };
+
+      // Animación de entrada
+      setTimeout(() => {
+        alertContainer.classList.remove("opacity-0", "-translate-y-4");
+      }, 100);
+
+      // CIERRE POR CLICK (En lugar de tiempo)
+      alertContainer.addEventListener("click", closeAlert);
+    }
+  });
 </script>
 
 </html>
