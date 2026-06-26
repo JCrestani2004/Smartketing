@@ -1,10 +1,34 @@
 ---
 import "../styles/global.css";
-const { title = "Smartketing", description = "Tu agencia de comunicación creativa para marcas en crecimiento." } = Astro.props;
-import fav from "../assets/smart/smart-simbolo.svg"
+import fav from "../assets/brandoors/isotipo.svg";
 import { ClientRouter } from "astro:transitions";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+
+const {
+  title = "Brandoors",
+  description = "Tu agencia de comunicación creativa para marcas en crecimiento.",
+  image = "/og-image.jpg",
+} = Astro.props;
+
+// URL canónica de la página actual (evita que Google la trate como contenido duplicado).
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+// Imagen para compartir en redes (recomendado 1200x630). Reemplaza public/og-image.jpg por la real.
+const ogImageURL = new URL(image, Astro.site);
+
+// Datos estructurados: le explican a Google qué es Brandoors.
+const orgSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Brandoors",
+  url: Astro.site?.href,
+  logo: new URL(fav.src, Astro.site).href,
+  description:
+    "Estudio de comunicación creativa que ayuda a pymes a construir marcas con criterio y visión a largo plazo.",
+  email: "contacto@brandoorsestudio.com",
+  areaServed: ["Panamá", "Colombia"],
+  sameAs: ["https://instagram.com/brandoors.estudio"],
+};
 ---
 
 <!doctype html>
@@ -13,28 +37,46 @@ import Footer from "../components/Footer.astro";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href={fav.src} />
-    <link rel="icon" href={fav.src} />
+    <link rel="canonical" href={canonicalURL} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <meta name="generator" content={Astro.generator} />
+
     <title>{title}</title>
     <meta name="description" content={description} />
-    
+
+    <!-- Open Graph: vista previa al compartir en WhatsApp, Facebook, LinkedIn -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Brandoors" />
+    <meta property="og:locale" content="es_LA" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content={ogImageURL} />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
+
+    <!-- Datos estructurados (Schema.org) -->
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
   </head>
   <ClientRouter />
-  <body class="bg-brand-gray/85">
+  <body>
     <Header />
     <slot />
     <Footer />
   </body>
- <script is:inline src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<!-- AOS ahora viene empaquetado dentro del proyecto (ya no se carga desde un CDN externo). -->
+<script>
+  import AOS from "aos";
+  import "aos/dist/aos.css";
 
-<script is:inline>
-  // 1. Definimos la función de inicialización
+  // Lo dejamos disponible globalmente para otros componentes (p. ej. Testimonios).
+  (window as any).AOS = AOS;
+
   function initAOS() {
     AOS.init({
       duration: 1000,
@@ -43,15 +85,14 @@ import Footer from "../components/Footer.astro";
     });
   }
 
-  // 2. La ejecutamos cuando carga la página por primera vez
+  // Primera carga de la página.
   initAOS();
 
-  // 3. ¡ESTA ES LA CLAVE! 
-  // Cada vez que Astro cambia de página (evento astro:after-swap), 
-  // le decimos a AOS que refresque y vuelva a buscar elementos.
-  document.addEventListener('astro:after-swap', () => {
-    AOS.refresh(); // Despierta a AOS
-    initAOS();     // Reinicia la configuración
+  // Astro usa transiciones de página (tipo SPA): al cambiar de página,
+  // refrescamos AOS y reiniciamos la configuración.
+  document.addEventListener("astro:after-swap", () => {
+    AOS.refresh();
+    initAOS();
   });
 </script>
 <script>

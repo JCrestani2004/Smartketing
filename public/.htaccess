@@ -1,0 +1,40 @@
+# ============================================================================
+#  Brandoors — Cabeceras de seguridad y reglas del servidor (Apache)
+#  Este archivo se publica en la raíz del sitio. Si tu hosting NO usa Apache
+#  (p. ej. Nginx), pídele a tu proveedor que aplique cabeceras equivalentes.
+# ============================================================================
+
+# ----------------------------------------------------------------------------
+#  1) Cabeceras de seguridad (solo si el servidor soporta mod_headers)
+# ----------------------------------------------------------------------------
+<IfModule mod_headers.c>
+    # Evita que el navegador "adivine" el tipo de archivo (anti-MIME-sniffing).
+    Header always set X-Content-Type-Options "nosniff"
+
+    # Impide que tu web se cargue dentro de un <iframe> de otro sitio (anti-clickjacking).
+    Header always set X-Frame-Options "SAMEORIGIN"
+
+    # Controla cuánta información de origen se envía al navegar a otros sitios.
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+    # Desactiva APIs del navegador que este sitio no necesita.
+    Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), interest-cohort=()"
+
+    # --- HSTS: obliga a usar HTTPS. ACTÍVALO SOLO cuando el certificado SSL
+    #     esté funcionando en todo el dominio (si no, puede bloquear el acceso).
+    # Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+
+    # --- Content-Security-Policy (CSP): la protección más fuerte contra inyección
+    #     de scripts. PUEDE romper estilos/fuentes/scripts si algo falta, así que
+    #     déjala comentada, actívala y prueba el sitio página por página.
+    # Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; form-action 'self'; base-uri 'self'; frame-ancestors 'self'; object-src 'none'"
+</IfModule>
+
+# ----------------------------------------------------------------------------
+#  2) Redirección a HTTPS (descomenta cuando el SSL esté activo)
+# ----------------------------------------------------------------------------
+# <IfModule mod_rewrite.c>
+#     RewriteEngine On
+#     RewriteCond %{HTTPS} off
+#     RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# </IfModule>
