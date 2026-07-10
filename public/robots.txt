@@ -1,6 +1,0 @@
-# Brandoors — reglas para los buscadores
-User-agent: *
-Allow: /
-
-# Mapa del sitio (lo genera Astro automáticamente en cada build)
-Sitemap: https://brandoorsestudio.com/sitemap-index.xml
