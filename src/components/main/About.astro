@@ -5,7 +5,7 @@ import Separador from './Separator.astro';
 
 <section
   class="relative w-full bg-transparent pb-20 2xl:pb-0 pt-32 px-6 md:px-10 lg:px-20 items-center"
-  data-aos-anchor-placement="top-center"
+  
 >
   <div
     class="max-w-6xl 2xl:max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-3 2xl:gap-20 items-start"
@@ -15,7 +15,7 @@ import Separador from './Separator.astro';
     >
       <h2
         class="font-title text-4xl md:text-[2.8rem] leading-[0.9] tracking-tight text-center md:text-left"
-        data-aos="fade-right" data-aos-duration="1000"
+        data-motion="revealRight" data-motion-duration="1"
       >
         <span class="text-brand-cyan font-light">Quiénes</span>
         <span class="text-brand-gray font-bold"> somos</span>
@@ -27,7 +27,7 @@ import Separador from './Separator.astro';
     >
       <div
         class="space-y-10 w-full text-brand-gray/80 font-body text-[0.95rem] md:text-[1.3rem] leading-[1.40rem] mb-14 tracking-wide font-normal antialiased text-justify"
-        data-aos="fade-up" data-aos-delay="200"
+        data-motion="revealUp" data-motion-delay="0.2"
       >
         <p>
           En <strong>Brandoors</strong> tenemos más de <strong>diez años</strong> acompañando a pequeñas y medianas empresas a construir
@@ -64,8 +64,8 @@ import Separador from './Separator.astro';
   <div class="max-w-5xl mx-auto mt-30 text-center">
 
   <h2 class="font-title text-3xl md:text-[2.3rem] leading-[1.1]"
-  data-aos="fade-down"
-    data-aos-duration="1000"
+  data-motion="revealDown"
+    data-motion-duration="1"
     >
     <span class="text-brand-coral font-light">Dile adiós a tus</span>
     <span class="text-brand-gray font-extrabold"> problemas</span>
@@ -74,8 +74,8 @@ import Separador from './Separator.astro';
   <div class="grid grid-cols-2 md:grid-cols-4 gap-25 mt-18 font-body max-w-4xl justify-self-center">
 
     <div class="flex flex-col items-center w-full max-w-80"
-    data-aos="zoom-in-up"
-      data-aos-delay="100">
+    data-motion="zoomInUp"
+      data-motion-delay="0.1">
       <div class="w-8 h-8 bg-brand-coral rounded-full flex items-center justify-center text-white font-bold">
         !
       </div>
@@ -85,8 +85,8 @@ import Separador from './Separator.astro';
     </div>
 
     <div class="flex flex-col items-center w-full max-w-80"
-    data-aos="zoom-in-up"
-      data-aos-delay="250">
+    data-motion="zoomInUp"
+      data-motion-delay="0.25">
       <div class="w-8 h-8 bg-brand-coral rounded-full flex items-center justify-center text-white font-bold">
         !
       </div>
@@ -96,8 +96,8 @@ import Separador from './Separator.astro';
     </div>
 
     <div class="flex flex-col items-center w-full max-w-80"
-    data-aos="zoom-in-up"
-      data-aos-delay="400">
+    data-motion="zoomInUp"
+      data-motion-delay="0.4">
       <div class="w-8 h-8 bg-brand-coral rounded-full flex items-center justify-center text-white font-bold">
         !
       </div>
@@ -107,8 +107,8 @@ import Separador from './Separator.astro';
     </div>
 
     <div class="flex flex-col items-center w-full max-w-80"
-    data-aos="zoom-in-up"
-      data-aos-delay="550">
+    data-motion="zoomInUp"
+      data-motion-delay="0.55">
       <div class="w-8 h-8 bg-brand-coral rounded-full flex items-center justify-center text-white font-bold">
         !
       </div>
@@ -123,13 +123,13 @@ import Separador from './Separator.astro';
 <div class="max-w-5xl mx-auto mt-24 flex flex-col md:flex-row items-center justify-between gap-10">
 
   <h3 class="font-title text-4xl md:text-[2.8rem] leading-[0.9] text-center md:text-left"
-  data-aos="fade-right"
-    data-aos-duration="1200">
+  data-motion="revealRight"
+    data-motion-duration="1.2">
     <span class="block text-brand-gray font-extrabold">Nosotros</span>
     <span class="block text-brand-cyan font-light">tenemos la</span>
     <span class="block text-brand-gray font-extrabold">solución.</span>
   </h3>
-  <div data-aos="fade-left" data-aos-duration="1200" data-aos-delay="200">
+  <div data-motion="revealLeft" data-motion-duration="1.2" data-motion-delay="0.2">
   <Link
     href="/about"
     class="bg-brand-coral text-white px-8 py-3 rounded-xl font-body hover:scale-105 transition duration-300"

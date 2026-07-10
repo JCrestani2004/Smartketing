@@ -19,7 +19,7 @@ import Link from "../Link.astro";
         src={onda.src}
         alt=""
         class="absolute -z-10 w-[250%] max-w-none lg:w-[130%] top-[20%] left-[62%] lg:top-1/2 lg:left-1/2 -translate-x-[55%] lg:-translate-x-[60%] -translate-y-1/2 pointer-events-none"
-        data-aos="zoom-out" data-aos-delay="200" data-aos-duration="2000"
+        data-motion="scale" data-motion-delay="0,2" data-motion-duration="2"
       />
 
       <div
@@ -29,14 +29,14 @@ import Link from "../Link.astro";
           class="font-title text-[2.5rem] leading-[0.9] lg:text-[3.8rem] text-white"
         >
           <span class="block font-light tracking-tight"
-          data-aos="fade-up" data-aos-delay="400"
+          data-motion="revealUp" data-motion-delay="0.4"
           >ESTUDIO DE</span>
           <span class="block font-bold text-brand-cyan uppercase"
-          data-aos="fade-up" data-aos-delay="600"
+          data-motion="revealUp" data-motion-delay="0.6"
             >comunicación</span
           >
           <span class="block italic text-brand-coral uppercase"
-          data-aos="fade-up" data-aos-delay="800"
+          data-motion="revealUp" data-motion-delay="0.8"
           >creativa</span>
         </h1>
 
@@ -47,11 +47,11 @@ import Link from "../Link.astro";
             src={iconoP.src}
             alt=""
             class="w-16 lg:w-25 lg:translate-y-2"
-            data-aos="fade-right" data-aos-delay="1000"
+            data-motion="revealRight" data-motion-delay="1"
           />
           <p
             class="text-brand-gray/90 font-subtitle text-[1.1rem] lg:text-[1.3rem] font-extralight leading-tight lg:leading-[0.8] text-left"
-            data-aos="fade-right" data-aos-delay="1000"
+            data-motion="revealRight" data-motion-delay="1"
           >
             <span class="opacity-90">Para marcas</span>
             <br />
@@ -70,12 +70,10 @@ import Link from "../Link.astro";
            lg:absolute
            lg:-top-12 lg:left-26
            z-30"
-           data-aos="zoom-in" data-aos-delay="1200"
-           loading="eager"
-           fetchpriority="high"
+           data-motion="scale" data-motion-delay="1.2"
         />
 
-        <div class="lg:mt-32" data-aos="fade-up" data-aos-delay="1000">
+        <div class="lg:mt-32" data-motion="revealUp" data-motion-delay="1">
           <Link
             href="/contacto"
             class="font-body bg-brand-cyan text-brand-blue px-8 py-3 lg:px-4 lg:py-3 rounded-xl font-bold text-[1.02rem] hover:bg-brand-cyan/80 hover:scale-105 transition-all shadow-lg duration-400"

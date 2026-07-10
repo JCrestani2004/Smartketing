@@ -30,7 +30,7 @@ const doubleClients = [...clients, ...clients];
 ---
 
 <section class="relative w-full py-8 lg:py-16 z-30 -mt-10 lg:-mt-10 xl:-mt-16 2xl:-mt-90 overflow-x-clip"
-data-aos="fade-in" data-aos-delay="600"
+data-motion="revealUp" data-motion-delay="0.8"
 >
     <h2
     class="w-full text-center font-title text-2xl xl:text-4xl z-20 text-white font-light antialiased tracking-widest mt-3 md:mt-auto pb-30 lg:pb-0 2xl:pb-8 2xl:text-4xl"
@@ -41,7 +41,7 @@ data-aos="fade-in" data-aos-delay="600"
   <div class="logo-marquee relative mx-auto flex items-center overflow-hidden w-full max-w-4xl">
     <div class="flex w-max animate-marquee items-center gap-8 md:gap-16 transition:persist">
       {doubleClients.map((client) => (
-        <div class="felx-shrink-0 flex items-center justify-center h-24 md:h-32 w-24 md:w-32 py-2">
+        <div class="shrink-0 flex items-center justify-center h-24 md:h-32 w-24 md:w-32 py-2">
         <img 
           src={client.logo.src} 
           alt={client.name} 

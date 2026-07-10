@@ -81,12 +81,12 @@ En Brandoors participa en la ejecución de contenidos, la gestión de redes soci
   <section
     class="relative bg-transparent w-full min-h-screen overflow-hidden pt-42 pb-20 px-6 lg:px-20"
   >
-  <div class="max-w-3xl mx-auto text-center pt-15 mb-10 md:mb-16" data-aos="fade-down">
-    <h1 class="text-white text-3xl md:text-4xl font-light mb-2 font-title">
+  <div class="max-w-3xl mx-auto text-center pt-15 mb-10 md:mb-16" data-motion="revealDown">
+    <h1 class="text-white text-3xl md:text-4xl font-light font-title">
       Nuestro <span class="text-brand-coral font-bold">Equipo</span>
     </h1>
     <Separador />
-    <p class="text-brand-gray/80 font-body font-light text-sm md:text-lg leading-relaxed mt-10 text-justify">
+    <p class="text-brand-gray/80 font-body font-light text-sm md:text-lg leading-relaxed text-justify">
       Detrás de cada proyecto hay un equipo que combina estrategia, creatividad y ejecución. 
       En Brandoors trabajamos con una estructura flexible 
       que integra dirección y talento creativo especializado para acompañar a cada cliente en su proceso de crecimiento.
@@ -97,7 +97,7 @@ En Brandoors participa en la ejecución de contenidos, la gestión de redes soci
     <div class="relative z-10 max-w-5xl mx-auto">
       <div
         class="text-center pt-15 md:mb-10 lg:-mb-12 xl:-mb-16"
-        data-aos="fade-down"
+        data-motion="revealDown"
       >
         <h2 class="text-white text-3xl md:text-4xl font-light">
           Equipo <span class="text-brand-coral font-bold">Directivo</span>
@@ -111,7 +111,7 @@ En Brandoors participa en la ejecución de contenidos, la gestión de redes soci
       >
         {
           equipo.map((persona) => (
-            <div data-aos="fade-up">
+            <div data-motion="revealUp">
               <article
                 class="team-card group cursor-pointer relative flex flex-col h-full transition-all duration-500 hover:-translate-y-2"
                 data-nombre={persona.nombre}
@@ -160,7 +160,7 @@ En Brandoors participa en la ejecución de contenidos, la gestión de redes soci
     <div class="relative z-10 max-w-5xl mx-auto mt-10">
       <div
         class="text-center pt-15 md:mb-10 lg:-mb-12 xl:-mb-16"
-        data-aos="fade-down"
+        data-motion="revealDown"
       >
         <h2 class="text-white text-3xl md:text-4xl font-light">
           Asociados <span class="text-brand-coral font-bold">Creativos</span>
@@ -174,7 +174,7 @@ En Brandoors participa en la ejecución de contenidos, la gestión de redes soci
       >
         {
           asociados.map((persona) => (
-            <div data-aos="fade-up">
+            <div data-motion="revealUp">
               <article
                 class="team-card group cursor-pointer relative flex flex-col h-full transition-all duration-500 hover:-translate-y-2"
                 data-nombre={persona.nombre}
@@ -220,7 +220,7 @@ En Brandoors participa en la ejecución de contenidos, la gestión de redes soci
       </div>
     </div>
 
-    <div class="w-full flex justify-center mt-20" data-aos="zoom-in-up">
+    <div class="w-full flex justify-center mt-20" data-motion="zoomInUp">
       <Link
         href="/contacto"
         class="bg-brand-coral hover:bg-brand-coral/90 text-base italic text-white font-normal py-3 px-8 rounded-xl transition-all shadow-lg hover:scale-105"

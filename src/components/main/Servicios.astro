@@ -57,11 +57,11 @@ const servicios = [
       <div class="mb-4 md:mb-4">
         <h2
           class="font-title text-4xl md:text-[2.73rem] leading-[0.95] tracking-normal"
-          data-aos="fade-right"
-          data-aos-duration="1000"
+          data-motion="revealRight"
+          data-motion-duration="1"
         >
           <span class="font-light text-white">Nuestros</span>
-          <span class="text-brand-coral font-bold">servicios</span>
+          <span class="text-brand-coral font-bold"> servicios</span>
         </h2>
       </div>
 
@@ -69,17 +69,17 @@ const servicios = [
         class="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-6 md:gap-x-20 md:gap-y-16 pb-8 mt-6 md:mt-0"
       >
         {
-          servicios.map((s) => (
+          servicios.map((s, index) => (
             <Link
               href={s.href}
               class="group relative block p-4 rounded-2xl transition-all duration-500 cursor-pointer"
-              data-aos="fade-up"
-              data-aos-delay={s.delay}
+              data-motion="revealUp"
+              data-motion-delay={index * 0.4}
             >
               <div
                 class="flex flex-col items-center lg:items-start"
-                data-aos="fade-up"
-                data-aos-delay={s.delay}
+                data-motion="revealUp"
+                data-motion-delay={index * 0.7}
               >
                 <div class="h-14 md:h-40 pt-2 relative flex items-center justify-center">
                   <div class={`glow-effect ${s.glowClass || 'glow-coral'}`}></div>
@@ -116,8 +116,8 @@ const servicios = [
       <div class="grid grid-cols-2 md:grid-cols-5 gap-10 mt-14 font-bold">
         <div
           class="flex flex-col items-center gap-3"
-          data-aos="fade-up"
-          data-aos-delay="200"
+          data-motion="revealUp"
+          data-motion-delay="0.2"
         >
           <img src={iconoA.src} class="w-28" />
           <p class="text-brand-coral text-[1rem]">
@@ -127,8 +127,8 @@ const servicios = [
 
         <div
           class="flex flex-col items-center gap-3"
-          data-aos="fade-up"
-          data-aos-delay="400"
+          data-motion="revealUp"
+          data-motion-delay="0.4"
         >
           <img src={iconoD.src} class="w-28" />
           <p class="text-brand-coral text-[1.1rem]">
@@ -138,8 +138,8 @@ const servicios = [
 
         <div
           class="flex flex-col items-center gap-3"
-          data-aos="fade-up"
-          data-aos-delay="600"
+          data-motion="revealUp"
+          data-motion-delay="0.6"
         >
           <img src={iconoI.src} class="w-28" />
           <p class="text-brand-coral text-[1.1rem]">
@@ -149,8 +149,8 @@ const servicios = [
 
         <div
           class="flex flex-col items-center gap-3"
-          data-aos="fade-up"
-          data-aos-delay="800"
+          data-motion="revealUp"
+          data-motion-delay="0.8"
         >
           <img src={iconoPr.src} class="w-28" />
           <p class="text-brand-coral text-[1.1rem]">
@@ -160,8 +160,8 @@ const servicios = [
 
         <div
           class="flex flex-col items-center gap-3"
-          data-aos="fade-up"
-          data-aos-delay="1000"
+          data-motion="revealUp"
+          data-motion-delay="1"
         >
           <img src={iconoCa.src} class="w-28" />
           <p class="text-brand-coral text-[1.1rem]">
@@ -174,7 +174,9 @@ const servicios = [
         <Link
           href="/servicio"
           class="bg-brand-coral text-brand-gray px-10 py-3 rounded-2xl font-bold font-body text-lg hover:scale-105 duration-300 z-50 inline-block"
-        >
+          data-motion="revealUp"
+          data-motion-duration="1.4"
+          >
           Ver servicios
         </Link>
       </div>

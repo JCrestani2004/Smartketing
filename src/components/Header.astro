@@ -7,27 +7,30 @@ import Link from "../components/Link.astro";
   <div class="max-w-8xl mx-auto px-6 md:px-15 lg:px-20 py-6 flex justify-between items-center gap-5">
 
     <Link href="/"
-    data-aos="fade-right" 
-        data-aos-duration="1000">
+    data-motion="scaleBig" 
+        data-motion-duration="4">
       <img src={logo.src} alt="Brandoors" class="h-10 md:h-13 transition-transform duration-300 hover:scale-105" 
       />
     </Link>
 
     <ul class="hidden lg:flex gap-14 md:text-xs lg:text-base text-brand-gray font-extralight">
         <li><Link href="/" class="nav-link hover:text-white transition-all duration-300"
-          data-aos="fade-down" data-aos-delay="100"
+          data-motion="revealDown" data-motion-delay="0.05"
           >Inicio</Link></li>
         <li><Link href="/about" class="nav-link hover:text-white transition-all duration-300"
-          data-aos="fade-down" data-aos-delay="100"
+          data-motion="revealDown" data-motion-delay="0.08"
           >Quiénes somos</Link></li>
         <li><Link href="/servicio" class="nav-link hover:text-white transition-all duration-300"
-          data-aos="fade-down" data-aos-delay="200">Servicios
+          data-motion="revealDown" data-motion-delay="0.15">Servicios
+        </Link></li>
+        <li><Link href="/exitos" class="nav-link hover:text-white transition-all duration-300"
+          data-motion="revealDown" data-motion-delay="0.2">Casos de Exito
         </Link></li>
       <li><Link href="/equipo" class="nav-link hover:text-white transition-all duration-300"
-        data-aos="fade-down" data-aos-delay="300"
+        data-motion="revealDown" data-motion-delay="0.25"
         >Equipo</Link></li>
       <li><Link href="/contacto" class="nav-link hover:text-white transition-all duration-300"
-        data-aos="fade-down" data-aos-delay="400"
+        data-motion="revealDown" data-motion-delay="0.3"
         >Contáctenos</Link></li>
     </ul>
 
@@ -44,6 +47,7 @@ import Link from "../components/Link.astro";
       <Link href="/" class="text-2xl text-white font-light hover:text-brand-cyan">Inicio</Link>
       <Link href="/about" class="text-2xl text-white font-light hover:text-brand-cyan">Quiénes somos</Link>
       <Link href="/servicio" class="text-2xl text-white font-light hover:text-brand-cyan">Servicios</Link>
+      <Link href="/exitos" class="text-2xl text-white font-light hover:text-brand-cyan">Casos de Exito</Link>
       <Link href="/equipo" class="text-2xl text-white font-light hover:text-brand-cyan">Equipo</Link>
       <Link href="/contacto" class="text-2xl text-white font-light hover:text-brand-cyan">Contáctenos</Link>
     </div>

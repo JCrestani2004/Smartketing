@@ -68,33 +68,48 @@ const orgSchema = {
     <Header />
     <slot />
     <Footer />
+    <script>
+      import { createObserver } from "../lib/motion/observer";
+
+      document.addEventListener("astro:page-load", () => {
+        createObserver()
+      })
+    </script>
   </body>
-<!-- AOS ahora viene empaquetado dentro del proyecto (ya no se carga desde un CDN externo). -->
-<script>
+
+<!-- <script>
   import AOS from "aos";
   import "aos/dist/aos.css";
 
-  // Lo dejamos disponible globalmente para otros componentes (p. ej. Testimonios).
+  // 1. Corregimos el error de TypeScript forzando el tipo 'any' en el objeto global
   (window as any).AOS = AOS;
 
   function initAOS() {
     AOS.init({
       duration: 1000,
-      once: true,
+      once: false, // Permite que las animaciones se repitan al navegar/escrolear
       offset: 100,
+      mirror: true,
     });
   }
 
-  // Primera carga de la página.
-  initAOS();
+  
 
-  // Astro usa transiciones de página (tipo SPA): al cambiar de página,
-  // refrescamos AOS y reiniciamos la configuración.
-  document.addEventListener("astro:after-swap", () => {
-    AOS.refresh();
-    initAOS();
+  // 3. Control estricto para el intercambio de páginas de Astro
+  document.addEventListener("astro:page-load", () => {
+    // 2. Primera carga física de la web
+  initAOS();
+    // refreshHard limpia el historial de elementos de la página anterior,
+    // busca las nuevas etiquetas 'data-aos' del nuevo DOM y las indexa.
+    AOS.refreshHard();
+    
+    // Le damos 100ms a la transición de Astro para asentarse y disparamos
+    // un scroll artificial para forzar a AOS a pintar las animaciones de inmediato.
+    setTimeout(() => {
+      window.dispatchEvent(new Event('scroll'));
+    }, 100);
   });
-</script>
+</script> -->
 <script>
   document.addEventListener("astro:page-load", () => {
     const params = new URLSearchParams(window.location.search);
@@ -116,7 +131,7 @@ const orgSchema = {
       );
     }
 
-    function showSmartAlert(title, message, type) {
+    function showSmartAlert(title: string, message: string, type: string) {
       const alertContainer = document.createElement("div");
       
       // CLAVES DEL CAMBIO:

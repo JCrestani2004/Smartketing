@@ -16,16 +16,12 @@ import Link from "../components/Link.astro";
   <section
     class="relative w-full min-h-screen bg-transparent overflow-hidden pt-42 pb-20 px-6 lg:px-20"
   >
-    <!-- <img
-      src={background.src}
-      alt=""
-      class="absolute inset-0 w-full h-full object-cover object-top pointer-events-none"
-    /> -->
+    
 
     <div class="relative z-10 max-w-5xl mx-auto">
       <div
         class="text-center pt-15 md:-mb-16 lg:-mb-18 xl:-mb-22"
-        data-aos="fade-down"
+        data-motion="revealDown"
       >
         <h1 class="text-brand-gray font-title text-3xl md:text-4xl font-light">
           Quiénes <span class="text-brand-coral font-bold">Somos</span>
@@ -36,7 +32,7 @@ import Link from "../components/Link.astro";
 
       <article
         class="space-y-10 -mb-10 max-w-3xl mx-auto text-justify"
-        data-aos="fade-up"
+        data-motion="revealUp"
       >
         <p
           class="text-brand-gray/90 text-sm md:text-lg font-body font-extralight leading-relaxed"
@@ -72,7 +68,7 @@ import Link from "../components/Link.astro";
 
       <div
         class="text-center mt-35 md:-mb-16 lg:-mb-18 xl:-mb-22"
-        data-aos="fade-right"
+        data-motion="revealRight"
       >
         <h2
           class="font-title text-3xl md:text-4xl leading-none font-light text-brand-gray"
@@ -121,8 +117,8 @@ import Link from "../components/Link.astro";
             <>
               <div
                 class="-mb-3 md:-mb-15"
-                data-aos="fade-up"
-                data-aos-delay={index * 100}
+                data-motion="revealUp"
+                data-motion-delay={index * 0.1}
               >
                 <div class="flex flex-col gap-3 items-center">
                   <img
@@ -151,7 +147,7 @@ import Link from "../components/Link.astro";
         }
       </div>
 
-      <div class="mt-32 flex justify-center lg:py-22" data-aos="zoom-in">
+      <div class="mt-32 flex justify-center lg:py-22" data-motion="scale">
         <Link
           href="/contacto"
           class="bg-brand-coral hover:bg-brand-gray hover:text-brand-coral text-brand-gray p-4 md:px-8 py-5 rounded-lg font-bold font-title text-sm md:text-sm transition-all duration-300 shadow-xl shadow-brand-coral/20 hover:scale-105"
