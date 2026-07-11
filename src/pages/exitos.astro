@@ -1,7 +1,63 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Separador from "../components/main/Separator.astro";
+import energy_case from "../assets/casos_exito/energy_caso.png";
+import energy from '../assets/clientes/energy.svg';
+import illuminations_case from"../assets/casos_exito/illuminations_caso.png";
+import illuminations from '../assets/clientes/illuminations.svg';
+import mega_case from"../assets/casos_exito/mega_case.png";
+import mega from '../assets/clientes/mega.svg';
+import simel_caso from"../assets/casos_exito/simel_caso.png";
+import simel from '../assets/clientes/simel.svg';
+import vicone_caso from"../assets/casos_exito/vicone_caso.png";
+import vicone from '../assets/clientes/vicone.svg';
+import type { ImageMetadata } from 'astro';
+import { Image } from "astro:assets";
+
+interface Casos {
+  name: string;
+  alt: string;
+  image: ImageMetadata;
+  logo: ImageMetadata;
+}
+
+const casosImages: Casos[] = [
+  {
+    name: "Caso Energy Control",
+    alt: "Energy Control",
+    image: energy_case,
+    logo: energy
+  },
+  {
+    name: "Caso Illuminations",
+    alt: "Illuminations",
+    image: illuminations_case,
+    logo: illuminations
+  },
+  {
+    name: "Caso Calzados Mega",
+    alt: "Calzados Mega",
+    image: mega_case,
+    logo: mega
+  },
+  {
+    name: "Caso Grupo Simel",
+    alt: "Grupo Simel",
+    image: simel_caso,
+    logo: simel
+  },
+  {
+    name: "Caso Vicone",
+    alt: "Vicone",
+    image: vicone_caso,
+    logo: vicone
+  },
+
+]
+
+
 ---
+
 
 <Layout
   title="Casos de Éxito | Brandoors"
@@ -17,10 +73,20 @@ import Separador from "../components/main/Separator.astro";
       </h1>
     </div>
     <Separador />
-    <article class="w-full flex flex-col">
+    <article class="w-full flex flex-col gap-10">
         <p class="text-justify text-brand-gray/80 text-sm md:text-lg max-w-3xl mx-auto">
             Cada marca tiene un punto de partida. Descubre cómo convertimos desafíos en estrategias, ideas en experiencias y marcas en historias que conectan. Selecciona una marca y sumérgete en su historia
         </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto mt-30">
+          {casosImages.map((caso, index) => (
+            <div class="relative group w-full aspect-square overflow-hidden bg-black ">
+              <Image src={caso.image} alt={caso.name} class={`w-full h-full object-cover transition-all duration-400 ease-out group-hover:opacity-20`} />
+              <Image src={caso.logo} alt={caso.alt} class={`absolute inset-0 w-full h-full p-10 object-container opacity-0 transition-all duration-700 ease-out group-hover:opacity-100`} />
+            </div>
+          ))}
+          <div></div>
+        </div>
     </article>
   </section>
 </Layout>
