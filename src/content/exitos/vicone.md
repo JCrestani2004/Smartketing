@@ -30,9 +30,9 @@ blocks:
     #3. Galeria
     - type: "galeria-proyectos"
       imagenes:
-        - /src/assets/casos_exito/vicone/image1.jpg
-        - /src/assets/casos_exito/vicone/image2.jpg
-        - /src/assets/casos_exito/vicone/image3.jpg
+        - /casos_exito/vicone/image1.jpg
+        - /casos_exito/vicone/image2.jpg
+        - /casos_exito/vicone/image3.jpg
     
     #4. Instagram videos
     - type: "instagram-embed"
@@ -49,25 +49,25 @@ blocks:
     #6. Bloque de imagenes
     - type: "galeria-grande"
       imagenes: 
-        - img: /src/assets/casos_exito/vicone/image4.png
+        - img: /casos_exito/vicone/image4.png
           grid: "md:col-span-4"
           h: "h-full"
-        - img: /src/assets/casos_exito/vicone/image5.jpeg
+        - img: /casos_exito/vicone/image5.jpeg
           grid: "md:col-span-1"
           h: "h-full"
-        - img: /src/assets/casos_exito/vicone/image6.jpeg
+        - img: /casos_exito/vicone/image6.jpeg
           grid: "md:col-span-3"
           h: "h-[100%]"
-        - img: /src/assets/casos_exito/vicone/image7.jpeg
+        - img: /casos_exito/vicone/image7.jpeg
           grid: "md:col-span-4"
           h: "h-full"
-        - img: /src/assets/casos_exito/vicone/image8.jpeg
+        - img: /casos_exito/vicone/image8.jpeg
           grid: "md:col-span-4"
           h: "h-full"
-        - img: /src/assets/casos_exito/vicone/image10.jpeg
+        - img: /casos_exito/vicone/image10.jpeg
           grid: "md:col-span-1"
           h: "h-full"
-        - img: /src/assets/casos_exito/vicone/image9.jpeg
+        - img: /casos_exito/vicone/image9.jpeg
           grid: "md:col-span-2"
           h: "h-full"
         
@@ -92,9 +92,9 @@ blocks:
     #8. Galeria entregables
     # - type: "galeria-entregables"
   #   imagenes:
-  #     - "/src/assets/vicone-antes-despues.jpg"
-  #     - "/src/assets/vicone-reels.jpg"
-  #     - "/src/assets/vicone-vallas.jpg"
+  #     - "/vicone-antes-despues.jpg"
+  #     - "/vicone-reels.jpg"
+  #     - "/vicone-vallas.jpg"
 
     #9. El impacto
     - type: "seccion-texto"
