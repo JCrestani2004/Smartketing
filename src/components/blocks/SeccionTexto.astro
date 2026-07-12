@@ -1,0 +1,26 @@
+---
+interface Props {
+  subtitulo?: string; // El '?' hace que no sea obligatorio, ideal para el párrafo suelto
+  parrafos: string[];
+}
+
+const { subtitulo, parrafos } = Astro.props;
+---
+
+<section class="max-w-4xl mx-auto px-6 py-6 space-y-4" data-motion="revealUp">
+  
+  {/* Si en el .md pusiste subtitulo, lo pinta; si no, lo ignora de forma limpia */}
+  {subtitulo && (
+    <h2 class="text-3xl font-bold font-subtitle text-white tracking-tight mb-2">
+      {subtitulo}
+    </h2>
+  )}
+  
+  <div class="space-y-4">
+    {parrafos.map((parrafo: string) => (
+      // Usamos set:html para que reconozca etiquetas <strong> si quieres resaltar palabras
+      <p class="text-brand-gray/90 font-body leading-relaxed text-lg" set:html={parrafo} />
+    ))}
+  </div>
+
+</section>

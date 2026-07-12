@@ -1,0 +1,82 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import Separador from "../../components/main/Separator.astro";
+
+// 1. Importamos los componentes de los bloques (los crearemos en el siguiente paso)
+import SeccionTexto from '../../components/blocks/SeccionTexto.astro';
+import GaleriaProyectos from '../../components/blocks/GaleriaProyectos.astro';
+import InstagramEmbed from '../../components/blocks/InstagramEmbed.astro';
+import GaleriaGrande from '../../components/blocks/GaleriaGrande.astro';
+import BloqueMetricas from '../../components/blocks/BloqueMetricas.astro';
+
+// 2. Generamos las rutas dinámicas para que Astro sepa que existe /exitos/vicone
+export async function getStaticPaths() {
+  const exitos = await getCollection('exitos');
+  return exitos.map((entry: any) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+// Destructuramos los datos exactos que pusiste en tu vicone.md
+const { cliente, title, industria, servicios, blocks } = entry.data;
+---
+
+<Layout title={`${cliente} - Caso de Éxito`}>
+  <main class="text-brand-gray min-h-screen py-20 space-y-10">
+    
+    <!-- ========================================== -->
+    <!-- CABECERA FIJA DEL PROYECTO                  -->
+    <!-- ========================================== -->
+    <header class="max-w-5xl mx-auto px-6 space-y-6 mt-10" data-motion="revealUp">
+      <div class="flex items-center gap-1.5 text-xs font-normal font-title tracking-widest text-brand-gray/80 uppercase">
+        <span class="">{cliente}</span>
+        <span>•</span>
+        <span class="">{industria}</span>
+      </div>
+      
+      <h1 class="text-4xl md:text-5xl font-bold font-title tracking-tight leading-[1.15]">
+        {title}
+      </h1>
+
+      <!-- Píldoras de servicios -->
+      <div class="flex flex-wrap pt-2">
+        {servicios.map((servicio: string) => (
+          <span class="text-xs font-medium font-subtitle px-3 py-1 rounded-full text-brand-gray/80">
+            {servicio}
+          </span>
+        ))}
+      </div>
+      
+      <Separador />
+    </header>
+
+    <!-- ========================================== -->
+    <!-- RENDERIZADO DINÁMICO DE BLOQUES             -->
+    <!-- ========================================== -->
+    {blocks.map((block: any) => {
+      switch (block.type) {
+        case 'seccion-texto':
+          return <SeccionTexto subtitulo={block.subtitulo} parrafos={block.parrafos} />;
+        
+        case 'galeria-proyectos':
+          return <GaleriaProyectos imagenes={block.imagenes} />;
+        
+        case 'instagram-embed':
+          return <InstagramEmbed urls={block.urls} />;
+        
+        case 'galeria-grande':
+          return <GaleriaGrande imagenes={block.imagenes} />;
+        
+        case 'bloque-metricas':
+          return <BloqueMetricas tituloSeccion={block.tituloSeccion} metricas={block.metricas} />;
+        
+        default:
+          return null;
+      }
+    })}
+
+  </main>
+</Layout>

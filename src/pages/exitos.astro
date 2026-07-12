@@ -13,12 +13,14 @@ import vicone_caso from"../assets/casos_exito/vicone_caso.png";
 import vicone from '../assets/clientes/vicone.svg';
 import type { ImageMetadata } from 'astro';
 import { Image } from "astro:assets";
+import Link from "../components/Link.astro";
 
 interface Casos {
   name: string;
   alt: string;
   image: ImageMetadata;
   logo: ImageMetadata;
+  id: string;
 }
 
 const casosImages: Casos[] = [
@@ -26,31 +28,36 @@ const casosImages: Casos[] = [
     name: "Caso Energy Control",
     alt: "Energy Control",
     image: energy_case,
-    logo: energy
+    logo: energy,
+    id: "energy"
   },
   {
     name: "Caso Illuminations",
     alt: "Illuminations",
     image: illuminations_case,
-    logo: illuminations
+    logo: illuminations,
+    id: "illuminations"
   },
   {
     name: "Caso Calzados Mega",
     alt: "Calzados Mega",
     image: mega_case,
-    logo: mega
+    logo: mega,
+    id: "mega"
   },
   {
     name: "Caso Grupo Simel",
     alt: "Grupo Simel",
     image: simel_caso,
-    logo: simel
+    logo: simel,
+    id: "simel"
   },
   {
     name: "Caso Vicone",
     alt: "Vicone",
     image: vicone_caso,
-    logo: vicone
+    logo: vicone,
+    id: "vicone"
   },
 
 ]
@@ -80,10 +87,10 @@ const casosImages: Casos[] = [
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto mt-30">
           {casosImages.map((caso, index) => (
-            <div class="relative group w-full aspect-square overflow-hidden bg-black ">
+            <Link href={`/exitos/${caso.id}`} class="relative group w-full aspect-square overflow-hidden bg-black ">
               <Image src={caso.image} alt={caso.name} class={`w-full h-full object-cover transition-all duration-400 ease-out group-hover:opacity-20`} />
               <Image src={caso.logo} alt={caso.alt} class={`absolute inset-0 w-full h-full p-10 object-container opacity-0 transition-all duration-700 ease-out group-hover:opacity-100`} />
-            </div>
+            </Link>
           ))}
           <div></div>
         </div>

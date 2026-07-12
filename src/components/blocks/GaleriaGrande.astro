@@ -1,0 +1,25 @@
+---
+interface Props {
+  imagenes: string[];
+}
+
+const { imagenes } = Astro.props;
+---
+
+<section class="max-w-4xl mx-auto px-6 py-12" data-motion="revealUp">
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+    {imagenes.map((image: any, index) => {
+
+      return (
+        <div class={`${image.grid} w-full overflow-hidden group`}>
+          <img 
+            src={image.img} 
+            alt="Despliegue visual del ecosistema de marca" 
+            class={`${image.h} w-full  object-container transition-transform duration-1000 ease-out group-hover:scale-102`}
+            loading="lazy"
+          />
+        </div>
+      );
+    })}
+  </div>
+</section>
