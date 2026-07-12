@@ -3,14 +3,20 @@ import Layout from "../layouts/Layout.astro";
 import Separador from "../components/main/Separator.astro";
 import energy_case from "../assets/casos_exito/energy_caso.png";
 import energy from '../assets/clientes/energy.svg';
-import illuminations_case from"../assets/casos_exito/illuminations_caso.png";
+import illuminations_case from "../assets/casos_exito/illuminations_caso.png";
+import illuminations_case2 from "../assets/casos_exito/illuminations_caso2.png";
 import illuminations from '../assets/clientes/illuminations.svg';
-import mega_case from"../assets/casos_exito/mega_case.png";
+import mega_case from"../assets/casos_exito/mega_caso.png";
 import mega from '../assets/clientes/mega.svg';
 import simel_caso from"../assets/casos_exito/simel_caso.png";
 import simel from '../assets/clientes/simel.svg';
-import vicone_caso from"../assets/casos_exito/vicone_caso.png";
+import vicone_case from"../assets/casos_exito/vicone_caso.png";
 import vicone from '../assets/clientes/vicone.svg';
+import miami_case from"../assets/casos_exito/miami_caso.png";
+import miami_case2 from"../assets/casos_exito/miami_caso2.png";
+import miami from '../assets/clientes/miami.svg';
+import hunter_case from"../assets/casos_exito/hunter_caso.jpeg";
+import hunter from '../assets/clientes/hunter.svg';
 import type { ImageMetadata } from 'astro';
 import { Image } from "astro:assets";
 import Link from "../components/Link.astro";
@@ -25,16 +31,23 @@ interface Casos {
 
 const casosImages: Casos[] = [
   {
-    name: "Caso Energy Control",
-    alt: "Energy Control",
-    image: energy_case,
-    logo: energy,
-    id: "energy"
+    name: "Caso Vicone",
+    alt: "Vicone",
+    image: vicone_case,
+    logo: vicone,
+    id: "vicone"
   },
   {
     name: "Caso Illuminations",
     alt: "Illuminations",
     image: illuminations_case,
+    logo: illuminations,
+    id: "illuminations"
+  },
+  {
+    name: "Caso Illuminations 2",
+    alt: "Illuminations",
+    image: illuminations_case2,
     logo: illuminations,
     id: "illuminations"
   },
@@ -53,13 +66,33 @@ const casosImages: Casos[] = [
     id: "simel"
   },
   {
-    name: "Caso Vicone",
-    alt: "Vicone",
-    image: vicone_caso,
-    logo: vicone,
-    id: "vicone"
+    name: "Caso Energy Control",
+    alt: "Energy Control",
+    image: energy_case,
+    logo: energy,
+    id: "energy"
   },
-
+  {
+    name: "Caso Miami Food Trucks Events",
+    alt: "Miami Food Trucks Events",
+    image: miami_case,
+    logo: miami,
+    id: "miami"
+  },
+  {
+    name: "Caso Miami Food Trucks Events 2",
+    alt: "Miami Food Trucks Events",
+    image: miami_case2,
+    logo: miami,
+    id: "miami"
+  },
+  {
+    name: "Caso Hunter",
+    alt: "Hunter",
+    image: hunter_case,
+    logo: hunter,
+    id: "hunter"
+  },
 ]
 
 
@@ -85,11 +118,15 @@ const casosImages: Casos[] = [
             Cada marca tiene un punto de partida. Descubre cómo convertimos desafíos en estrategias, ideas en experiencias y marcas en historias que conectan. Selecciona una marca y sumérgete en su historia
         </p>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto mt-30">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto mt-30"
+        
+        >
           {casosImages.map((caso, index) => (
-            <Link href={`/exitos/${caso.id}`} class="relative group w-full aspect-square overflow-hidden bg-black ">
+            <Link href={`/exitos/${caso.id}`} class="relative group w-full aspect-square overflow-hidden bg-black "
+            data-motion="fade" data-motion-duration={index * 0.3}
+            >
               <Image src={caso.image} alt={caso.name} class={`w-full h-full object-cover transition-all duration-400 ease-out group-hover:opacity-20`} />
-              <Image src={caso.logo} alt={caso.alt} class={`absolute inset-0 w-full h-full p-10 object-container opacity-0 transition-all duration-700 ease-out group-hover:opacity-100`} />
+              <Image src={caso.logo} alt={caso.alt} class={`absolute inset-0 w-full h-full p-30 object-container opacity-0 transition-all duration-700 ease-out group-hover:opacity-100`} />
             </Link>
           ))}
           <div></div>
