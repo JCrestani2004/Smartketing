@@ -118,12 +118,12 @@ const casosImages: Casos[] = [
             Cada marca tiene un punto de partida. Descubre cómo convertimos desafíos en estrategias, ideas en experiencias y marcas en historias que conectan. Selecciona una marca y sumérgete en su historia
         </p>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto mt-30"
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto mt-2 md:mt-4"
         
         >
           {casosImages.map((caso, index) => (
             <Link href={`/exitos/${caso.id}`} class="relative group w-full aspect-square overflow-hidden bg-black "
-            data-motion="fade" data-motion-duration={index * 0.3}
+            data-motion="revealLeft" data-motion-duration="1"
             >
               <Image src={caso.image} alt={caso.name} class={`w-full h-full object-cover transition-all duration-400 ease-out group-hover:opacity-20`} />
               <Image src={caso.logo} alt={caso.alt} class={`absolute inset-0 w-full h-full p-30 object-container opacity-0 transition-all duration-700 ease-out group-hover:opacity-100`} />
