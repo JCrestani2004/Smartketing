@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 import Separador from "../../components/main/Separator.astro";
+import Link from "../../components/Link.astro";
 
 // 1. Importamos los componentes de los bloques (los crearemos en el siguiente paso)
 import SeccionTexto from '../../components/blocks/SeccionTexto.astro';
@@ -37,7 +38,7 @@ const { cliente, title, industria, servicios, blocks } = entry.data;
         <span class="">{industria}</span>
       </div>
       
-      <h1 class="text-4xl md:text-5xl font-bold font-title tracking-tight leading-[1.15]">
+      <h1 class="text-4xl md:text-5xl font-bold font-title text-center tracking-tight leading-[1.15]">
         {title}
       </h1>
 
@@ -77,6 +78,10 @@ const { cliente, title, industria, servicios, blocks } = entry.data;
           return null;
       }
     })}
+
+    <footer class="w-full flex justify-center mt-15" data-motion="revealUp" data-motion-duration="1">
+      <Link href="/contacto" class="font-body bg-brand-coral rounded-2xl p-4 italic text-brand-gray font-bold text-sm cursor-pointer hover:scale-103 transition-all duration-300">Renueva tu marca con nosotros</Link>
+    </footer>
 
   </main>
 </Layout>

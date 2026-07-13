@@ -52,6 +52,8 @@ blocks:
         - img: /casos_exito/vicone/image4.png
           grid: "md:col-span-4"
           h: "h-full"
+          link: "https://vicone.com.ve/"
+          rel: "Web Vicone"
         - img: /casos_exito/vicone/image5.jpeg
           grid: "md:col-span-1"
           h: "h-full"

@@ -7,7 +7,7 @@ interface Props {
 const { subtitulo, parrafos } = Astro.props;
 ---
 
-<section class="max-w-4xl mx-auto px-6 py-6 space-y-4" data-motion="revealUp">
+<section class="max-w-4xl mx-auto px-6 py-2 space-y-4" data-motion="revealUp">
   
   {/* Si en el .md pusiste subtitulo, lo pinta; si no, lo ignora de forma limpia */}
   {subtitulo && (
@@ -19,7 +19,7 @@ const { subtitulo, parrafos } = Astro.props;
   <div class="space-y-4">
     {parrafos.map((parrafo: string) => (
       // Usamos set:html para que reconozca etiquetas <strong> si quieres resaltar palabras
-      <p class="text-brand-gray/90 font-body leading-relaxed text-lg" set:html={parrafo} />
+      <p class="text-brand-gray/90 font-body leading-relaxed text-lg text-justify" set:html={parrafo} />
     ))}
   </div>
 

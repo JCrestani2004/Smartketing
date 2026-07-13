@@ -1,4 +1,6 @@
 ---
+
+
 interface Props {
   imagenes: string[];
 }
@@ -8,18 +10,39 @@ const { imagenes } = Astro.props;
 
 <section class="max-w-4xl mx-auto px-6 py-12" data-motion="revealUp">
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
-    {imagenes.map((image: any, index) => {
+    {
+      imagenes.map((image: any, index) => {
+        return (
+          <div class={`${image.grid} w-full overflow-hidden group bg-black relative`}>
+            <a
+              href={image.link}
+              target="_blank"
+              rel={image.rel}
+              class=""
+            >
+              {image.link ?
+              
+              <img
+                src={image.img}
+                alt="Despliegue visual del ecosistema de marca"
+                class={`${image.h} w-full object-cover group-hover:scale-102 transition-all duration-400 ease-out group-hover:opacity-20`}
+                loading="lazy"
+              />
+               
+              <div class="absolute inset-0 w-full h-full p-30 object-container opacity-0 transition-all duration-700 ease-out group-hover:opacity-100 text-center text-3xl font-title flex justify-center items-center">Ir a la web</div>
+              :
 
-      return (
-        <div class={`${image.grid} w-full overflow-hidden group`}>
-          <img 
-            src={image.img} 
-            alt="Despliegue visual del ecosistema de marca" 
-            class={`${image.h} w-full  object-container transition-transform duration-1000 ease-out group-hover:scale-102`}
-            loading="lazy"
-          />
-        </div>
-      );
-    })}
+               <img
+                src={image.img}
+                alt="Despliegue visual del ecosistema de marca"
+                class={`${image.h} w-full object-cover group-hover:scale-102 transition-all duration-400 ease-out`}
+                loading="lazy"
+              />
+              }
+            </a>
+          </div>
+        );
+      })
+    }
   </div>
 </section>
