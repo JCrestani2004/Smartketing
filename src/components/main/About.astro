@@ -1,11 +1,10 @@
 ---
 import Link from "../Link.astro";
-import Separador from './Separator.astro';
+import Separador from "./Separator.astro";
 ---
 
 <section
   class="relative w-full bg-transparent pb-20 2xl:pb-0 pt-32 px-6 md:px-10 lg:px-20 items-center"
-  
 >
   <div
     class="max-w-6xl 2xl:max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-3 2xl:gap-20 items-start"
@@ -15,7 +14,8 @@ import Separador from './Separator.astro';
     >
       <h2
         class="font-title text-4xl md:text-[2.8rem] leading-[0.9] tracking-tight text-center md:text-left"
-        data-motion="revealRight" data-motion-duration="1"
+        data-motion="revealRight"
+        data-motion-duration="1"
       >
         <span class="text-brand-cyan font-light">Quiénes</span>
         <span class="text-brand-gray font-bold"> somos</span>
@@ -26,19 +26,31 @@ import Separador from './Separator.astro';
       class="flex flex-col items-center md:items-end md:col-span-7 text-center md:text-right"
     >
       <div
-        class="space-y-10 w-full text-brand-gray/80 font-body text-[0.95rem] md:text-[1.3rem] leading-[1.40rem] mb-14 tracking-wide font-normal antialiased text-justify"
-        data-motion="revealUp" data-motion-delay="0.2"
+        class="space-y-10 w-full text-brand-gray/80 font-body text-[0.95rem] md:text-[1.1rem] leading-[1.40rem] mb-14 tracking-wide font-normal antialiased text-justify"
+        data-motion="revealUp"
+        data-motion-delay="0.2"
       >
         <p>
-          En <strong>Brandoors</strong> tenemos más de <strong>diez años</strong> acompañando a pequeñas y medianas empresas a construir
-          marcas con criterio y visión a largo plazo.
+          En <strong>Brandoors</strong> llevamos más de 10 años acompañando a pequeñas
+          y medianas empresas a construir marcas con criterio, estrategia y visión
+          de largo plazo.
         </p>
         <p>
-          Trabajamos como su <strong>equipo creativo externo</strong>, dando 
-          forma a su identidad, su mensaje y su comunicación
-          a través de contenido y diseño estratégico.
+          <strong>Nos convertimos en tu equipo de marketing externo</strong> entendemos
+          tu negocio, definimos la estrategia y ponemos a tu disposición las personas
+          y capacidades necesarias para llevarla a la realidad.
         </p>
-        <div class="w-full text-center">
+        <p>
+          Estrategia, creatividad, contenido, diseño, audiovisual, digital y
+          ejecución, todo bajo una misma dirección y con un mismo propósito.
+        </p>
+        <p>
+          Con Brandoors, no necesitas contratar ni coordinar un proveedor
+          diferente para cada necesidad. Nosotros centralizamos la gestión de tu
+          marketing y ponemos a tu disposición un equipo especializado que
+          conoce tu marca y trabaja para hacerla avanzar.
+        </p>
+        <!-- <div class="w-full text-center">
         <h3
           class="font-title text-3xl md:text-[2.35rem] leading-normal tracking-normal italic pb-8"
         >
@@ -47,97 +59,116 @@ import Separador from './Separator.astro';
           <span class="block text-brand-cyan/90 font-extrabold"
             >agencia digital <span class="text-brand-gray font-light">tradicional”</span></span>
         </h3>
+      </div> -->
+        <p>
+          Tú te concentras en dirigir y hacer crecer tu empresa. Nosotros nos
+          ocupamos de tu marketing, desde la estrategia hasta la ejecución.
+        </p>
       </div>
-        <p class="">
-          No creemos en soluciones rápidas, creemos en
-          procesos que hacen que vender sea una consecuencia natural de una comunicación bien hecha.
+    </div>
+  </div>
+
+  <Separador />
+
+  <div class="max-w-5xl mx-auto mt-30 text-center">
+    <h2
+      class="font-title text-3xl md:text-[2.3rem] leading-[1.1]"
+      data-motion="revealDown"
+      data-motion-duration="1"
+    >
+      <span class="text-brand-coral font-light">Dile adiós a tus</span>
+      <span class="text-brand-gray font-extrabold"> problemas</span>
+    </h2>
+
+    <div
+      class="grid grid-cols-2 md:grid-cols-4 gap-25 mt-18 font-body max-w-4xl justify-self-center"
+    >
+      <div
+        class="flex flex-col items-center w-full max-w-80"
+        data-motion="zoomInUp"
+        data-motion-delay="0.1"
+      >
+        <div
+          class="w-8 h-8 bg-brand-coral rounded-full flex items-center justify-center text-white font-bold"
+        >
+          !
+        </div>
+        <p class="text-brand-gray/90 text-md mt-3 text-center italic">
+          Falta de <br />tiempo para<br /> crear contenido
         </p>
       </div>
 
+      <div
+        class="flex flex-col items-center w-full max-w-80"
+        data-motion="zoomInUp"
+        data-motion-delay="0.25"
+      >
+        <div
+          class="w-8 h-8 bg-brand-coral rounded-full flex items-center justify-center text-white font-bold"
+        >
+          !
+        </div>
+        <p class="text-brand-gray/90 text-md mt-3 text-center italic">
+          Identidad <br />de marca indefinida
+        </p>
+      </div>
 
+      <div
+        class="flex flex-col items-center w-full max-w-80"
+        data-motion="zoomInUp"
+        data-motion-delay="0.4"
+      >
+        <div
+          class="w-8 h-8 bg-brand-coral rounded-full flex items-center justify-center text-white font-bold"
+        >
+          !
+        </div>
+        <p class="text-brand-gray/90 text-md mt-3 text-center italic">
+          Clientes<br /> que <br /> no llegan
+        </p>
+      </div>
+
+      <div
+        class="flex flex-col items-center w-full max-w-80"
+        data-motion="zoomInUp"
+        data-motion-delay="0.55"
+      >
+        <div
+          class="w-8 h-8 bg-brand-coral rounded-full flex items-center justify-center text-white font-bold"
+        >
+          !
+        </div>
+        <p class="text-brand-gray/90 text-md mt-3 text-center italic">
+          Equipos <br /> que no<br /> responden
+        </p>
+      </div>
     </div>
-    
   </div>
-      
-<Separador />
-
-  <div class="max-w-5xl mx-auto mt-30 text-center">
-
-  <h2 class="font-title text-3xl md:text-[2.3rem] leading-[1.1]"
-  data-motion="revealDown"
-    data-motion-duration="1"
-    >
-    <span class="text-brand-coral font-light">Dile adiós a tus</span>
-    <span class="text-brand-gray font-extrabold"> problemas</span>
-  </h2>
-
-  <div class="grid grid-cols-2 md:grid-cols-4 gap-25 mt-18 font-body max-w-4xl justify-self-center">
-
-    <div class="flex flex-col items-center w-full max-w-80"
-    data-motion="zoomInUp"
-      data-motion-delay="0.1">
-      <div class="w-8 h-8 bg-brand-coral rounded-full flex items-center justify-center text-white font-bold">
-        !
-      </div>
-      <p class="text-brand-gray/90 text-md mt-3 text-center italic">
-        Falta de <br>tiempo para<br> crear contenido
-      </p>
-    </div>
-
-    <div class="flex flex-col items-center w-full max-w-80"
-    data-motion="zoomInUp"
-      data-motion-delay="0.25">
-      <div class="w-8 h-8 bg-brand-coral rounded-full flex items-center justify-center text-white font-bold">
-        !
-      </div>
-      <p class="text-brand-gray/90 text-md mt-3 text-center italic">
-        Identidad <br>de marca indefinida
-      </p>
-    </div>
-
-    <div class="flex flex-col items-center w-full max-w-80"
-    data-motion="zoomInUp"
-      data-motion-delay="0.4">
-      <div class="w-8 h-8 bg-brand-coral rounded-full flex items-center justify-center text-white font-bold">
-        !
-      </div>
-      <p class="text-brand-gray/90 text-md mt-3 text-center italic">
-        Clientes<br> que <br> no llegan
-      </p>
-    </div>
-
-    <div class="flex flex-col items-center w-full max-w-80"
-    data-motion="zoomInUp"
-      data-motion-delay="0.55">
-      <div class="w-8 h-8 bg-brand-coral rounded-full flex items-center justify-center text-white font-bold">
-        !
-      </div>
-      <p class="text-brand-gray/90 text-md mt-3 text-center italic">
-        Equipos <br> que no<br> responden
-      </p>
-    </div>
-
-  </div>
-
-</div>
-<div class="max-w-5xl mx-auto mt-24 flex flex-col md:flex-row items-center justify-between gap-10">
-
-  <h3 class="font-title text-4xl md:text-[2.8rem] leading-[0.9] text-center md:text-left"
-  data-motion="revealRight"
-    data-motion-duration="1.2">
-    <span class="block text-brand-gray font-extrabold">Nosotros</span>
-    <span class="block text-brand-cyan font-light">tenemos la</span>
-    <span class="block text-brand-gray font-extrabold">solución.</span>
-  </h3>
-  <div data-motion="revealLeft" data-motion-duration="1.2" data-motion-delay="0.2">
-  <Link
-    href="/about"
-    class="bg-brand-coral text-white px-8 py-3 rounded-xl font-body hover:scale-105 transition duration-300"
+  <div
+    class="max-w-5xl mx-auto mt-24 flex flex-col md:flex-row items-center justify-between gap-10"
   >
-    Más sobre nosotros
-  </Link>
-</div>
-</div>
-  
-<Separador />
+    <h3
+      class="font-title text-4xl md:text-[2.8rem] leading-[0.9] text-center md:text-left"
+      data-motion="revealRight"
+      data-motion-duration="1.2"
+    >
+      <span class="block text-brand-gray font-extrabold">Nosotros</span>
+      <span class="block text-brand-cyan font-light">tenemos la</span>
+      <span class="block text-brand-gray font-extrabold">solución.</span>
+    </h3>
+    <div
+      data-motion="revealLeft"
+      data-motion-duration="1.2"
+      data-motion-delay="0.2"
+    >
+      <Link
+        href="/about"
+        class="bg-brand-coral text-white px-8 py-3 rounded-xl font-body hover:scale-105 transition duration-300"
+      >
+        Más sobre nosotros
+      </Link>
+    </div>
+  </div>
+
+  <Separador />
 </section>
