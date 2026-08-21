@@ -14,11 +14,13 @@ const { urls } = Astro.props;
       
       return (
         <div class="w-full h-140 overflow-hidden shadow-2xl">
-          <iframe 
-            src={embedUrl} 
-            class="w-full h-full border-0" 
-            scrolling="no" 
+          <iframe
+            src={embedUrl}
+            class="w-full h-full border-0"
+            scrolling="no"
             allowtransparency="true"
+            loading="lazy"
+            title="Publicación de Instagram del proyecto"
           />
         </div>
       );

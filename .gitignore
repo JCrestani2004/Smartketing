@@ -26,5 +26,10 @@ pnpm-debug.log*
 # Carpeta de pruebas
 pruebas/
 
-# PHP
+# PHP del formulario de contacto.
+# Contiene la contraseña SMTP en config.php, así que no entra al repositorio.
+# Vive en public/ para que astro build lo copie solo a dist/php/ y baste con
+# subir dist/ al hosting; el .htaccess de esa carpeta impide el acceso web
+# directo a config.php y a la librería PHPMailer.
 php/
+public/php/

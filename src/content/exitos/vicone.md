@@ -2,6 +2,7 @@
 cliente: "Vicone"
 title: "Transformando una marca con historia para conectar con una nueva generación"
 industria: "Alimentos"
+description: "Rebranding de Vicone: renovamos la identidad visual y la presencia digital de una marca de alimentos con trayectoria para conectar con una nueva generación."
 servicios: 
     - "Estrategia de marca"
     - "Rebranding"
@@ -30,9 +31,9 @@ blocks:
     #3. Galeria
     - type: "galeria-proyectos"
       imagenes:
-        - /casos_exito/vicone/image1.jpg
-        - /casos_exito/vicone/image2.jpg
-        - /casos_exito/vicone/image3.jpg
+        - /src/assets/casos_exito/vicone/image1.jpg
+        - /src/assets/casos_exito/vicone/image2.jpg
+        - /src/assets/casos_exito/vicone/image3.jpg
     
     #4. Instagram videos
     - type: "instagram-embed"
@@ -49,27 +50,26 @@ blocks:
     #6. Bloque de imagenes
     - type: "galeria-grande"
       imagenes: 
-        - img: /casos_exito/vicone/image4.png
+        - img: /src/assets/casos_exito/vicone/image4.png
           grid: "md:col-span-4"
           h: "h-full"
           link: "https://vicone.com.ve/"
-          rel: "Web Vicone"
-        - img: /casos_exito/vicone/image5.jpeg
+        - img: /src/assets/casos_exito/vicone/image5.jpeg
           grid: "md:col-span-1"
           h: "h-full"
-        - img: /casos_exito/vicone/image6.jpeg
+        - img: /src/assets/casos_exito/vicone/image6.jpeg
           grid: "md:col-span-3"
           h: "h-[100%]"
-        - img: /casos_exito/vicone/image7.jpeg
+        - img: /src/assets/casos_exito/vicone/image7.jpeg
           grid: "md:col-span-4"
           h: "h-full"
-        - img: /casos_exito/vicone/image8.jpeg
+        - img: /src/assets/casos_exito/vicone/image8.jpeg
           grid: "md:col-span-4"
           h: "h-full"
-        - img: /casos_exito/vicone/image10.jpeg
+        - img: /src/assets/casos_exito/vicone/image10.jpeg
           grid: "md:col-span-1"
           h: "h-full"
-        - img: /casos_exito/vicone/image9.jpeg
+        - img: /src/assets/casos_exito/vicone/image9.jpeg
           grid: "md:col-span-2"
           h: "h-full"
         

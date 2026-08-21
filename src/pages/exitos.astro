@@ -101,16 +101,18 @@ const casosImages: Casos[] = [
 
 <Layout
   title="Casos de Éxito | Brandoors"
-  descripcion="Explora nuestro portafolio de proyectos. Descubre cómo transformamos ideas en marcas de impacto a través de la dirección de arte, contenido y estrategia creativa."
+  description="Explora nuestro portafolio de proyectos. Descubre cómo transformamos ideas en marcas de impacto a través de la dirección de arte, contenido y estrategia creativa."
 >
   <section class="relative w-full min-h-screen bg-transparent overflow-hidden pt-42 pb-20 px-6 lg:px-20">
     <div
       class="relative z-10 text-center pt-15 md:-mb-16 lg:-mb-18 xl:-mb-22 w-full"
       data-motion="revealDown"
     >
-      <h2 class="text-white text-3xl md:text-4xl font-title font-light">
+      {/* Era un h2: esta página no tenía encabezado principal, y "Casos de
+          Éxito" es justo el término por el que interesa posicionar. */}
+      <h1 class="text-white text-3xl md:text-4xl font-title font-light">
         Casos de<span class="text-brand-coral font-bold "> Éxito</span>
-      </h2>
+      </h1>
     </div>
     <Separador />
     <article class="w-full flex flex-col gap-10">
@@ -125,7 +127,20 @@ const casosImages: Casos[] = [
             <Link href={`/exitos/${caso.id}`} class="relative group w-full aspect-square overflow-hidden bg-black "
             data-motion="revealLeft" data-motion-duration="1"
             >
-              <Image src={caso.image} alt={caso.name} class={`w-full h-full object-cover transition-all duration-400 ease-out group-hover:opacity-20`} />
+              {/*
+                Las miniaturas se ven a ~384 px como mucho, pero los originales
+                son de 1254 px. Con widths/sizes el navegador se descarga la
+                versión que le corresponde en vez de la grande siempre.
+              */}
+              <Image
+                src={caso.image}
+                widths={[400, 600, 800]}
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                format="webp"
+                quality={78}
+                alt={`Caso de éxito de ${caso.alt} — branding y comunicación por Brandoors`}
+                class={`w-full h-full object-cover transition-all duration-400 ease-out group-hover:opacity-20`}
+              />
               <Image src={caso.logo} alt={caso.alt} class={`absolute inset-0 w-full h-full p-30 object-container opacity-0 transition-all duration-700 ease-out group-hover:opacity-100`} />
             </Link>
           ))}

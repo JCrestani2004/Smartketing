@@ -1,21 +1,44 @@
 ---
+import { Image } from "astro:assets";
+import { resolverImagen } from "../../lib/imagenes";
+
 interface Props {
   imagenes: string[];
 }
 
 const { imagenes } = Astro.props;
+
+// Las rutas del .md se resuelven a imágenes reales para que Astro las convierta
+// a WebP y les ponga width/height (antes se servían en crudo desde public/).
+const resueltas = imagenes.map((ruta) => ({
+  ruta,
+  imagen: resolverImagen(ruta),
+}));
 ---
 
 <section class="max-w-4xl mx-auto px-6 py-4" data-motion="revealUp">
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
-    {imagenes.map((img) => (
+    {resueltas.map(({ ruta, imagen }) => (
       <div class="w-full aspect-auto overflow-hidden shadow-xl group">
-        <img 
-          src={img} 
-          alt="Detalle del caso de éxito" 
-          class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-103"
-          loading="lazy"
-        />
+        {imagen ? (
+          <Image
+            src={imagen}
+            format="webp"
+            quality={78}
+            widths={[400, 800]}
+            sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
+            alt="Detalle del caso de éxito"
+            class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-103"
+            loading="lazy"
+          />
+        ) : (
+          <img
+            src={ruta}
+            alt="Detalle del caso de éxito"
+            class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-103"
+            loading="lazy"
+          />
+        )}
       </div>
     ))}
   </div>

@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
 import Separador from "../components/main/Separator.astro";
 import iluminacion from "../assets/assets/iluminacion-perfil.svg";
 import daniela from "../assets/equipo/cortas/daniela.png";
@@ -118,7 +119,6 @@ En Brandoors participa en la ejecución de contenidos, la gestión de redes soci
                 data-apellido={persona.apellido}
                 data-cargo={persona.cargo}
                 data-bio={persona.bio}
-                data-img={persona.imagen.src}
               >
                 <div class="relative aspect-[1/1.1] overflow-hidden flex items-end border border-transparent bg-white/2 backdrop-blur-[2px] rounded-t-2xl">
                   <img
@@ -128,10 +128,14 @@ En Brandoors participa en la ejecución de contenidos, la gestión de redes soci
                     style="z-index: 1;"
                   />
 
-                  <img
-                    src={persona.imagen.src}
-                    alt={persona.nombre}
-                    class="relative w-full h-[98%] object-contain object-bottom transition-transform duration-500 group-hover:scale-105 pointer-events-none"
+                  <Image
+                    src={persona.imagen}
+                    width={570}
+                    height={600}
+                    format="webp"
+                    quality={82}
+                    alt={`${persona.nombre} ${persona.apellido}, ${persona.cargo} en Brandoors`}
+                    class="team-photo relative w-full h-[98%] object-contain object-bottom transition-transform duration-500 group-hover:scale-105 pointer-events-none"
                     style="z-index: 2;"
                   />
                 </div>
@@ -181,7 +185,6 @@ En Brandoors participa en la ejecución de contenidos, la gestión de redes soci
                 data-apellido={persona.apellido}
                 data-cargo={persona.cargo}
                 data-bio={persona.bio}
-                data-img={persona.imagen.src}
               >
                 <div class="relative aspect-[1/1.1] overflow-hidden flex items-end border border-transparent bg-white/2 backdrop-blur-[2px] rounded-t-2xl">
                   <img
@@ -191,10 +194,14 @@ En Brandoors participa en la ejecución de contenidos, la gestión de redes soci
                     style="z-index: 1;"
                   />
 
-                  <img
-                    src={persona.imagen.src}
-                    alt={persona.nombre}
-                    class="relative w-full h-[98%] object-contain object-bottom transition-transform duration-500 group-hover:scale-105 pointer-events-none"
+                  <Image
+                    src={persona.imagen}
+                    width={570}
+                    height={600}
+                    format="webp"
+                    quality={82}
+                    alt={`${persona.nombre} ${persona.apellido}, ${persona.cargo} en Brandoors`}
+                    class="team-photo relative w-full h-[98%] object-contain object-bottom transition-transform duration-500 group-hover:scale-105 pointer-events-none"
                     style="z-index: 2;"
                   />
                 </div>
@@ -230,6 +237,10 @@ En Brandoors participa en la ejecución de contenidos, la gestión de redes soci
     </div>
     <Modal />
     <script>
+      // Se ejecuta en astro:page-load y no sólo al cargar: con las transiciones
+      // de vista de Astro (ClientRouter) el script no vuelve a correr al navegar
+      // entre páginas, y el modal se quedaba muerto al volver a /equipo.
+      document.addEventListener("astro:page-load", () => {
       // 1. Usamos "as" para decirle a TS que son HTMLElements (y así reconozca .dataset)
       const cards = document.querySelectorAll(
         ".team-card",
@@ -250,7 +261,15 @@ En Brandoors participa en la ejecución de contenidos, la gestión de redes soci
       cards.forEach((card) => {
         card.addEventListener("click", () => {
           // Extraemos los datos del dataset (ahora sin errores)
-          const { nombre, apellido, cargo, bio, img } = card.dataset;
+          const { nombre, apellido, cargo, bio } = card.dataset;
+
+          // La foto se lee del propio <img> de la tarjeta en vez de un
+          // data-img: así reutiliza la versión WebP que Astro ya generó y que
+          // el navegador tiene en caché, en lugar de pedir el PNG original.
+          const foto = card.querySelector(
+            ".team-photo",
+          ) as HTMLImageElement | null;
+          const img = foto?.currentSrc || foto?.src || "";
 
           // Verificamos que todo exista antes de usarlo (para evitar el error de "posiblemente null")
           if (
@@ -264,6 +283,7 @@ En Brandoors participa en la ejecución de contenidos, la gestión de redes soci
           ) 
           {
             mImg.src = img || "";
+            mImg.alt = `${nombre || ""} ${apellido || ""}`.trim();
             mNombre.innerText = nombre || "";
             mApellido.innerText = apellido || "";
             mCargo.innerText = cargo || "";
@@ -298,6 +318,14 @@ En Brandoors participa en la ejecución de contenidos, la gestión de redes soci
 
       closeBtn?.addEventListener("click", closeModal);
       overlay?.addEventListener("click", closeModal);
+
+      // Cerrar con Escape: es lo que espera cualquiera que use teclado.
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && modal && !modal.classList.contains("hidden")) {
+          closeModal();
+        }
+      });
+      });
     </script>
   </section>
 </Layout>

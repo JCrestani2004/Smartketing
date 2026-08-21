@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import fav from "../assets/brandoors/isotipo.svg";
+import { Font } from "astro:assets";
 import { ClientRouter } from "astro:transitions";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
@@ -9,6 +10,8 @@ const {
   title = "Brandoors",
   description = "Tu agencia de comunicación creativa para marcas en crecimiento.",
   image = "/og-image.jpg",
+  imageWidth = 1200,
+  imageHeight = 630,
 } = Astro.props;
 
 // URL canónica de la página actual (evita que Google la trate como contenido duplicado).
@@ -17,16 +20,41 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const ogImageURL = new URL(image, Astro.site);
 
 // Datos estructurados: le explican a Google qué es Brandoors.
+// ProfessionalService es un subtipo de LocalBusiness: le da a Google las señales
+// que necesita para las búsquedas locales ("agencia de branding Panamá"), cosa
+// que el tipo genérico Organization no hace.
+//
+// PENDIENTE: cuando tengan teléfono público y dirección fiscal, descomentar los
+// campos de abajo. Google los usa para el panel lateral de resultados locales.
 const orgSchema = {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": "ProfessionalService",
+  "@id": new URL("/#organizacion", Astro.site).href,
   name: "Brandoors",
+  alternateName: "Brandoors Estudio",
   url: Astro.site?.href,
   logo: new URL(fav.src, Astro.site).href,
+  image: ogImageURL.href,
   description:
     "Estudio de comunicación creativa que ayuda a pymes a construir marcas con criterio y visión a largo plazo.",
   email: "contacto@brandoorsestudio.com",
-  areaServed: ["Panamá", "Colombia"],
+  // telephone: "+507 0000 0000",
+  // address: {
+  //   "@type": "PostalAddress",
+  //   addressLocality: "Ciudad de Panamá",
+  //   addressCountry: "PA",
+  // },
+  knowsLanguage: ["es"],
+  areaServed: [
+    { "@type": "Country", name: "Panamá" },
+    { "@type": "Country", name: "Colombia" },
+  ],
+  serviceType: [
+    "Consultoría comercial",
+    "Posicionamiento estratégico",
+    "Branding visual",
+    "Diseño web",
+  ],
   sameAs: ["https://instagram.com/brandoors.estudio"],
 };
 ---
@@ -35,12 +63,39 @@ const orgSchema = {
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href={fav.src} />
     <link rel="canonical" href={canonicalURL} />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <meta name="generator" content={Astro.generator} />
+
+    {/*
+      Tipografías auto-alojadas. Emite los @font-face y el link rel=preload
+      del archivo que necesita el primer pintado. Plus Jakarta Sans es la del
+      h1 del hero, así que es la única que se precarga: precargarlas todas
+      competiría por ancho de banda con lo que sí bloquea el render.
+    */}
+    <Font cssVariable="--font-jakarta" preload={[{ style: "normal", subset: "latin" }]} />
+    <Font cssVariable="--font-inter" />
+    <Font cssVariable="--font-grotesk" />
+
+    {/*
+      Estado inicial de las animaciones de scroll. Va inline y en el head para
+      que aplique en el primer pintado, en vez de esperar al bundle de motion.
+      Sin esto el contenido aparecía, desaparecía y volvía.
+    */}
+    <script is:inline>
+      (function () {
+        var raiz = document.documentElement;
+        raiz.classList.add("motion-ready");
+        // Red de seguridad: si el bundle de animaciones nunca llega a arrancar,
+        // mostramos el contenido igualmente en lugar de dejarlo invisible.
+        setTimeout(function () {
+          if (!raiz.hasAttribute("data-motion-activo")) {
+            raiz.classList.remove("motion-ready");
+          }
+        }, 2500);
+      })();
+    </script>
 
     <title>{title}</title>
     <meta name="description" content={description} />
@@ -53,6 +108,11 @@ const orgSchema = {
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:image" content={ogImageURL} />
+    {/* Con las medidas declaradas, WhatsApp y Facebook pintan la vista previa
+        sin esperar a descargar la imagen para medirla. */}
+    <meta property="og:image:width" content={String(imageWidth)} />
+    <meta property="og:image:height" content={String(imageHeight)} />
+    <meta property="og:image:alt" content={title} />
 
     <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -62,8 +122,10 @@ const orgSchema = {
 
     <!-- Datos estructurados (Schema.org) -->
     <script is:inline type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
+
+    {/* Va dentro del head: fuera de él el HTML no es válido. */}
+    <ClientRouter />
   </head>
-  <ClientRouter />
   <body>
     <Header />
     <slot />
@@ -75,42 +137,8 @@ const orgSchema = {
         createObserver()
       })
     </script>
-  </body>
 
-<!-- <script>
-  import AOS from "aos";
-  import "aos/dist/aos.css";
-
-  // 1. Corregimos el error de TypeScript forzando el tipo 'any' en el objeto global
-  (window as any).AOS = AOS;
-
-  function initAOS() {
-    AOS.init({
-      duration: 1000,
-      once: false, // Permite que las animaciones se repitan al navegar/escrolear
-      offset: 100,
-      mirror: true,
-    });
-  }
-
-  
-
-  // 3. Control estricto para el intercambio de páginas de Astro
-  document.addEventListener("astro:page-load", () => {
-    // 2. Primera carga física de la web
-  initAOS();
-    // refreshHard limpia el historial de elementos de la página anterior,
-    // busca las nuevas etiquetas 'data-aos' del nuevo DOM y las indexa.
-    AOS.refreshHard();
-    
-    // Le damos 100ms a la transición de Astro para asentarse y disparamos
-    // un scroll artificial para forzar a AOS a pintar las animaciones de inmediato.
-    setTimeout(() => {
-      window.dispatchEvent(new Event('scroll'));
-    }, 100);
-  });
-</script> -->
-<script>
+    <script>
   document.addEventListener("astro:page-load", () => {
     const params = new URLSearchParams(window.location.search);
     const status = params.get("status");
@@ -182,6 +210,6 @@ const orgSchema = {
       alertContainer.addEventListener("click", closeAlert);
     }
   });
-</script>
-
+    </script>
+  </body>
 </html>

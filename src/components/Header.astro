@@ -6,31 +6,34 @@ import Link from "../components/Link.astro";
 <nav id="main-nav" class="fixed top-0 w-full z-100 bg-transparent font-body transition-all duration-300">
   <div class="max-w-8xl mx-auto px-6 md:px-15 lg:px-20 py-6 flex justify-between items-center gap-5">
 
-    <Link href="/"
-    data-motion="scaleBig" 
-        data-motion-duration="4">
-      <img src={logo.src} alt="Brandoors" class="h-10 md:h-13 transition-transform duration-300 hover:scale-105" 
+    {/*
+      La cabecera está sobre el pliegue en todas las páginas, así que anima con
+      CSS (.enter-*) en vez de con [data-motion]: así no depende del bundle de
+      motion para aparecer.
+    */}
+    <Link href="/" class="enter-scale">
+      <img src={logo.src} alt="Brandoors" class="h-10 md:h-13 transition-transform duration-300 hover:scale-105"
       />
     </Link>
 
     <ul class="hidden lg:flex gap-14 md:text-xs lg:text-base text-brand-gray font-extralight">
-        <li><Link href="/" class="nav-link hover:text-white transition-all duration-300"
-          data-motion="revealDown" data-motion-delay="0.05"
+        <li><Link href="/" class="nav-link hover:text-white transition-all duration-300 enter-down"
+          style="animation-delay: 0.05s"
           >Inicio</Link></li>
-        <li><Link href="/about" class="nav-link hover:text-white transition-all duration-300"
-          data-motion="revealDown" data-motion-delay="0.08"
+        <li><Link href="/about" class="nav-link hover:text-white transition-all duration-300 enter-down"
+          style="animation-delay: 0.08s"
           >Quiénes somos</Link></li>
-        <li><Link href="/servicio" class="nav-link hover:text-white transition-all duration-300"
-          data-motion="revealDown" data-motion-delay="0.15">Servicios
+        <li><Link href="/servicio" class="nav-link hover:text-white transition-all duration-300 enter-down"
+          style="animation-delay: 0.15s">Servicios
         </Link></li>
-        <li><Link href="/exitos" class="nav-link hover:text-white transition-all duration-300"
-          data-motion="revealDown" data-motion-delay="0.2">Casos de Exito
+        <li><Link href="/exitos" class="nav-link hover:text-white transition-all duration-300 enter-down"
+          style="animation-delay: 0.2s">Casos de Exito
         </Link></li>
-      <li><Link href="/equipo" class="nav-link hover:text-white transition-all duration-300"
-        data-motion="revealDown" data-motion-delay="0.25"
+      <li><Link href="/equipo" class="nav-link hover:text-white transition-all duration-300 enter-down"
+        style="animation-delay: 0.25s"
         >Equipo</Link></li>
-      <li><Link href="/contacto" class="nav-link hover:text-white transition-all duration-300"
-        data-motion="revealDown" data-motion-delay="0.3"
+      <li><Link href="/contacto" class="nav-link hover:text-white transition-all duration-300 enter-down"
+        style="animation-delay: 0.3s"
         >Contáctenos</Link></li>
     </ul>
 

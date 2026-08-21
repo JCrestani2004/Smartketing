@@ -22,10 +22,20 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 // Destructuramos los datos exactos que pusiste en tu vicone.md
-const { cliente, title, industria, servicios, blocks } = entry.data;
+const { cliente, title, industria, servicios, blocks, description } = entry.data;
+
+// Si el caso no trae description propia, componemos una a partir de sus datos
+// en vez de heredar la genérica del sitio: en Google cada caso compite por
+// términos distintos ("rebranding alimentos", etc.).
+const metaDescription =
+  description ??
+  `Caso de éxito de ${cliente} (${industria}): ${title}. Servicios: ${servicios.slice(0, 4).join(", ")}.`;
 ---
 
-<Layout title={`${cliente} - Caso de Éxito`}>
+<Layout
+  title={`${cliente} · Caso de Éxito | Brandoors`}
+  description={metaDescription}
+>
   <main class="text-brand-gray min-h-screen py-20 space-y-10">
     
     <!-- ========================================== -->

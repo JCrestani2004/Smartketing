@@ -10,8 +10,12 @@ const exitosCollection = defineCollection({
     cliente: z.string(),
     title: z.string(),
     industria: z.string(),
-    servicios: z.array(z.string()), 
-    blocks: z.array(z.any()),       
+    servicios: z.array(z.string()),
+    blocks: z.array(z.any()),
+    // Resumen del caso para <meta name="description"> y Open Graph.
+    // Es lo que se lee bajo el título en Google, así que conviene que cada
+    // caso tenga el suyo. Si falta, se usa la descripción genérica del sitio.
+    description: z.string().optional(),
   }),
 });
 

@@ -15,29 +15,35 @@ import Link from "../Link.astro";
     <div
       class="flex flex-col lg:flex-row justify-center lg:gap-x-12 xl:gap-x-20 items-center w-full max-w-250 relative"
     >
+      {/*
+        Todo el hero anima con CSS (clases .enter-*), no con [data-motion].
+        [data-motion] es el sistema de reveal por scroll: depende del bundle de
+        motion, y usarlo aquí hacía que la primera pantalla no se pintara hasta
+        que ese bundle cargara y corriera.
+      */}
       <img
         src={onda.src}
         alt=""
-        class="absolute -z-10 w-[250%] max-w-none lg:w-[130%] top-[20%] left-[62%] lg:top-1/2 lg:left-1/2 -translate-x-[55%] lg:-translate-x-[60%] -translate-y-1/2 pointer-events-none"
-        data-motion="scale" data-motion-delay="0,2" data-motion-duration="2"
+        class="absolute -z-10 w-[250%] max-w-none lg:w-[130%] top-[20%] left-[62%] lg:top-1/2 lg:left-1/2 -translate-x-[55%] lg:-translate-x-[60%] -translate-y-1/2 pointer-events-none enter-scale"
+        style="animation-delay: 0.15s; animation-duration: 1.6s;"
       />
 
       <div
         class="text-center lg:text-left lg:items-start xl:pl-10 lg:pb-8 xl:pb-12"
       >
+        {/*
+          El h1 es el elemento LCP de la portada: se pinta de entrada, sin
+          animación de entrada de ningún tipo. Es lo que mide Google como
+          "cuándo aparece el contenido principal".
+        */}
         <h1
           class="font-title text-[2.5rem] leading-[0.9] lg:text-[3.8rem] text-white"
         >
-          <span class="block font-light tracking-tight"
-          data-motion="revealUp" data-motion-delay="0.4"
-          >ESTUDIO DE</span>
+          <span class="block font-light tracking-tight">ESTUDIO DE</span>
           <span class="block font-bold text-brand-cyan uppercase"
-          data-motion="revealUp" data-motion-delay="0.6"
             >comunicación</span
           >
-          <span class="block italic text-brand-coral uppercase"
-          data-motion="revealUp" data-motion-delay="0.8"
-          >creativa</span>
+          <span class="block italic text-brand-coral uppercase">creativa</span>
         </h1>
 
         <div
@@ -46,12 +52,12 @@ import Link from "../Link.astro";
           <img
             src={iconoP.src}
             alt=""
-            class="w-16 lg:w-25 lg:translate-y-2"
-            data-motion="revealRight" data-motion-delay="1"
+            class="w-16 lg:w-25 lg:translate-y-2 enter-right"
+            style="animation-delay: 0.35s;"
           />
           <p
-            class="text-brand-gray/90 font-subtitle text-[1.1rem] lg:text-[1.3rem] font-extralight leading-tight lg:leading-[0.8] text-left"
-            data-motion="revealRight" data-motion-delay="1"
+            class="text-brand-gray/90 font-subtitle text-[1.1rem] lg:text-[1.3rem] font-extralight leading-tight lg:leading-[0.8] text-left enter-right"
+            style="animation-delay: 0.35s;"
           >
             <span class="opacity-90">Para marcas</span>
             <br />
@@ -69,11 +75,11 @@ import Link from "../Link.astro";
           class="w-28 lg:w-32 mb-4
            lg:absolute
            lg:-top-12 lg:left-26
-           z-30"
-           data-motion="scale" data-motion-delay="1.2"
+           z-30 enter-scale"
+           style="animation-delay: 0.5s;"
         />
 
-        <div class="lg:mt-32" data-motion="revealUp" data-motion-delay="1">
+        <div class="lg:mt-32 enter-up" style="animation-delay: 0.4s;">
           <Link
             href="/contacto"
             class="font-body bg-brand-cyan text-brand-blue px-8 py-3 lg:px-4 lg:py-3 rounded-xl font-bold text-[1.02rem] hover:bg-brand-cyan/80 hover:scale-105 transition-all shadow-lg duration-400"

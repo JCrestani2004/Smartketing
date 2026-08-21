@@ -1,45 +1,69 @@
 ---
+import { Image } from "astro:assets";
+import { resolverImagen } from "../../lib/imagenes";
 
+interface ItemGaleria {
+  img: string;
+  grid?: string;
+  h?: string;
+  link?: string;
+  rel?: string;
+}
 
 interface Props {
-  imagenes: string[];
+  imagenes: ItemGaleria[];
 }
 
 const { imagenes } = Astro.props;
+
+// Igual que en GaleriaProyectos: la ruta del .md se convierte en una imagen que
+// Astro puede optimizar. El fallback cubre el caso de una ruta mal escrita.
+const resueltas = imagenes.map((item) => ({
+  ...item,
+  imagen: resolverImagen(item.img),
+}));
 ---
 
 <section class="max-w-4xl mx-auto px-6 py-12" data-motion="revealUp">
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
     {
-      imagenes.map((image: any, index) => {
-        return (
-          <div class={`${image.grid} w-full overflow-hidden group bg-black relative`}>
-            <a
-              href={image.link}
-              target="_blank"
-              rel={image.rel}
-              class=""
-            >
-              {image.link ?
-              
-              <img
-                src={image.img}
-                alt="Despliegue visual del ecosistema de marca"
-                class={`${image.h} w-full object-cover group-hover:scale-102 transition-all duration-400 ease-out group-hover:opacity-20`}
-                loading="lazy"
-              />
-               
-              <div class="absolute inset-0 w-full h-full p-30 object-container opacity-0 transition-all duration-700 ease-out group-hover:opacity-100 text-center text-3xl font-title flex justify-center items-center">Ir a la web</div>
-              :
+      resueltas.map((image) => {
+        const clasesImagen = `${image.h ?? ""} w-full object-cover transition-all duration-400 ease-out group-hover:scale-102${
+          image.link ? " group-hover:opacity-20" : ""
+        }`;
 
-               <img
-                src={image.img}
-                alt="Despliegue visual del ecosistema de marca"
-                class={`${image.h} w-full object-cover group-hover:scale-102 transition-all duration-400 ease-out`}
-                loading="lazy"
-              />
-              }
-            </a>
+        const contenido = image.imagen ? (
+          <Image
+            src={image.imagen}
+            format="webp"
+            quality={78}
+            widths={[480, 960]}
+            sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
+            alt="Despliegue visual del ecosistema de marca"
+            class={clasesImagen}
+            loading="lazy"
+          />
+        ) : (
+          <img
+            src={image.img}
+            alt="Despliegue visual del ecosistema de marca"
+            class={clasesImagen}
+            loading="lazy"
+          />
+        );
+
+        return (
+          <div class={`${image.grid ?? ""} w-full overflow-hidden group bg-black relative`}>
+            {image.link ? (
+              <a href={image.link} target="_blank" rel={image.rel ?? "noopener noreferrer"}>
+                {contenido}
+                <div class="absolute inset-0 w-full h-full p-30 object-container opacity-0 transition-all duration-700 ease-out group-hover:opacity-100 text-center text-3xl font-title flex justify-center items-center">
+                  Ir a la web
+                </div>
+              </a>
+            ) : (
+              contenido
+            )}
           </div>
         );
       })

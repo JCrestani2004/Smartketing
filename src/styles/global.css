@@ -1,5 +1,7 @@
-/* Importación obligatoria en v4 */
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Space+Grotesk:wght@300..700&display=swap');
+/* Las tipografías ya NO se piden a fonts.googleapis.com desde aquí.
+   Se declaran en astro.config.mjs y Astro las auto-aloja y precarga desde
+   el <Font> del Layout. Importarlas con @import obligaba al navegador a
+   descargar y parsear todo este CSS antes de poder siquiera pedirlas. */
 @import "tailwindcss";
 
 /* Reset de navegador: elimina márgenes blancos laterales */
@@ -16,12 +18,6 @@ html, body {
   -webkit-overflow-scrolling: touch;
 }
 
-[data-aos] {
-  pointer-events: none;
-}
-.aos-animate {
-  pointer-events: auto;
-}
 /* =========================
    🎨 TOKENS DE MARCA
 ========================= */
@@ -34,10 +30,12 @@ html, body {
     --color-brand-purple: #5B2EFF;
     --color-brand-gray: #F0F0F0;
 
-     /* tIPOGRAFIAS DE LA MARCA SEGUN MANUAL DE DISEÑO */
-    --font-title: 'Plus Jakarta Sans', sans-serif;
-    --font-subtitle: 'Space Grotesk', sans-serif;
-    --font-body: 'Inter', sans-serif;
+     /* tIPOGRAFIAS DE LA MARCA SEGUN MANUAL DE DISEÑO
+        Las familias las define Astro (astro.config.mjs) y las expone en estas
+        variables, que ya incluyen los fallbacks ajustados por métricas. */
+    --font-title: var(--font-jakarta);
+    --font-subtitle: var(--font-grotesk);
+    --font-body: var(--font-inter);
 }
 
 /* =========================
@@ -117,3 +115,76 @@ background-image:
 }
 
 }
+
+/* =========================================================================
+   ✨ ANIMACIONES DE ENTRADA — ESTADO INICIAL
+   =========================================================================
+   Antes, observer.ts ponía opacity:0 desde JavaScript. Eso obligaba a esperar
+   al bundle de motion (61 KB) para que el contenido se ocultara, con lo que el
+   usuario veía el texto aparecer, desaparecer y volver — y el LCP se medía al
+   final de ese ciclo.
+
+   Ahora el estado inicial lo pone el CSS. La clase .motion-ready la añade un
+   script inline del <head>, así que aplica en el primer pintado. Si el JS está
+   desactivado o el bundle falla, la clase no se añade (o se retira por la red
+   de seguridad del Layout) y todo el contenido queda visible.
+   ========================================================================= */
+
+html.motion-ready [data-motion] {
+  opacity: 0;
+}
+
+/* Quien pide menos movimiento ve el contenido directamente, sin animar. */
+@media (prefers-reduced-motion: reduce) {
+  html.motion-ready [data-motion] {
+    opacity: 1 !important;
+  }
+}
+
+/* =========================================================================
+   ✨ ENTRADA DEL HERO Y LA CABECERA (CSS puro)
+   =========================================================================
+   Lo que está sobre el pliegue no usa [data-motion]: animarlo con JS significa
+   que la primera pantalla depende de que descargue un bundle. Estas clases
+   arrancan en el primer frame, sin esperar a nada.
+
+   El <h1> del hero no lleva ninguna de estas clases a propósito: es el elemento
+   LCP de la portada y tiene que estar pintado desde el principio.
+   ========================================================================= */
+
+@keyframes enter-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes enter-down {
+  from { opacity: 0; transform: translateY(-16px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes enter-right {
+  from { opacity: 0; transform: translateX(28px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes enter-scale {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: none; }
+}
+
+@layer utilities {
+  .enter-up    { animation: enter-up    0.7s cubic-bezier(0.22, 1, 0.36, 1) both; }
+  .enter-down  { animation: enter-down  0.5s cubic-bezier(0.22, 1, 0.36, 1) both; }
+  .enter-right { animation: enter-right 0.7s cubic-bezier(0.22, 1, 0.36, 1) both; }
+  .enter-scale { animation: enter-scale 0.9s cubic-bezier(0.22, 1, 0.36, 1) both; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .enter-up,
+  .enter-down,
+  .enter-right,
+  .enter-scale {
+    animation: none;
+  }
+}
+
